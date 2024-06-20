@@ -15,6 +15,7 @@
                 "aaron-bond.better-comments",
                 "vsls-contrib.gitdoc",
                 "seunlanlege.action-buttons",
+                "tomoki1207.pdf"
             ],
             "settings": {
                 "apple-swift-format.path": [
@@ -45,9 +46,21 @@
                     "commands": [
                         {
                             "cwd": "${workspaceFolder}",
-                            "name": "$(run) Run file",
-                            "singleInstance": true,
-                            "command": "swift sh ${file}" // This is executed in the terminal.
+                            "name": "$(run-all) Run project",
+                            "useVsCodeApi": true,
+                            "command": "workbench.action.debug.start"
+                        },
+                        {
+                            "cwd": "{workspaceFolder}",
+                            "name": "$(new-file) New main.swift",
+                            "useVsCodeApi": false,
+                            "command": "mv --backup=t Sources/OCProgram/main.swift ./main.swift && touch Sources/OCProgram/main.swift"
+                        },
+                        {
+                            "cwd": "{workspaceFolder}",
+                            "name": "$(remove) Clean project",
+                            "useVsCodeApi": false,
+                            "command": "rm -rf .build && rm -rf Package.resolved"
                         },
                         {
                             "cwd": "{workspaceFolder}",
@@ -72,5 +85,7 @@
                 }
             }
         }
-    }
+    },
+    "postStartCommand": "bash -c git remote set-url origin 'https://github.com/OnslowCollege/$(basename $(pwd))'",
+    "postAttachCommand": "wget -x -nH --cut-dirs=3 -P res https://raw.githubusercontent.com/OnslowCollege/OCGUI/main/style.css"
 }
