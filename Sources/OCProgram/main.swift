@@ -36,7 +36,7 @@ class FlashcardApp : OCApp{
     }
 
     func shuffleDeck(deck) {
-        deck.shuffle()
+        return deck.shuffled()
     }
 
     override open func main(app: any OCAppDelegate) -> OCControl {
@@ -44,7 +44,7 @@ class FlashcardApp : OCApp{
         // Return total layout of GUI.
         var deck = generateDeck()
         let listView = OCListView()
-        deck = shuffleDeck(deck)
+        let shuffledDeck = shuffleDeck(deck)
 
         for card in deck {
             listView.append(item: "\(card.value)-\(card.suite)")
