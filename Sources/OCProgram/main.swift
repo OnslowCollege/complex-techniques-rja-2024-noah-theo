@@ -32,7 +32,6 @@ class FlashcardApp : OCApp{
                 deck.append(Card(value: value, suite: suite))
             }
         }
-        print(deck)
         return deck
     }
 
