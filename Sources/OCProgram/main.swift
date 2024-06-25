@@ -9,23 +9,30 @@
 import Foundation
 import OCGUI
 // Names of file to load flashcards from.
-let FILENAME: String = "cards.txt"
 
 // Struct for each value on each side of card.
 struct Card{
-    // Name of element.
+    // Value of card.
     let value: String
-    // Symbol of element.
+    // Suite of card.
     let suite: String
+    // Image of card.
 }
 
-// Application to show make user guess selected number of flashcards.
-class FlashcardApp : OCApp{
+// Application to play blackjack.
+class BlackJackApp : OCApp{
+    let playerView = OCHBox(controls: [OCLabel(text: "Player Cards: ")])
+    let dealerView = OCHBox(controls: [OCLabel(text: "Dealer Cards: ")])
+    // Return total layout of GUI.
+    let listView = OCListView()
+    var deck: [Card] = []
+    var playerCards: [Card] = []
+    var currentCard = 0
+
+
     func generateDeck() -> [Card] {
         let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
         let suites = ["Hearts", "Diamonds", "Clubs", "Spades"]
-    
-        var deck = [Card]()
     
         for suite in suites {
             for value in values {
@@ -39,23 +46,25 @@ class FlashcardApp : OCApp{
         return deck.shuffled()
     }
 
+    func startGame() {
+        playerView.append(OCLabel (text: "\(deck[currentCard])-\(deck[currentCard])---"))
+        currentCard += 1
+        playerView.append(OCLabel (text: "\(deck[currentCard])-\(deck[currentCard])"))
+        currentCard += 1
+        dealerView.append(OCLabel (text: "\(deck[currentCard])-\(deck[currentCard])---"))
+        currentCard += 1
+        dealerView.append(OCLabel (text: "Back of card"))
+    }
+
     override open func main(app: any OCAppDelegate) -> OCControl {
-        let mainView = OCHBox(controls: [])
-        // Return total layout of GUI.
-        let deck = generateDeck()
-        let listView = OCListView()
-        let shuffledDeck = shuffleDeck(deck: deck)
+        deck = shuffleDeck(deck: generateDeck())
 
-        for card in shuffledDeck {
-            listView.append(item: "\(card.value)-\(card.suite)")
-        }
-
-        mainView.append(control: listView)
+        startGame()
 
         return OCVBox(controls: [
-            mainView
+            playerView, dealerView
         ])
     }
 }
 
-FlashcardApp().start()
+BlackJackApp().start()
