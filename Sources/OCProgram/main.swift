@@ -1,4 +1,3 @@
-
 //
 //  main.swift
 //  OCProgram
@@ -17,6 +16,7 @@ struct Card{
     // Suite of card.
     let suite: String
     // Image of card.
+    let image: String
 }
 
 // Application to play blackjack.
@@ -27,43 +27,107 @@ class BlackJackApp : OCApp{
     let listView = OCListView()
     var deck: [Card] = []
     var playerCards: [Card] = []
+    var dealerCards: [Card] = []
     var currentCard = 0
-
+    let dealButton = OCButton(text: "Deal")
+    let hitButton = OCButton(text: "Hit")
 
     func generateDeck() -> [Card] {
+        // Each value and suite.
         let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-        let suites = ["Hearts", "Diamonds", "Clubs", "Spades"]
-    
+        let suites = ["hearts", "diamonds", "clubs", "spades"]
+        // Take each combo and add it to list.
         for suite in suites {
             for value in values {
-                deck.append(Card(value: value, suite: suite))
+                deck.append(Card(value: value, suite: suite, image: "\(suite)_\(value).png"))
             }
         }
         return deck
     }
-
+    /// Shuffle deck.
     func shuffleDeck(deck: [Card]) -> [Card] {
         return deck.shuffled()
     }
-
-    func startGame() {
-        playerView.append(OCLabel (text: "\(deck[currentCard])-\(deck[currentCard])---"))
-        currentCard += 1
-        playerView.append(OCLabel (text: "\(deck[currentCard])-\(deck[currentCard])"))
-        currentCard += 1
-        dealerView.append(OCLabel (text: "\(deck[currentCard])-\(deck[currentCard])---"))
-        currentCard += 1
-        dealerView.append(OCLabel (text: "Back of card"))
+    func calculateScore(cards: [Card]) -> Int {
+        var score = 0
+        var aces = 0
+        for card in cards{
+            switch card.value {
+                case "A":
+                    score += 11
+                    aces += 1
+                case "K", "Q", "J":
+                    score += 10
+                default: 
+                    print(score)
+                    score += Int(card.value) ?? 0
+                    print(score)
+            }
+            // If have ace and score is more thant 21 ace becomes a 1.
+            while score > 21 && aces > 1 {
+                score -= 11
+                aces -= 1
+            }
+        }
+    return score
     }
+    // Show cards to start game.
+    func startGame(button: any OCControlClickable) {
+    // Add card to player view and dealer view.
+    let playerCard1 = "\(deck[currentCard].image)"
+    print("Adding player card 1 image: \(playerCard1)")
+    playerView.append(OCImageView(filename: playerCard1))
+    playerCards.append(deck[currentCard])
+    currentCard += 1
+
+    let playerCard2 = "\(deck[currentCard].image)"
+    print("Adding player card 2 image: \(playerCard2)")
+    playerView.append(OCImageView(filename: playerCard2))
+    playerCards.append(deck[currentCard])
+    currentCard += 1
+
+    let dealerCard = "\(deck[currentCard].image)"
+    print("Adding dealer card image: \(dealerCard)")
+    dealerView.append(OCImageView(filename: dealerCard))
+    currentCard += 1
+
+    let backCardImage = "club_2.png"
+    print("Adding back card image: \(backCardImage)")
+    dealerView.append(OCImageView(filename: backCardImage))
+    dealButton.enabled = false
+}
+
+    /// When dealer clicks hit button.
+    func hitPlayer(button: any OCControlClickable) {
+        // Adds card to playerView.
+        playerView.append(OCImageView(filename: "\(deck[currentCard].image)"))
+        playerCards.append(deck[currentCard])
+        currentCard += 1
+        if currentCard > 5 {
+            hitButton.enabled = false
+        }
+    }
+    /// Might not be necesarry.
+    func hitDealer() {
+        // Adds card to playerView.
+        dealerView.append(OCImageView(filename: "\(deck[currentCard].image)"))
+        currentCard += 1
+    }
+    
 
     override open func main(app: any OCAppDelegate) -> OCControl {
         deck = shuffleDeck(deck: generateDeck())
+        self.dealButton.onClick(self.startGame)
+        self.hitButton.onClick(self.hitPlayer)
+        playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
 
-        startGame()
-
-        return OCVBox(controls: [
-            playerView, dealerView
+        let maincontainer = OCVBox(controls: [
+            playerView, dealerView, dealButton, hitButton
         ])
+        
+    // Change background color.
+    
+        return maincontainer
     }
 }
 
