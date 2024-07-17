@@ -75,25 +75,20 @@ class BlackJackApp : OCApp{
     func startGame(button: any OCControlClickable) {
     // Add card to player view and dealer view.
     let playerCard1 = "\(deck[currentCard].image)"
-    print("Adding player card 1 image: \(playerCard1)")
     playerView.append(OCImageView(filename: playerCard1))
     playerCards.append(deck[currentCard])
     currentCard += 1
 
     let playerCard2 = "\(deck[currentCard].image)"
-    print("Adding player card 2 image: \(playerCard2)")
     playerView.append(OCImageView(filename: playerCard2))
     playerCards.append(deck[currentCard])
     currentCard += 1
 
     let dealerCard = "\(deck[currentCard].image)"
-    print("Adding dealer card image: \(dealerCard)")
     dealerView.append(OCImageView(filename: dealerCard))
     currentCard += 1
 
-    let backCardImage = "res/back_dark.png"
-    print("Adding back card image: \(backCardImage)")
-    dealerView.append(OCImageView(filename: backCardImage))
+    dealerView.append(OCImageView(filename: "back_dark.image"))
     dealButton.enabled = false
 }
 
