@@ -88,7 +88,7 @@ class BlackJackApp : OCApp{
     dealerView.append(OCImageView(filename: dealerCard))
     currentCard += 1
 
-    dealerView.append(OCImageView(filename: "back_dark.image"))
+    dealerView.append(OCImageView(filename: "back.png"))
     dealButton.enabled = false
 }
 
