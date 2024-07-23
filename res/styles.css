@@ -579,7 +579,7 @@ button::first-line {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: rgb(2, 70, 147);
+    background: rgb(147, 50, 50);
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
 }
 
@@ -594,7 +594,7 @@ button::first-line {
     user-select: none;
     outline: 0;
     padding: 0;
-    color: rgb(2, 70, 147);
+    color: rgb(147, 50, 50);
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
