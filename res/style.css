@@ -2,7 +2,7 @@
 /* latin */
 
 body {
-    background-color: #3B6EA5;
+    background-color: #ff0000;
 }
 
 .remi-main input[type='checkbox']:focus,
@@ -728,7 +728,7 @@ button::first-line {
 }
 
 .remi-main #loading-animation {
-    background-color: rgb(255, 170, 0);
+    background-color: rgb(2, 70, 147);
     opacity: 0.2;
 }
 
