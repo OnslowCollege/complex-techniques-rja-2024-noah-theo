@@ -728,7 +728,7 @@ button::first-line {
 }
 
 .remi-main #loading-animation {
-    background-color: rgb(2, 70, 147);
+    background-color: rgb(255, 170, 0);
     opacity: 0.2;
 }
 
