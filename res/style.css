@@ -595,7 +595,7 @@ button::first-line {
     user-select: none;
     outline: 0;
     padding: 0;
-    color: rgb(2, 70, 147);
+    color: rgb(147, 50, 50);
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
