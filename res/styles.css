@@ -632,7 +632,7 @@ button::first-line {
 
 .remi-main input[type='range']::-ms-fill-lower {
     padding: 0;
-    background: linear-gradient(to right, transparent, transparent 16px, rgb(15, 113, 225), rgb(15, 113, 225))
+    background: linear-gradient(to right, transparent, transparent 16px, rgb(209, 19, 19, 0.6), rgb(209, 19, 19, 0.6))
 }
 
 .remi-main input[type='range']::-ms-fill-upper {
