@@ -612,18 +612,18 @@ button::first-line {
 }
 
 .remi-main input[type='range']::-webkit-slider-runnable-track {
-    background: rgba(2, 70, 147, 0.26);
+    background: rgba(255, 166, 0, 0.26);
     height: 2px;
 }
 
 .remi-main input[type='range']::-moz-range-track {
-    background: rgba(2, 70, 147, 0.26);
+    background: rgba(147, 2, 2, 0.26);
     height: 2px;
     border: none;
 }
 
 .remi-main input[type='range']::-ms-track {
-    background: rgba(2, 70, 147, 0.26);
+    background: rgba(255, 0, 0, 0.26);
     height: 2px;
     color: transparent;
     width: 100%;
