@@ -648,7 +648,7 @@ button::first-line {
     position: relative;
     box-sizing: border-box;
     border-radius: 100%;
-    background: rgb(2, 70, 147);
+    background: rgb(147, 2, 2);
     border: none;
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), border .18s cubic-bezier(.4, 0, .2, 1), box-shadow .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1);
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), border .18s cubic-bezier(.4, 0, .2, 1), box-shadow .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1), -webkit-transform .18s cubic-bezier(.4, 0, .2, 1)
@@ -661,7 +661,7 @@ button::first-line {
     box-sizing: border-box;
     border-radius: 100%;
     background-image: none;
-    background: rgb(2, 70, 147);
+    background: rgb(38, 255, 0);
     border: none
 }
 
@@ -682,7 +682,7 @@ button::first-line {
 
 .remi-main input[type='range']:active::-moz-range-thumb {
     background-image: none;
-    background: rgb(2, 70, 147);
+    background: rgb(231, 230, 230);
     /*transform: scale(1.5)*/
 }
 
@@ -691,19 +691,19 @@ button::first-line {
     height: 15px;
     border: none;
     border-radius: 50%;
-    background: rgb(2, 70, 147);
+    background: rgb(255, 0, 174);
     /*transform: scale(.375);*/
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1);
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1), -webkit-transform .18s cubic-bezier(.4, 0, .2, 1)
 }
 
 .remi-main input[type='range']:focus:not(:active)::-ms-thumb {
-    background: radial-gradient(circle closest-side, rgb(15, 113, 225) 0%, rgb(15, 113, 225) 37.5%, rgba(4, 90, 188, 0.26); 37.5%, rgba(4, 90, 188, 0.26); 100%);
+    background: radial-gradient(circle closest-side, rgb(172, 30, 96) 0%, rgb(53, 175, 16) 37.5%, rgba(159, 29, 157, 0.26); 37.5%, rgba(4, 90, 188, 0.26); 100%);
     transform: scale(1);
 }
 
 .remi-main input[type='range']:active::-ms-thumb {
-    background: rgb(2, 70, 147);
+    background: rgb(255, 255, 255);
     /*transform: scale(.5625)*/
 }
 
