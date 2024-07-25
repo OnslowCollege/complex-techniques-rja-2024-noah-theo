@@ -357,7 +357,8 @@ select {
     max-height: 1.75em;
     padding: 0 2em;
     min-width: 6em;
-    border: 0;
+    border: 2;
+    border-color: #0a5318;
     border-radius: 100px;
     position: relative !important;
     overflow: hidden;
@@ -403,7 +404,6 @@ select:after {
     left: 50%;
     transform: translateX(-50%);
     height: 33%;
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
     width: calc(100% - 1.25em);
     border-radius: 0.75em;
     bottom: 10%;
