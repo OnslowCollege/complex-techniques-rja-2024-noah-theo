@@ -363,6 +363,7 @@ select {
     cursor: default;
     outline: none;
     background: rgb(8, 116, 15);
+    box-shadow: 0 0.375em 0.5em rgb(4, 72, 9), 0 0.125em 0.125em rgba(4, 72, 9), inset 0 0.25em 0.25em rgba(4, 72, 9), inset 0 0.375em 0.5em 0.25em rgb(4, 72, 9);
 }
 
 select {
