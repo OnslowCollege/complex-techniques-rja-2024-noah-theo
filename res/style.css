@@ -387,7 +387,7 @@ select:before {
     left: 50%;
     transform: translateX(-50%);
     height: 33%;
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.3));
+    background: (8, 116, 15);
     width: calc(100% - 0.875em);
     border-radius: 2em 2em 0.5em 0.5em;
     top: 5%;
@@ -411,7 +411,7 @@ select:after {
 
 button:focus,
 button:active {
-    box-shadow: 0 0.375em 0.5em rgba(0, 0, 0, 0.2), 0 0.125em 0.125em rgba(0, 0, 0, 0.3), inset 0 0.25em 0.25em rgba(0, 0, 0, 0.4), inset 0 0.375em 0.5em 0.25em #BBBBBB, 0 0 0.5em rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.375em 0.5em rgba(4, 72, 9), 0 0.125em 0.125em rgba(4, 72, 9), inset 0 0.25em 0.25em rgba(4, 72, 9), inset 0 0.375em 0.5em 0.25em #BBBBBB, 0 0 0.5em rgba(4, 72, 9);
 }
 
 button::first-line {
@@ -419,8 +419,7 @@ button::first-line {
     top: -1px;
     z-index: 1 !important;
     -webkit-text-stroke-width: 0.025em;
-    -webkit-text-stroke-color: #000000;
-    text-shadow: 0 0.25em 0.2em rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-color: #ffffff;
 }
 
 @keyframes remi-main-outline-animation {
