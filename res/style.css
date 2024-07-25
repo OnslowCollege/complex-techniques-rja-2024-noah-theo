@@ -357,7 +357,7 @@ select {
     padding: 0 2em;
     min-width: 6em;
     border: 0;
-    border-radius: 250px;
+    border-radius: 100px;
     position: relative !important;
     overflow: hidden;
     cursor: default;
