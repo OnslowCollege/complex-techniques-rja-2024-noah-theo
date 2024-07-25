@@ -90,6 +90,7 @@ class BlackJackApp : OCApp{
 
     dealerView.append(OCImageView(filename: "back.png"))
     dealButton.enabled = false
+    hitButton.enabled = true
 }
 
     /// When dealer clicks hit button.
@@ -111,6 +112,7 @@ class BlackJackApp : OCApp{
     
 
     override open func main(app: any OCAppDelegate) -> OCControl {
+        hitButton.enabled = false
         deck = shuffleDeck(deck: generateDeck())
         self.dealButton.onClick(self.startGame)
         self.hitButton.onClick(self.hitPlayer)
