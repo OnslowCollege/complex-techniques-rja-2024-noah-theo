@@ -405,7 +405,7 @@ select:after {
     transform: translateX(-50%);
     height: 33%;
     width: calc(100% - 1.25em);
-    border-radius: 0.5em;
+    border-radius: 0.2em;
     bottom: 10%;
     filter: blur(3px);
 }
