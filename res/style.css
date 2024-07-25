@@ -350,6 +350,7 @@ body> :nth-of-type(2) {
 button,
 select {
     grid-row: 1;
+    -webkit-text-fill-color: #ffffff;
     font-size: 14pt;
     font-family: "Lucida Grande", "Lucida Sans", "Helvetica", "Arial", sans-serif;
     min-height: 1.75em;
