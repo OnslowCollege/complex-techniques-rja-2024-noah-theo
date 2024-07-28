@@ -351,11 +351,11 @@ button,
 select {
     grid-row: 1;
     -webkit-text-fill-color: #ffffff;
-    font-size: 20pt;
+    font-size: 32pt;
     font-family: "Tarif", serif;
     min-height: 2.75em;
     max-height: 2.75em;
-    padding: 0 2em;
+    padding: 0 1em;
     min-width: 10em;
     border: 2;
     border-radius: 50px;
