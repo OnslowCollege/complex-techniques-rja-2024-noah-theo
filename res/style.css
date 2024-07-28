@@ -353,8 +353,8 @@ select {
     -webkit-text-fill-color: #ffffff;
     font-size: 32pt;
     font-family: "Tarif", serif;
-    min-height: 2.75em;
-    max-height: 2.75em;
+    min-height: 1.75em;
+    max-height: 1.75em;
     min-width: 10em;
     border: 2;
     border-radius: 50px;
@@ -371,7 +371,7 @@ select {
     border-radius: 3px !important;
     width: 100%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
-    padding-left: 16px;
+    padding-left: 8px;
     background: linear-gradient(180deg, rgba(128, 128, 128, 0.75) 0%, rgba(226, 226, 226, 0.75) 1%, rgba(222, 222, 222, 0.75) 23%, rgba(209, 209, 209, 0.75) 36%, rgba(254, 254, 254, 0.75) 99%, rgba(128, 128, 128, 0.75) 100%) left / calc(100% - 32px) no-repeat, url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m15.99 5.992-5.711 8.525 11.491 0.032-5.78-8.557z"/><path d="m15.99 25.992-5.711-8.526 11.491-0.032-5.78 8.558z"/></svg>') right / 32px no-repeat, linear-gradient(180deg, rgba(7, 71, 156, 0.75) 0%, rgba(77, 160, 255, 0.75) 1%, rgba(202, 229, 255, 0.75) 4%, rgba(170, 211, 255, 0.75) 29%, rgba(61, 155, 255, 0.75) 31%, rgba(174, 255, 255, 0.75) 99%, rgba(14, 71, 162, 0.75) 100%) right / 32px no-repeat, rgba(255, 255, 255, 0.7);
 }
 
