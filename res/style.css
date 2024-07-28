@@ -352,7 +352,7 @@ select {
     grid-row: 1;
     -webkit-text-fill-color: #ffffff;
     font-size: 20pt;
-    font-family: "Papyrus", "Lucida Sans", "Helvetica", "Arial", sans-serif;
+    font-family: "Papyrus", fantasy;
     min-height: 2.75em;
     max-height: 2.75em;
     padding: 0 2em;
