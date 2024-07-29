@@ -355,7 +355,7 @@ select {
     font-family: "Tarif", serif;
     min-height: 1.75em;
     max-height: 1.75em;
-    min-width: 7em;
+    min-width: 5em;
     border: 2;
     border-radius: 50px;
     position: relative !important;
