@@ -337,7 +337,7 @@ body> :nth-of-type(2) {
 button,
 select {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(8, 116, 15);
+    -webkit-text-fill-color: rgb(255, 255, 255);
     font-size: 64pt;
     font-family: "Tarif", serif;
     min-height: 2em;
@@ -349,7 +349,7 @@ select {
     overflow: hidden;
     cursor: default;
     outline: none;
-    background: rgb(#ffffff);
+    background: rgb(#ff0000);
     box-shadow: 0.125em 0.125em 0.125em 0.125em rgba(42, 46, 43);
 }
 
