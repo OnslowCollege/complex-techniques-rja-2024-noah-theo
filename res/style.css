@@ -340,11 +340,11 @@ select {
     -webkit-text-fill-color: rgb(8, 116, 15);
     font-size: 64pt;
     font-family: "Tarif", serif;
-    min-height: 2.25em;
-    max-height: 2.25em;
-    min-width: 7em;
+    min-height: 2em;
+    max-height: 2em;
+    min-width: 6em;
     border: 0;
-    border-radius: 100px;
+    border-radius: 75px;
     position: relative !important;
     overflow: hidden;
     cursor: default;
