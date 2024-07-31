@@ -349,7 +349,7 @@ select {
     overflow: hidden;
     cursor: default;
     outline: none;
-    background: rgb(#ff0000);
+    background: #a20f0f;
     box-shadow: 0.125em 0.125em 0.125em 0.125em rgba(42, 46, 43);
 }
 
