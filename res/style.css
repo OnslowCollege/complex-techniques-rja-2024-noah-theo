@@ -223,7 +223,7 @@ html {
 }
 
 body> :nth-of-type(2) {
-    background: #0d7221;
+    background: #313131;
     margin-top: 32px;
     transition: height 1s;
     width: 1024px;
@@ -244,7 +244,7 @@ body> :nth-of-type(2) {
     grid-auto-flow: row;
     grid-auto-rows: 1fr;
     row-gap: 16px;
-    background-color: #0d7221;
+    background-color: #313131;
     height: 100%;
     justify-content: start !important;
 }
