@@ -68,6 +68,9 @@ class BlackJackApp : OCApp{
                 score -= 11
                 aces -= 1
             }
+            if score > 21 {
+                hitButton.enabled = false
+            }
         }
     return score
     }
