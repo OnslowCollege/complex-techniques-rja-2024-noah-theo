@@ -350,7 +350,7 @@ select {
     cursor: default;
     outline: none;
     background: rgb(#ffffff);
-    box-shadow: 0.125em 0.125em 0.125em 0.125em rgba(42, 46, 43);
+    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
     margin: 10px;
 }
 
