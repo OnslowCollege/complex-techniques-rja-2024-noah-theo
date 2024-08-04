@@ -343,7 +343,8 @@ select {
     min-height: 1.9em;
     max-height: 1.9em;
     min-width: 5em;
-    border: 0;
+    border-width: 4px;
+    border-color: #0d7221;
     border-radius: 85px;
     position: relative !important;
     overflow: hidden;
