@@ -342,7 +342,7 @@ select {
     max-height: 3em;
     padding: 0 2em;
     min-width: 7em;
-    border: 3px;
+    border: 10px;
     border-color: #0d7221;
     border-radius: 1000px;
     position: relative !important;
@@ -350,7 +350,7 @@ select {
     cursor: default;
     outline: none;
     background: #ffffff;
-    box-shadow: 0 0.375em 0.5em rgba(0, 0, 0, 0.2), 0 0.125em 0.125em rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.375em 0.5em rgba(0, 0, 0, 0.2);
 }
 
 select {
