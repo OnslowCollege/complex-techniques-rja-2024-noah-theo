@@ -343,8 +343,6 @@ select {
     min-height: 1.9em;
     max-height: 1.9em;
     min-width: 5em;
-    border-width: 4px;
-    border-color: #0d7221;
     border-radius: 85px;
     position: relative !important;
     overflow: hidden;
@@ -399,7 +397,21 @@ select:after {
 
 button:focus,
 button:active {
-    box-shadow: 0 0.375em 0.5em rgba(4, 72, 9), 0 0.125em 0.125em rgba(4, 72, 9), inset 0 0.25em 0.25em rgba(4, 72, 9), inset 0 0.375em 0.5em 0.25em #BBBBBB, 0 0 0.5em rgba(4, 72, 9);
+    grid-row: 1;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-size: 64pt;
+    font-family: "Tarif", serif;
+    min-height: 1.9em;
+    max-height: 1.9em;
+    min-width: 5em;
+    border-radius: 85px;
+    position: relative !important;
+    overflow: hidden;
+    cursor: default;
+    outline: none;
+    background: rgb(8, 116, 15);
+    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
+    margin: 10px;
 }
 
 button::first-line {
