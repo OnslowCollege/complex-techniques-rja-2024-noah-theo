@@ -337,7 +337,7 @@ button,
 select {
     grid-row: 1;
     font-size: 14pt;
-    font-family: "Lucida Grande", "Lucida Sans", "Helvetica", "Arial", sans-serif;
+    font-family: "Times New Roman";
     min-height: 3em;
     max-height: 3em;
     padding: 0 2em;
