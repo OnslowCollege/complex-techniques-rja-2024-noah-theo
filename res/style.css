@@ -228,11 +228,7 @@ html {
 }
 
 body> :nth-of-type(2) {
-    background: repeating-linear-gradient(to bottom,
-            #FEFEFE,
-            #FEFEFE 2px,
-            #F0F0F0 2px,
-            #F0F0F9 4px);
+    background: #0d7221;
     box-shadow: 0 0 32px rgba(0, 0, 0, 0.8);
     margin-top: 32px;
     transition: height 1s;
