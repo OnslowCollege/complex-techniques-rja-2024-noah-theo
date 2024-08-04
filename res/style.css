@@ -17,12 +17,12 @@ body {
 }
 
 ::-moz-selection {
-    background: rgba(2, 70, 147, 0.26);
+    background: #0d7221;
     text-shadow: none
 }
 
 ::selection {
-    background: rgba(2, 70, 147, 0.26);
+    background: #0d7221;
     text-shadow: none
 }
 
@@ -155,7 +155,7 @@ html {
 }
 
 .remi-main a {
-    color: rgba(2, 70, 147, 0.8);
+    color: rgba(#0d7221);
     font-weight: 500
 }
 
