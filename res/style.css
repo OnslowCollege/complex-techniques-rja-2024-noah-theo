@@ -342,7 +342,7 @@ select {
     max-height: 3em;
     padding: 0 2em;
     min-width: 7em;
-    border: 10px;
+    border-width: 2px;
     border-color: #0d7221;
     border-radius: 1000px;
     position: relative !important;
