@@ -155,7 +155,7 @@ html {
 }
 
 .remi-main a {
-    color: rgba(255, 0, 0, 0.8);
+    color: rgba(2, 70, 147, 0.8);
     font-weight: 500
 }
 
@@ -206,6 +206,11 @@ html {
     line-height: 12px
 }
 
+.remi-main .RaisedFrame {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+    z-index: 1;
+}
+
 .remi-main div {
     display: grid;
     padding: 8px 0;
@@ -223,7 +228,12 @@ html {
 }
 
 body> :nth-of-type(2) {
-    background: #0d7221;
+    background: repeating-linear-gradient(to bottom,
+            #FEFEFE,
+            #FEFEFE 2px,
+            #F0F0F0 2px,
+            #F0F0F9 4px);
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.8);
     margin-top: 32px;
     transition: height 1s;
     width: 1024px;
@@ -244,7 +254,10 @@ body> :nth-of-type(2) {
     grid-auto-flow: row;
     grid-auto-rows: 1fr;
     row-gap: 16px;
-    background-color: #0d7221;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .1);
     height: 100%;
     justify-content: start !important;
 }
@@ -337,29 +350,28 @@ body> :nth-of-type(2) {
 button,
 select {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(8, 116, 15);
-    font-size: 64pt;
-    font-family: "Tarif", serif;
-    min-height: 1.9em;
-    max-height: 1.9em;
-    min-width: 5em;
+    font-size: 14pt;
+    font-family: "Lucida Grande", "Lucida Sans", "Helvetica", "Arial", sans-serif;
+    min-height: 1.75em;
+    max-height: 1.75em;
+    padding: 0 2em;
+    min-width: 6em;
     border: 0;
-    border-radius: 85px;
+    border-radius: 1000px;
     position: relative !important;
     overflow: hidden;
     cursor: default;
     outline: none;
-    background: rgb(#ffffff);
-    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
-    margin: 10px;
+    background: linear-gradient(rgba(160, 160, 160, 0.625), rgba(255, 255, 255, 0.625));
+    box-shadow: 0 0.375em 0.5em rgba(0, 0, 0, 0.2), 0 0.125em 0.125em rgba(0, 0, 0, 0.3), inset 0 0.25em 0.25em rgba(0, 0, 0, 0.4), inset 0 0.375em 0.5em 0.25em #BBBBBB;
 }
 
 select {
     appearance: none;
-    border-radius: 3px !important;
+    border-radius: 6px !important;
     width: 100%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
-    padding-left: 8px;
+    padding-left: 16px;
     background: linear-gradient(180deg, rgba(128, 128, 128, 0.75) 0%, rgba(226, 226, 226, 0.75) 1%, rgba(222, 222, 222, 0.75) 23%, rgba(209, 209, 209, 0.75) 36%, rgba(254, 254, 254, 0.75) 99%, rgba(128, 128, 128, 0.75) 100%) left / calc(100% - 32px) no-repeat, url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m15.99 5.992-5.711 8.525 11.491 0.032-5.78-8.557z"/><path d="m15.99 25.992-5.711-8.526 11.491-0.032-5.78 8.558z"/></svg>') right / 32px no-repeat, linear-gradient(180deg, rgba(7, 71, 156, 0.75) 0%, rgba(77, 160, 255, 0.75) 1%, rgba(202, 229, 255, 0.75) 4%, rgba(170, 211, 255, 0.75) 29%, rgba(61, 155, 255, 0.75) 31%, rgba(174, 255, 255, 0.75) 99%, rgba(14, 71, 162, 0.75) 100%) right / 32px no-repeat, rgba(255, 255, 255, 0.7);
 }
 
@@ -375,7 +387,7 @@ select:before {
     left: 50%;
     transform: translateX(-50%);
     height: 33%;
-    background: (8, 116, 15);
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.3));
     width: calc(100% - 0.875em);
     border-radius: 2em 2em 0.5em 0.5em;
     top: 5%;
@@ -390,15 +402,16 @@ select:after {
     left: 50%;
     transform: translateX(-50%);
     height: 33%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5));
     width: calc(100% - 1.25em);
-    border-radius: 0.2em;
+    border-radius: 0.75em;
     bottom: 10%;
     filter: blur(3px);
 }
 
 button:focus,
 button:active {
-    box-shadow: 0 0.375em 0.5em rgba(4, 72, 9), 0 0.125em 0.125em rgba(4, 72, 9), inset 0 0.25em 0.25em rgba(4, 72, 9), inset 0 0.375em 0.5em 0.25em #BBBBBB, 0 0 0.5em rgba(4, 72, 9);
+    box-shadow: 0 0.375em 0.5em rgba(0, 0, 0, 0.2), 0 0.125em 0.125em rgba(0, 0, 0, 0.3), inset 0 0.25em 0.25em rgba(0, 0, 0, 0.4), inset 0 0.375em 0.5em 0.25em #BBBBBB, 0 0 0.5em rgba(0, 0, 0, 0.25);
 }
 
 button::first-line {
@@ -406,7 +419,8 @@ button::first-line {
     top: -1px;
     z-index: 1 !important;
     -webkit-text-stroke-width: 0.025em;
-    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-color: #000000;
+    text-shadow: 0 0.25em 0.2em rgba(0, 0, 0, 0.25);
 }
 
 @keyframes remi-main-outline-animation {
@@ -455,7 +469,7 @@ button::first-line {
 .remi-main th {
     border: 1px solid white;
     outline: 0px;
-    background: rgba(209, 19, 19, 0.6);
+    background: rgba(19, 108, 209, .6);
     color: rgb(255, 255, 255);
     font-weight: normal;
 }
@@ -565,7 +579,7 @@ button::first-line {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: rgb(147, 50, 50);
+    background: rgb(2, 70, 147);
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
 }
 
@@ -580,7 +594,7 @@ button::first-line {
     user-select: none;
     outline: 0;
     padding: 0;
-    color: rgb(147, 50, 50);
+    color: rgb(2, 70, 147);
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -598,18 +612,18 @@ button::first-line {
 }
 
 .remi-main input[type='range']::-webkit-slider-runnable-track {
-    background: rgba(255, 166, 0, 0.26);
+    background: rgba(2, 70, 147, 0.26);
     height: 2px;
 }
 
 .remi-main input[type='range']::-moz-range-track {
-    background: rgba(147, 2, 2, 0.26);
+    background: rgba(2, 70, 147, 0.26);
     height: 2px;
     border: none;
 }
 
 .remi-main input[type='range']::-ms-track {
-    background: rgba(255, 0, 0, 0.26);
+    background: rgba(2, 70, 147, 0.26);
     height: 2px;
     color: transparent;
     width: 100%;
@@ -618,7 +632,7 @@ button::first-line {
 
 .remi-main input[type='range']::-ms-fill-lower {
     padding: 0;
-    background: linear-gradient(to right, transparent, transparent 16px, rgb(209, 19, 19, 0.6), rgb(209, 19, 19, 0.6))
+    background: linear-gradient(to right, transparent, transparent 16px, rgb(15, 113, 225), rgb(15, 113, 225))
 }
 
 .remi-main input[type='range']::-ms-fill-upper {
@@ -634,7 +648,7 @@ button::first-line {
     position: relative;
     box-sizing: border-box;
     border-radius: 100%;
-    background: rgb(147, 2, 2);
+    background: rgb(2, 70, 147);
     border: none;
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), border .18s cubic-bezier(.4, 0, .2, 1), box-shadow .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1);
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), border .18s cubic-bezier(.4, 0, .2, 1), box-shadow .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1), -webkit-transform .18s cubic-bezier(.4, 0, .2, 1)
@@ -647,7 +661,7 @@ button::first-line {
     box-sizing: border-box;
     border-radius: 100%;
     background-image: none;
-    background: rgb(38, 255, 0);
+    background: rgb(2, 70, 147);
     border: none
 }
 
@@ -668,7 +682,7 @@ button::first-line {
 
 .remi-main input[type='range']:active::-moz-range-thumb {
     background-image: none;
-    background: rgb(231, 230, 230);
+    background: rgb(2, 70, 147);
     /*transform: scale(1.5)*/
 }
 
@@ -677,19 +691,19 @@ button::first-line {
     height: 15px;
     border: none;
     border-radius: 50%;
-    background: rgb(255, 0, 174);
+    background: rgb(2, 70, 147);
     /*transform: scale(.375);*/
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1);
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1), -webkit-transform .18s cubic-bezier(.4, 0, .2, 1)
 }
 
 .remi-main input[type='range']:focus:not(:active)::-ms-thumb {
-    background: radial-gradient(circle closest-side, rgb(172, 30, 96) 0%, rgb(53, 175, 16) 37.5%, rgba(159, 29, 157, 0.26); 37.5%, rgba(4, 90, 188, 0.26); 100%);
+    background: radial-gradient(circle closest-side, rgb(15, 113, 225) 0%, rgb(15, 113, 225) 37.5%, rgba(4, 90, 188, 0.26); 37.5%, rgba(4, 90, 188, 0.26); 100%);
     transform: scale(1);
 }
 
 .remi-main input[type='range']:active::-ms-thumb {
-    background: rgb(255, 255, 255);
+    background: rgb(2, 70, 147);
     /*transform: scale(.5625)*/
 }
 
