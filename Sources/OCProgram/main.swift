@@ -31,6 +31,12 @@ class BlackJackApp : OCApp{
     var currentCard = 0
     let dealButton = OCButton(text: "Deal")
     let hitButton = OCButton(text: "Hit")
+    let standButton = OCButton(text: "Stand")
+    let splitButton = OCButton(text: "Split")
+    let insuranceButton = OCButton(text: "Insurance")
+    let doubleButton = OCButton(text: "Double")
+    let increaseButton = OCButton(text: "Increase")
+    let decreaseButton = OCButton(text: "Decrease")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -121,8 +127,14 @@ class BlackJackApp : OCApp{
         self.hitButton.onClick(self.hitPlayer)
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
 
+        let hitStandVBox = OCVBox(controls: [hitButton, standButton])
+        let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
+        let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
+        let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
+        let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
+
         let maincontainer = OCVBox(controls: [
-            playerView, dealerView, dealButton, hitButton
+            playerView, dealerView, masterHBox
         ])
         
     // Change background color.
