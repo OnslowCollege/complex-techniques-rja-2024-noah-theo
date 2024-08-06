@@ -418,7 +418,7 @@ button:active {
 }
 
 img{
-    size-adjust: 50px;
+    size-adjust: 20px;
 }
 
 button::first-line {
