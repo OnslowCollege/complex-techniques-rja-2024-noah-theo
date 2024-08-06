@@ -338,7 +338,7 @@ button,
 select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(8, 116, 15);
-    font-size: 32pt;
+    font-size: 12pt;
     font-family: "Tarif", serif;
     min-height: 0.9em;
     max-height: 0.9em;
@@ -350,7 +350,7 @@ select {
     outline: none;
     background: rgb(#ffffff);
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
-    margin: 10px;
+    margin: 5px;
 }
 
 select {
@@ -398,23 +398,20 @@ select:after {
 button:focus,
 button:active {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(255, 255, 255);
+    -webkit-text-fill-color: rgb(8, 116, 15);
     font-size: 32pt;
     font-family: "Tarif", serif;
-    min-height: 1.9em;
-    max-height: 1.9em;
-    min-width: 5em;
-    border: rgb(8, 116, 15);
-    border-color: rgb(8, 116, 15);
-    border-width: 4px;
-    border-radius: 85px;
+    min-height: 0.9em;
+    max-height: 0.9em;
+    min-width: 2em;
+    border-radius: 40px;
     position: relative !important;
     overflow: hidden;
     cursor: default;
     outline: none;
-    background: rgb(8, 116, 15);
+    background: rgb(#ffffff);
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
-    margin: 10px;
+    margin: 5px;
 }
 
 img{
