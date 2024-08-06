@@ -342,7 +342,7 @@ select {
     font-family: "Tarif", serif;
     min-height: 1.5em;
     max-height: 1.5em;
-    min-width: 1em;
+    min-width: 3em;
     border-radius: 40px;
     position: relative !important;
     overflow: hidden;
