@@ -399,7 +399,7 @@ button:focus,
 button:active {
     grid-row: 1;
     -webkit-text-fill-color: rgb(255, 255, 255);
-    font-size: 64pt;
+    font-size: 32pt;
     font-family: "Tarif", serif;
     min-height: 1.9em;
     max-height: 1.9em;
