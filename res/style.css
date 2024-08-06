@@ -417,6 +417,10 @@ button:active {
     margin: 10px;
 }
 
+img{
+    size-adjust: 50px;
+}
+
 button::first-line {
     position: relative;
     top: -1px;
