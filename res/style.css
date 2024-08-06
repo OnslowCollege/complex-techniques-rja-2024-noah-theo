@@ -338,7 +338,6 @@ button,
 select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(8, 116, 15);
-    font-size: 12pt;
     font-family: "Tarif", serif;
     min-height: 0.9em;
     max-height: 0.9em;
