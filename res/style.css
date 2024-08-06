@@ -404,6 +404,9 @@ button:active {
     min-height: 1.9em;
     max-height: 1.9em;
     min-width: 5em;
+    border: rgb(8, 116, 15);
+    border-color: rgb(8, 116, 15);
+    border-width: 4px;
     border-radius: 85px;
     position: relative !important;
     overflow: hidden;
