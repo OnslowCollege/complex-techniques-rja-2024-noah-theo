@@ -343,7 +343,7 @@ select {
     min-height: 35%;
     max-height: 35%;
     min-width: 70%;
-    border-radius: 50%;
+    border-radius: 20%;
     position: relative !important;
     overflow: hidden;
     cursor: default;
@@ -418,7 +418,7 @@ button:active {
 img{
     width: 90px;
     height: 135px;
-    padding: 5px;
+    margin: 5px;
 }
 
 button::first-line {
