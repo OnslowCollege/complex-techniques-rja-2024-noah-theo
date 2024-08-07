@@ -337,13 +337,13 @@ body> :nth-of-type(2) {
 button,
 select {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(#ffffff);
+    -webkit-text-fill-color: #ffffff;
     font-size: 16pt;
     font-family: "Tarif", serif;
-    min-height: 1em;
-    max-height: 1em;
+    min-height: 1.5em;
+    max-height: 1.5em;
     min-width: 0.75em;
-    border-radius: 30px;
+    border-radius: 0.5em;
     position: relative !important;
     size: relative;
     overflow: hidden;
