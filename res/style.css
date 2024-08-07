@@ -343,14 +343,14 @@ select {
     min-height: 35%;
     max-height: 35%;
     min-width: 70%;
-    border-radius: 20%;
+    border-radius: 30%;
     position: relative !important;
+    size: relative;
     overflow: hidden;
     cursor: default;
     outline: none;
     background: rgb(#ffffff);
-    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
-    margin: 5%;
+    margin: 2%;
 }
 
 
