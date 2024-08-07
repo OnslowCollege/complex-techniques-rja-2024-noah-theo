@@ -416,8 +416,8 @@ button:active {
 }
 
 img{
-    width: 0.5*180px;
-    height: 0.5*270px;
+    width: 90px;
+    height: 135px;
 }
 
 button::first-line {
