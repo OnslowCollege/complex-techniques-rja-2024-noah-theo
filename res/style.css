@@ -338,19 +338,19 @@ button,
 select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(8, 116, 15);
-    font-size: 32pt;
+    font-size: 50%;
     font-family: "Tarif", serif;
-    min-height: 1.5em;
-    max-height: 1.5em;
-    min-width: 4em;
-    border-radius: 40px;
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    border-radius: 40%;
     position: relative !important;
     overflow: hidden;
     cursor: default;
     outline: none;
     background: rgb(#ffffff);
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
-    margin: 5px;
+    margin: 5%;
 }
 
 
