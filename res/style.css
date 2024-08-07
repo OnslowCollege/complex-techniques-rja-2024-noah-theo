@@ -342,8 +342,8 @@ select {
     font-family: "Tarif", serif;
     min-height: 35%;
     max-height: 35%;
-    min-width: 100%;
-    border-radius: 10px;
+    min-width: 70%;
+    border-radius: 100%;
     position: relative !important;
     overflow: hidden;
     cursor: default;
