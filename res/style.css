@@ -338,12 +338,12 @@ button,
 select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(8, 116, 15);
-    font-size: 16pt;
+    font-size: 32pt;
     font-family: "Tarif", serif;
     min-height: 7rem;
     max-height: 7rem;
-    min-width: 10rem;
-    max-width: 10rem; 
+    min-width: 3rem;
+    max-width: 3rem; 
     border-radius: 10rem;
     position: relative !important;
     size: relative;
