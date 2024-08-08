@@ -402,7 +402,7 @@ button:focus,
 button:active {
     grid-row: 1;
     -webkit-text-fill-color: rgb(8, 116, 15);
-    font-size: 32pt;
+    font-size: 20pt;
     font-family: "Tarif", serif;
     min-height: 1.5em;
     max-height: 1.5em;
@@ -420,7 +420,7 @@ button:active {
 img{
     width: 90px;
     height: 135px;
-    margin: 5px;
+    margin: 2px;
 }
 
 button::first-line {
