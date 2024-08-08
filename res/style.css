@@ -342,8 +342,8 @@ select {
     font-family: "Tarif", serif;
     min-height: 3rem;
     max-height: 3rem;
-    min-width: 7rem;
-    max-width: 7rem; 
+    min-width: 8rem;
+    max-width: 8rem; 
     border-radius: 10rem;
     position: relative !important;
     size: relative;
@@ -351,7 +351,7 @@ select {
     cursor: default;
     outline: none;
     background: #FFFFFF;
-    margin: 0.5rem;
+    margin: 0.2rem;
     box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(42, 46, 43);
 }
 
