@@ -215,7 +215,7 @@ html {
 .remi-main .HBox {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    column-gap: 24px;
+    column-gap: 8px;
     justify-content: none !important;
     display: grid !important;
     flex-direction: none !important;
@@ -224,7 +224,7 @@ html {
 
 body> :nth-of-type(2) {
     background: #0d7221;
-    margin-top: 32px;
+    margin-top: 10px;
     transition: height 1s;
     width: 1024px;
     padding: 16px !important;
@@ -252,7 +252,7 @@ body> :nth-of-type(2) {
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
-    padding: 12px;
+    padding: 6px;
 }
 
 .remi-main .VBox > .HBox {
