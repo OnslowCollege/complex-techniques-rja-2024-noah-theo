@@ -234,8 +234,8 @@ body> :nth-of-type(2) {
     right: 0;
     aspect-ratio: 4 / 3;
     margin: auto;
-    margin-top: 32px;
-    margin-bottom: 48px;
+    margin-top: 16px;
+    margin-bottom: 32px;
 }
 
 
