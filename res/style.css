@@ -89,7 +89,7 @@ html {
     font-size: 400%;
     line-height: 1.35;
     letter-spacing: -.02em;
-    margin: 24px 0
+    margin: 12px 0
 }
 
 .remi-main h1,
@@ -105,12 +105,12 @@ html {
 
 .remi-main h2,
 .remi-main h3 {
-    margin: 24px 0
+    margin: 12px 0
 }
 
 .remi-main h3 {
     font-size: 240%;
-    line-height: 40px
+    line-height: 20px
 }
 
 .remi-main h3,
@@ -123,7 +123,7 @@ html {
     font-size: 170%;
     line-height: 32px;
     -moz-osx-font-smoothing: grayscale;
-    margin: 24px 0 16px
+    margin: 12px 0 8px
 }
 
 .remi-main h5 {
@@ -136,7 +136,7 @@ html {
 .remi-main h5,
 .remi-main h6 {
     font-family: "Lucida Grande", "Helvetica", "Arial", sans-serif;
-    margin: 24px 0 16px
+    margin: 12px 0 8px
 }
 
 .remi-main h6 {
@@ -208,7 +208,7 @@ html {
 
 .remi-main div {
     display: grid;
-    padding: 8px 0;
+    padding: 4px 0;
     z-index: 0;
 }
 
@@ -252,11 +252,11 @@ body> :nth-of-type(2) {
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
-    padding: 24px;
+    padding: 12px;
 }
 
 .remi-main .VBox > .HBox {
-    padding: 8px !important;
+    padding: 4px !important;
 }
 
 .remi-main>* {
