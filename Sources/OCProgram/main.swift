@@ -38,6 +38,7 @@ class BlackJackApp : OCApp{
     let increaseButton = OCButton(text: "Increase")
     let decreaseButton = OCButton(text: "Decrease")
     let resetButton = OCButton(text: "Again")
+    let helpbutton = OCButton(text: "?")
     var dealerSecondCardHidden = true
 
     func generateDeck() -> [Card] {
@@ -253,7 +254,7 @@ class BlackJackApp : OCApp{
         let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
         let maincontainer = OCVBox(controls: [
-            playerView, dealerView, masterHBox
+            dealerView, playerView,  masterHBox
         ])
         
     // Change background color.
