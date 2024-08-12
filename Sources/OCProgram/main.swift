@@ -232,6 +232,60 @@ class BlackJackApp : OCApp{
         }
     }
 
+    func helpButton(button: any OCControlClickable) {
+        // pop up that will appear, confirming the user's order
+        OCDialog(
+            title: "Help",
+            message: """
+Here's a summary of the rules for a single-player blackjack game, including betting:
+
+### **Objective**
+- Beat the dealer by having a hand value closer to 21 without exceeding 21.
+
+### **Card Values**
+- Number cards (2-10): Face value.
+- Face cards (Jack, Queen, King): 10 points.
+- Aces: 1 or 11 points.
+
+### **Game Setup**
+- **Deck**: Usually 1-8 decks of 52 cards.
+- **Players**: Single player against the dealer.
+- **Bets**: Placed before cards are dealt. The player places chips in the betting area according to the table's minimum and maximum limits.
+
+### **Game Play**
+1. **Initial Deal**:
+   - Player and dealer receive two cards each.
+   - Player’s cards are face up.
+   - Dealer has one card face up (upcard) and one card face down (hole card).
+
+2. **Player’s Turn**:
+   - **Hit**: Take an additional card.
+   - **Stand**: Keep the current hand.
+   - **Double Down**: Double the bet and take exactly one more card.
+   - **Split**: If the initial two cards are of the same value, the player can split them into two hands, each with a separate bet.
+   - **Surrender**: Forfeit half the bet and end the round (only available in some variations).
+
+3. **Dealer’s Turn**:
+   - Dealer reveals the hole card.
+   - Dealer must hit until their hand is at least 17.
+   - Dealer stands on 17 or higher.
+
+4. **Outcome**:
+   - If the player’s hand exceeds 21, they bust and lose the bet.
+   - If the dealer busts, the player wins the bet.
+   - If neither busts, the hand closest to 21 wins.
+   - A tie (push) results in no loss or gain of the bet.
+
+### **Payouts**
+- **Winning Hand**: 1:1 payout.
+- **Blackjack (Ace + 10-value card)**: 3:2 payout.
+- **Insurance** (if the dealer's upcard is an Ace): Player can bet up to half their original bet that the dealer has blackjack. If correct, the payout is 2:1.
+
+This summary covers the essential rules and actions for a single-player blackjack game, focusing on the player's interactions and decisions during the game.
+""", app: self
+        ).show()
+    }
+
     override open func main(app: any OCAppDelegate) -> OCControl {
         hitButton.enabled = false
         standButton.enabled = false
@@ -241,7 +295,8 @@ class BlackJackApp : OCApp{
         dealButton.onClick(self.startGame)
         hitButton.onClick(self.hitPlayer)
         resetButton.onClick(self.resestGame)
-        self.standButton.onClick(self.standPlayer)
+        standButton.onClick(self.standPlayer)
+        helpbutton.onClick(self.helpButton)
         
 
         deck = shuffleDeck(deck: generateDeck())
