@@ -400,7 +400,7 @@ select:after {
 button:focus,
 button:active {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(8, 116, 15);
+    -webkit-text-fill-color: #FFFFFF;
     font-size: 20pt;
     font-family: "Tarif", serif;
     min-height: 3rem;
@@ -413,7 +413,7 @@ button:active {
     overflow: hidden;
     cursor: default;
     outline: none;
-    background: #FFFFFF;
+    background: rgb(8, 116, 15);
     margin: 0.2rem;
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
 }
