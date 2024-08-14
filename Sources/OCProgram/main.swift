@@ -232,24 +232,17 @@ class BlackJackApp : OCApp{
         }
     }
 
-    func helpButton(button: any OCControlClickable) {
-    let helpText = "Objective:\nThe goal of Blackjack is to have a hand value as close to 21 as possible, without exceeding it.\n\n" +
-                   "Card Values:\n" +
-                   "- Number Cards (2-10): Face value.\n" +
-                   "- Face Cards (Jack, Queen, King): 10 points.\n" +
-                   "- Ace: 1 or 11 points.\n\n" +
-                   "Gameplay:\n" +
-                   "- Initial Deal: ...\n" +
-                   "- Player’s Turn: ...\n" +
-                   "- Dealer’s Turn: ...\n\n" +
-                   "Betting with NCEA Credits:\nThe player bets a certain number of credits before the hand begins."
+func helpButton(button: any OCControlClickable) {
+    // Clear previous content if needed
+    playerView.empty()
 
-    OCDialog(
-        title: "Help",
-        message: helpText,
-        app: self
-    ).show()
+    // Add help content to playerView or a dedicated area
+    playerView.append(OCLabel(text: "Objective:\nThe goal of Blackjack is to have a hand value as close to 21 as possible, without exceeding it.\n"))
+    playerView.append(OCLabel(text: "Card Values:\n- Number Cards (2-10): Face value.\n- Face Cards (Jack, Queen, King): 10 points.\n- Ace: 1 or 11 points.\n"))
+    playerView.append(OCLabel(text: "Gameplay:\n- Initial Deal: ...\n- Player’s Turn: ...\n- Dealer’s Turn: ...\n"))
+    playerView.append(OCLabel(text: "Betting with NCEA Credits:\nThe player bets a certain number of credits before the hand begins."))
 }
+
 
 
 
