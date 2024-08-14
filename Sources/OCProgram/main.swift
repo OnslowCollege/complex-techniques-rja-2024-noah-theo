@@ -233,30 +233,24 @@ class BlackJackApp : OCApp{
     }
 
     func helpButton(button: any OCControlClickable) {
-    // Create multiple OCLabel instances to represent different sections of the help content
-    let helpText = """
-    Objective: The goal of Blackjack is to have a hand value as close to 21 as possible, without exceeding it.
+    let helpText = "Objective:\nThe goal of Blackjack is to have a hand value as close to 21 as possible, without exceeding it.\n\n" +
+                   "Card Values:\n" +
+                   "- Number Cards (2-10): Face value.\n" +
+                   "- Face Cards (Jack, Queen, King): 10 points.\n" +
+                   "- Ace: 1 or 11 points.\n\n" +
+                   "Gameplay:\n" +
+                   "- Initial Deal: ...\n" +
+                   "- Player’s Turn: ...\n" +
+                   "- Dealer’s Turn: ...\n\n" +
+                   "Betting with NCEA Credits:\nThe player bets a certain number of credits before the hand begins."
 
-    Card Values:
-    - Number Cards (2-10): Face value.
-    - Face Cards (Jack, Queen, King): 10 points.
-    - Ace: 1 or 11 points.
-
-    Gameplay:
-    - Initial Deal: ...
-    - Player’s Turn: ...
-    - Dealer’s Turn: ...
-    
-    Betting with NCEA Credits: The player bets a certain number of credits before the hand begins.
-    """
-
-    // Show the help content in a dialog
     OCDialog(
         title: "Help",
         message: helpText,
         app: self
     ).show()
 }
+
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
