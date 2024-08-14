@@ -236,7 +236,48 @@ class BlackJackApp : OCApp{
         // pop up that will appear, confirming the user's order
         OCDialog(
             title: "Help",
-            message: "", app: self
+            message: """
+Objective
+The goal of Blackjack is to have a hand value as close to 21 as possible, without exceeding it. The player competes against the dealer, aiming to have a higher hand value than the dealer without going over 21.
+
+Card Values
+Number Cards (2-10): Face value (e.g., a 7 is worth 7 points).
+Face Cards (Jack, Queen, King): 10 points each.
+Ace: Can be worth either 1 or 11 points, depending on which value benefits the hand more without exceeding 21.
+Game Setup
+Deck: A standard deck of 52 cards is used.
+NCEA Credits: The player bets a certain number of NCEA credits before the hand begins.
+Gameplay
+Initial Deal:
+
+The player and dealer are each dealt two cards.
+The player's cards are both face-up.
+The dealer has one card face-up and one card face-down (the "hole" card).
+Player’s Turn:
+
+Hit: The player can request additional cards (one at a time) to increase the hand’s value.
+Stand: The player can choose to keep their current hand and end their turn.
+If the player's hand value exceeds 21 after hitting, they "bust" and lose the bet.
+Dealer’s Turn:
+
+The dealer reveals the hole card.
+The dealer must hit until their hand value is 17 or higher.
+If the dealer busts (hand value exceeds 21), the player wins the bet.
+Comparing Hands:
+
+If neither the player nor the dealer busts, the hand values are compared.
+Winning: If the player's hand is closer to 21 than the dealer’s, the player wins the bet.
+Losing: If the dealer's hand is closer to 21, the player loses the bet.
+Push: If both hands have the same value, it’s a tie, and the bet is returned to the player.
+Betting with NCEA Credits
+The player decides how many NCEA credits to bet at the start of each round.
+Winning: If the player wins, they gain the amount of NCEA credits they bet.
+Losing: If the player loses, they forfeit the bet amount of NCEA credits.
+Push: If the round results in a tie, the player neither gains nor loses any credits.
+Additional Rules
+Blackjack: If the player or dealer gets an Ace and a 10-point card on the initial deal, they have "Blackjack" and automatically win the round unless both have Blackjack, in which case it’s a push.
+Doubling Down: The player may choose to double their initial bet after the first two cards are dealt, but they will only receive one additional card.
+""", app: self
         ).show()
     }
 
