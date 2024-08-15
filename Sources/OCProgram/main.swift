@@ -235,7 +235,7 @@ class BlackJackApp : OCApp{
     func helpButton(button: any OCControlClickable) {
     // Create multiple OCLabel instances to represent different sections of the help content
     let helpText = """
-    Objective: The goal of Blackjack is to have a hand value as close to 21 as possible, without exceeding it.<br>
+    Objective: The goal of Blackjack is to have a hand value as close to 21 as possible, without exceeding it.
 
     Card Values:
     - Number Cards (2-10): Face value.
