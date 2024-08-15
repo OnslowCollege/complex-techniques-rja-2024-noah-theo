@@ -2,7 +2,7 @@
 /* latin */
 
 body {
-    background-color: #0d7221;
+    background-color: #084e16;
 }
 
 .remi-main input[type='checkbox']:focus,
@@ -223,7 +223,7 @@ html {
 }
 
 body> :nth-of-type(2) {
-    background: #0d7221;
+    background: #084e16;
     transition: height 1s;
     width: 1024px;
     padding: 8px !important;
@@ -336,20 +336,20 @@ body> :nth-of-type(2) {
 button,
 select {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(8, 116, 15);
+    -webkit-text-fill-color: rgb(255, 255, 255);
     font-size: 20pt;
     font-family: "Tarif", serif;
     min-height: 3rem;
     max-height: 3rem;
     min-width: 10rem;
     max-width: 10rem; 
-    border-radius: 10rem;
+    border-radius: 2rem;
     position: relative !important;
     size: relative;
     overflow: hidden;
     cursor: default;
     outline: none;
-    background: #FFFFFF;
+    background: linear-gradient(180deg, rgba(128, 128, 128, 0.75) 0%, rgba(226, 226, 226, 0.75) 1%, rgba(222, 222, 222, 0.75) 23%, rgba(209, 209, 209, 0.75) 36%, rgba(254, 254, 254, 0.75) 99%, rgba(128, 128, 128, 0.75) 100%) left / calc(100% - 32px) no-repeat, url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m15.99 5.992-5.711 8.525 11.491 0.032-5.78-8.557z"/><path d="m15.99 25.992-5.711-8.526 11.491-0.032-5.78 8.558z"/></svg>') right / 32px no-repeat, linear-gradient(180deg, rgba(7, 71, 156, 0.75) 0%, rgba(77, 160, 255, 0.75) 1%, rgba(202, 229, 255, 0.75) 4%, rgba(170, 211, 255, 0.75) 29%, rgba(61, 155, 255, 0.75) 31%, rgba(174, 255, 255, 0.75) 99%, rgba(14, 71, 162, 0.75) 100%) right / 32px no-repeat, rgba(255, 255, 255, 0.7);
     margin: 0.2rem;
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
 }
