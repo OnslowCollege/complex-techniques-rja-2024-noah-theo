@@ -361,7 +361,7 @@ select {
     width: 100%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
     padding-left: 8px;
-    background: linear-gradient(180deg, rgba(128, 128, 128, 0.75) 0%, rgba(226, 226, 226, 0.75) 1%, rgba(222, 222, 222, 0.75) 23%, rgba(209, 209, 209, 0.75) 36%, rgba(254, 254, 254, 0.75) 99%, rgba(128, 128, 128, 0.75) 100%);
+    background: linear-gradient(180deg, rgba(128, 128, 128, 0.75) 0%, rgba(226, 226, 226, 0.75) 1%);
 }
 
 select:disabled {
