@@ -348,7 +348,7 @@ select {
     overflow: hidden;
     cursor: pointer;
     outline: none;
-    background: linear-gradient(145deg, #454545, #9a9a9a);
+    background: linear-gradient(145deg, #454545, #6f6f6f);
     margin: 0.2rem;
     box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
