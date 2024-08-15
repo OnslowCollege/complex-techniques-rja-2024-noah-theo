@@ -336,7 +336,7 @@ body> :nth-of-type(2) {
 button,
 select {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(4, 75, 9);
+    -webkit-text-fill-color: rgb(255, 255, 255);
     font-size: 20pt;
     font-family: "Tarif", serif;
     min-height: 3rem;
@@ -348,7 +348,7 @@ select {
     overflow: hidden;
     cursor: pointer;
     outline: none;
-    background: linear-gradient(145deg, #454545, #1b1b1b);
+    background: linear-gradient(145deg, #454545, #9a9a9a);
     margin: 0.2rem;
     box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
