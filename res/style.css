@@ -5,6 +5,13 @@ body {
     background-color: #084e16;
 }
 
+@font-face {
+    font-family: 'New Amsterdam'; /* The name you'll use in your CSS */
+    src: url('../fonts/NewAmsterdam-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .remi-main input[type='checkbox']:focus,
 .remi-main input[type='color']:focus,
 .remi-main input[type='number']:focus,
