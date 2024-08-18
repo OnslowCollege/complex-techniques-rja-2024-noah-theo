@@ -423,6 +423,7 @@ img{
     width: 117px;
     height: 175.5px;
     margin: 0.01rem;
+    padding: 0.01rem;
 }
 
 button::first-line {
