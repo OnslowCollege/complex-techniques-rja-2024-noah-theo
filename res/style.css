@@ -341,7 +341,7 @@ select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(8, 116, 15);
     font-size: 20pt;
-    font-family: "New Amsterdam", serif;
+    font-family: "Tarif", serif;
     min-height: 3rem;
     max-height: 3rem;
     min-width: 10rem;
@@ -425,8 +425,9 @@ button:active {
 img{
     width: 117px;
     height: 175.5px;
-    margin: 0.01rem;
-    padding: 0.01rem;
+    margin: auto;
+    padding: auto;
+    display: block;
 }
 
 button::first-line {
