@@ -215,7 +215,7 @@ html {
 .remi-main .HBox {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    column-gap: 8px;
+    column-gap: 5px;
     justify-content: none !important;
     display: grid !important;
     flex-direction: none !important;
@@ -422,7 +422,7 @@ button:active {
 img{
     width: 117px;
     height: 175.5px;
-    margin: 2px;
+    margin: 1px;
 }
 
 button::first-line {
