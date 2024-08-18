@@ -5,6 +5,9 @@ body {
     background-color: #0d7221;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+
+
 .remi-main input[type='checkbox']:focus,
 .remi-main input[type='color']:focus,
 .remi-main input[type='number']:focus,
@@ -338,7 +341,7 @@ select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(8, 116, 15);
     font-size: 20pt;
-    font-family: "Tarif", serif;
+    font-family: "New Amsterdam", serif;
     min-height: 3rem;
     max-height: 3rem;
     min-width: 10rem;
