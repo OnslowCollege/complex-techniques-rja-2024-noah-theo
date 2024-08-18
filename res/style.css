@@ -422,7 +422,8 @@ button:active {
 img{
     width: 117px;
     height: 175.5px;
-    margin: 1px;
+    margin: 0.2rem;
+    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
 }
 
 button::first-line {
