@@ -279,11 +279,17 @@ class BlackJackApp : OCApp{
         let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
-        let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox, helpbutton])
+        let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
-        let maincontainer = OCVBox(controls: [
-            dealerView, playerView,  masterHBox
-        ])
+    let topBar = OCHBox(controls: [OCLabel(text: ""), helpbutton])
+
+    let maincontainer = OCVBox(controls: [
+        topBar,          
+        dealerView, 
+        playerView,  
+        masterHBox
+    ])
+
         
     // Change background color.
         return maincontainer

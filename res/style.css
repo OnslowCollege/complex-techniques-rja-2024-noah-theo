@@ -351,7 +351,7 @@ select {
     outline: none;
     background: #FFFFFF;
     margin: 0.2rem;
-    border: 2px rgb(8, 116, 15);
+    border: 2px solid rgb(8, 116, 15);
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
 }
 
