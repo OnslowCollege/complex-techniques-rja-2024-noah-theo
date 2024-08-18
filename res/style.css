@@ -215,7 +215,7 @@ html {
 .remi-main .HBox {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    column-gap: 5px;
+    column-gap: 1rem;
     justify-content: none !important;
     display: grid !important;
     flex-direction: none !important;
@@ -242,7 +242,7 @@ body> :nth-of-type(2) {
 .remi-main .VBox {
     grid-auto-flow: row;
     grid-auto-rows: 1fr;
-    row-gap: 16px;
+    row-gap: 10px;
     background-color: #0d7221;
     height: 100%;
     justify-content: start !important;
@@ -251,7 +251,7 @@ body> :nth-of-type(2) {
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
-    padding: 6px;
+    padding: 5px;
 }
 
 .remi-main .VBox > .HBox {
@@ -422,8 +422,7 @@ button:active {
 img{
     width: 117px;
     height: 175.5px;
-    margin: 0.2rem;
-    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
+    margin: 0.01rem;
 }
 
 button::first-line {
