@@ -351,6 +351,7 @@ select {
     outline: none;
     background: #FFFFFF;
     margin: 0.2rem;
+    border: 2px rgb(8, 116, 15);
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
 }
 
@@ -820,7 +821,7 @@ button::first-line {
 
 .remi-main .Label {
     grid-row: 1;
-    -webkit-text-fill-color: #084e16;
+    -webkit-text-fill-color: rgb(8, 116, 15);
     font-size: 1.5rem;
     font-family: "Tarif", sans-serif;
     min-height: 3rem;
@@ -834,7 +835,7 @@ button::first-line {
     margin: 0.2rem;
     box-shadow: 0.3em 0.3em 0.6em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #084e16;
+    border: 2px solid rgb(8, 116, 15);
     display: flex;
     align-items: center;
     justify-content: center;
