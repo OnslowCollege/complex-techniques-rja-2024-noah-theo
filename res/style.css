@@ -833,9 +833,7 @@ button::first-line {
     font-size: 10pt;
     font-family: "Tarif", sans-serif;
     min-height: 3rem;
-    max-height: 3rem;
-    min-width: 10rem;
-    max-width: 10rem; 
+    min-width: 10rem; 
     border-radius: 2rem;
     position: relative !important;
     overflow: hidden;
