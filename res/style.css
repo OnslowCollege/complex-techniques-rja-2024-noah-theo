@@ -427,6 +427,7 @@ img {
     width: 117px;
     height: 175.5px;
     margin: 1px;
+    column-gap: 0.5rem;
     padding: auto;
     display: block;
 }
