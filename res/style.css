@@ -218,11 +218,11 @@ html {
 .remi-main .HBox {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    column-gap: 0.01rem; /* Reduced gap */
+    column-gap: 0.2rem; /* Reduced gap */
     justify-content: none !important;
     display: grid !important;
-    flex-direction: right !important;
-    align-items: start !important;
+    flex-direction: center !important;
+    align-items: center !important;
 }
 
 
@@ -255,11 +255,11 @@ body> :nth-of-type(2) {
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
-    padding: 2px;
+    padding: 5px;
 }
 
 .remi-main .VBox > .HBox {
-    padding: 2px !important;
+    padding: 4px !important;
 }
 
 .remi-main>* {
