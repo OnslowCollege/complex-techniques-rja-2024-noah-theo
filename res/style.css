@@ -428,8 +428,9 @@ img {
     height: 175.5px;
     margin: 1px;
     column-gap: 0.5rem;
-    padding: auto;
+    padding: 0.2rem;
     display: block;
+    
 }
 
 button::first-line {
