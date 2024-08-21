@@ -236,16 +236,16 @@ class BlackJackApp : OCApp{
     }
 
     func helpButton(button: any OCControlClickable) {
-    if helpLabel.visible == true {
-        self.helpLabel.visible = false
-        self.dealerView.visible = true
-        self.playerView.visible = true
-    } else {
-        self.helpLabel.visible = true
-        self.dealerView.visible = false
-        self.playerView.visible = false
+        if helpLabel.visible == true {
+            self.helpLabel.visible = false
+            self.dealerView.visible = true
+            self.playerView.visible = true
+        } else {
+            self.helpLabel.visible = true
+            self.dealerView.visible = false
+            self.playerView.visible = false
+        }
     }
-}
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
