@@ -40,6 +40,9 @@ class BlackJackApp : OCApp{
     let resetButton = OCButton(text: "Again")
     let helpbutton = OCButton(text: "?")
     var dealerSecondCardHidden = true
+    let helpLabel = OCLabel(text: "Help test words")
+
+
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -233,29 +236,15 @@ class BlackJackApp : OCApp{
     }
 
     func helpButton(button: any OCControlClickable) {
-    // Create multiple OCLabel instances to represent different sections of the help content
-    let helpText = """
-    Objective: The goal of Blackjack is to have a hand value as close to 21 as possible, without exceeding it.
-
-    Card Values:
-    - Number Cards (2-10): Face value.
-    - Face Cards (Jack, Queen, King): 10 points.
-    - Ace: 1 or 11 points.
-
-    Gameplay:
-    - Initial Deal: ...
-    - Player’s Turn: ...
-    - Dealer’s Turn: ...
-    
-    Betting with NCEA Credits: The player bets a certain number of credits before the hand begins.
-    """
-
-    // Show the help content in a dialog
-    OCDialog(
-        title: "Help",
-        message: helpText,
-        app: self
-    ).show()
+    if helpLabel.visible == true {
+        self.helpLabel.visible = false
+        self.dealerView.visible = true
+        self.playerView.visible = true
+    } else {
+        self.helpLabel.visible = true
+        self.dealerView.visible = false
+        self.playerView.visible = false
+    }
 }
 
 
