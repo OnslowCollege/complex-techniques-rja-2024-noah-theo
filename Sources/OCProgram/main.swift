@@ -245,6 +245,9 @@ class BlackJackApp : OCApp{
             self.dealerView.visible = false
             self.playerView.visible = false
         }
+        self.helpLabel.visible = true
+        self.dealerView.visible = false
+        self.playerView.visible = false
     }
 
 
