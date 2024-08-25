@@ -39,6 +39,7 @@ class BlackJackApp : OCApp{
     let decreaseButton = OCButton(text: "Decrease")
     let resetButton = OCButton(text: "Again")
     var dealerSecondCardHidden = true
+    let betLabel = OCLabel(text: "Bet: 10")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -247,6 +248,7 @@ class BlackJackApp : OCApp{
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
+        playerVbox.append()betLabel
 
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
