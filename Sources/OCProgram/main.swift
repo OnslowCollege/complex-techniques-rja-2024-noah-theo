@@ -255,7 +255,7 @@ class BlackJackApp : OCApp{
         let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
         let maincontainer = OCVBox(controls: [
-            playerView, dealerView, masterHBox
+            dealerView, playerView, masterHBox
         ])
             
     // Change background color.
