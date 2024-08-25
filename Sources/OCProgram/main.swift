@@ -82,13 +82,14 @@ class BlackJackApp : OCApp{
 
     func updatePlayerScore() {
         playerView.empty()
-        playerView.append(OCLabel(text: "Player Cards: "))
+        let playerVbox = OCVBox(controls: [OCLabel(text: "Player Cards: ")])
+        playerView.append(playerVbox)
 
         for card in playerCards {
             playerView.append(OCImageView(filename: card.image))
         }
         let playerScore = calculateScore(cards: playerCards)
-        playerView.append(OCLabel(text: "Player Score: \(playerScore)"))
+        playerVbox.append(OCLabel(text: "Player Score: \(playerScore)"))
     }
 
     func updateDealerScore() {
