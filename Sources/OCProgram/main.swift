@@ -15,7 +15,7 @@ struct Card{
     let value: String
     // Suite of card.
     let suite: String
-    // Image of card.   
+    // Image of card.
     let image: String
 }
 
@@ -38,11 +38,7 @@ class BlackJackApp : OCApp{
     let increaseButton = OCButton(text: "Increase")
     let decreaseButton = OCButton(text: "Decrease")
     let resetButton = OCButton(text: "Again")
-    let helpbutton = OCButton(text: "?")
     var dealerSecondCardHidden = true
-    let helpLabel = OCLabel(text: "Help test words")
-
-
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -235,24 +231,6 @@ class BlackJackApp : OCApp{
         }
     }
 
-    func helpButton(button: any OCControlClickable) {
-        if helpLabel.visible == true {
-            self.helpLabel.visible = false
-            self.dealerView.visible = true
-            self.playerView.visible = true
-        } else {
-            self.helpLabel.visible = true
-            self.dealerView.visible = false
-            self.playerView.visible = false
-        }
-        self.helpLabel.visible = true
-        self.dealerView.visible = false
-        self.playerView.visible = false
-        
-        
-    }
-
-
     override open func main(app: any OCAppDelegate) -> OCControl {
         hitButton.enabled = false
         standButton.enabled = false
@@ -262,28 +240,25 @@ class BlackJackApp : OCApp{
         dealButton.onClick(self.startGame)
         hitButton.onClick(self.hitPlayer)
         resetButton.onClick(self.resestGame)
-        standButton.onClick(self.standPlayer)
-        helpbutton.onClick(self.helpButton)
+        self.standButton.onClick(self.standPlayer)
         
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
 
-
-
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
-        let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox, helpbutton])
+        let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
         let maincontainer = OCVBox(controls: [
-            dealerView, playerView,  masterHBox
+            playerView, dealerView, masterHBox
         ])
-        
+            
     // Change background color.
         return maincontainer
     }
 }
-
+    
 BlackJackApp().start()
