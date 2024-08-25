@@ -94,7 +94,8 @@ class BlackJackApp : OCApp{
 
     func updateDealerScore() {
         dealerView.empty()
-        dealerView.append(OCLabel(text: "Dealer Cards: "))
+        let dealerVbox = OCVBox(controls: [OCLabel(text: "Dealer Cards: ")])
+        dealerView.append(dealerVbox)
         // Re-add the dealer's cards
         for (index, card) in dealerCards.enumerated() {
             if dealerSecondCardHidden && index == 1 {
@@ -105,7 +106,7 @@ class BlackJackApp : OCApp{
         }
         let visibleDealerCards = dealerSecondCardHidden ? [dealerCards[0]] : dealerCards
         let dealerScore = calculateScore(cards: visibleDealerCards)
-        dealerView.append(OCLabel(text: "Dealer Score: \(dealerScore)"))
+        dealerVbox.append(OCLabel(text: "Dealer Score: \(dealerScore)"))
     }
 
     // Show cards to start game.
