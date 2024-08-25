@@ -91,6 +91,7 @@ class BlackJackApp : OCApp{
         }
         let playerScore = calculateScore(cards: playerCards)
         playerVbox.append(OCLabel(text: "Player Score: \(playerScore)"))
+        playerVbox.append(betLabel)
     }
 
     func updateDealerScore() {
@@ -248,7 +249,6 @@ class BlackJackApp : OCApp{
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
-        playerVbox.append()betLabel
 
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
