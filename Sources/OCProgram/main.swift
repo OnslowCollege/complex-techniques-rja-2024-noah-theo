@@ -255,10 +255,10 @@ class BlackJackApp : OCApp{
         let maincontainer = OCVBox(controls: [
             playerView, dealerView, masterHBox
         ])
-        
+            
     // Change background color.
         return maincontainer
     }
 }
-
+    
 BlackJackApp().start()
