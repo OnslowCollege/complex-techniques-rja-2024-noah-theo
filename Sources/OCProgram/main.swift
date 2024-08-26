@@ -91,7 +91,6 @@ class BlackJackApp : OCApp{
         }
         let playerScore = calculateScore(cards: playerCards)
         playerVbox.append(OCLabel(text: "Player Score: \(playerScore)"))
-        playerVbox.append(betLabel)
     }
 
     func updateDealerScore() {
