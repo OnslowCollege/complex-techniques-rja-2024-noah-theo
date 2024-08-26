@@ -6,11 +6,16 @@ body {
 }
 
 @font-face {
-    font-family: 'New Amsterdam'; /* The name you'll use in your CSS */
-    src: url('res/fonts/NewAmsterdam-Regular.ttf') format('truetype');
+    font-family: 'New Amsterdam';
+    src: url('fonts/NewAmsterdam.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
+body {
+    font-family: 'New Amsterdam', sans-serif;
+}
+
 
 .remi-main input[type='checkbox']:focus,
 .remi-main input[type='color']:focus,
