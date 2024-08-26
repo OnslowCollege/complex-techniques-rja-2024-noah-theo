@@ -348,9 +348,8 @@ select {
     font-family: "New Amsterdam", sans-serif;
     min-height: 3rem;
     max-height: 3rem;
-    min-width: 10rem;
-    max-width: 10rem; 
-    border-radius: 10rem;
+    min-width: 11rem; 
+    border-radius: 0.5rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
@@ -829,25 +828,23 @@ button::first-line {
 
 .remi-main .Label {
     grid-row: 1;
-    -webkit-text-fill-color: #084e16;
-    font-size: 1.5rem;
-    font-family: "Tarif", sans-serif;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-size: 20pt;
+    font-family: "New Amsterdam", sans-serif;
     min-height: 3rem;
-    min-width: 11rem; 
-    border-radius: 2rem;
+    max-height: 3rem;
+    min-width: 12rem; 
+    border-radius: 0.5em;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
-    background: #FFFFFF;
+    background: linear-gradient(145deg, #454545, #6f6f6f);
     margin: 0.2rem;
     box-shadow: 0.3em 0.3em 0.6em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #084e16;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    border: 2px solid #333333;
+    border-radius: 10rem;
 }
 
 .remi-main .FileFolderItem {
