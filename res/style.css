@@ -2,11 +2,15 @@
 /* latin */
 
 body {
-    background-color: #0d7221;
+    background-color: #084e16;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
-
+@font-face {
+    font-family: 'New Amsterdam'; /* The name you'll use in your CSS */
+    src: url('res/fonts/NewAmsterdam-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .remi-main input[type='checkbox']:focus,
 .remi-main input[type='color']:focus,
@@ -218,16 +222,15 @@ html {
 .remi-main .HBox {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    column-gap: 0.2rem; /* Reduced gap */
+    column-gap: 8px;
     justify-content: none !important;
     display: grid !important;
-    flex-direction: center !important;
-    align-items: center !important;
+    flex-direction: none !important;
+    align-items: start !important;
 }
 
-
 body> :nth-of-type(2) {
-    background: #0d7221;
+    background: #084e16;;
     transition: height 1s;
     width: 1024px;
     padding: 8px !important;
@@ -246,8 +249,8 @@ body> :nth-of-type(2) {
 .remi-main .VBox {
     grid-auto-flow: row;
     grid-auto-rows: 1fr;
-    row-gap: 10px;
-    background-color: #0d7221;
+    row-gap: 16px;
+    background-color: #084e16;;
     height: 100%;
     justify-content: start !important;
 }
@@ -255,7 +258,7 @@ body> :nth-of-type(2) {
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
-    padding: 5px;
+    padding: 6px;
 }
 
 .remi-main .VBox > .HBox {
@@ -340,23 +343,24 @@ body> :nth-of-type(2) {
 button,
 select {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(8, 116, 15);
+    -webkit-text-fill-color: rgb(255, 255, 255);
     font-size: 20pt;
-    font-family: "Tarif", serif;
+    font-family: "New Amsterdam", sans-serif;
     min-height: 3rem;
     max-height: 3rem;
     min-width: 10rem;
     max-width: 10rem; 
     border-radius: 10rem;
     position: relative !important;
-    size: relative;
     overflow: hidden;
-    cursor: default;
+    cursor: pointer;
     outline: none;
-    background: #FFFFFF;
+    background: linear-gradient(145deg, #454545, #6f6f6f);
     margin: 0.2rem;
-    border: 2px solid rgb(8, 116, 15);
-    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
+    box-shadow: 0.3em 0.3em 0.6em rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #333333;
+    border-radius: 10rem;
 }
 
 
@@ -423,14 +427,10 @@ button:active {
     box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
 }
 
-img {
+img{
     width: 117px;
     height: 175.5px;
-    margin: 1px;
-    column-gap: 0.5rem;
-    padding: 0.2rem;
-    display: block;
-    
+    margin: 2px;
 }
 
 button::first-line {
@@ -829,7 +829,7 @@ button::first-line {
 
 .remi-main .Label {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(8, 116, 15);
+    -webkit-text-fill-color: #084e16;
     font-size: 1.5rem;
     font-family: "Tarif", sans-serif;
     min-height: 3rem;
@@ -843,7 +843,7 @@ button::first-line {
     margin: 0.2rem;
     box-shadow: 0.3em 0.3em 0.6em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid rgb(8, 116, 15);
+    border: 2px solid #084e16;
     display: flex;
     align-items: center;
     justify-content: center;
