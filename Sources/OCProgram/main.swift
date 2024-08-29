@@ -39,6 +39,7 @@ class BlackJackApp : OCApp{
     let decreaseButton = OCButton(text: "Decrease")
     let resetButton = OCButton(text: "Again")
     var dealerSecondCardHidden = true
+    let betLabel = OCLabel(text: "Bet: 10")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -82,18 +83,20 @@ class BlackJackApp : OCApp{
 
     func updatePlayerScore() {
         playerView.empty()
-        playerView.append(OCLabel(text: "Player Cards: "))
+        let playerVbox = OCVBox(controls: [OCLabel(text: "Player Cards: ")])
+        playerView.append(playerVbox)
 
         for card in playerCards {
             playerView.append(OCImageView(filename: card.image))
         }
         let playerScore = calculateScore(cards: playerCards)
-        playerView.append(OCLabel(text: "Player Score: \(playerScore)"))
+        playerVbox.append(OCLabel(text: "Player Score: \(playerScore)"))
     }
 
     func updateDealerScore() {
         dealerView.empty()
-        dealerView.append(OCLabel(text: "Dealer Cards: "))
+        let dealerVbox = OCVBox(controls: [OCLabel(text: "Dealer Cards: ")])
+        dealerView.append(dealerVbox)
         // Re-add the dealer's cards
         for (index, card) in dealerCards.enumerated() {
             if dealerSecondCardHidden && index == 1 {
@@ -104,7 +107,7 @@ class BlackJackApp : OCApp{
         }
         let visibleDealerCards = dealerSecondCardHidden ? [dealerCards[0]] : dealerCards
         let dealerScore = calculateScore(cards: visibleDealerCards)
-        dealerView.append(OCLabel(text: "Dealer Score: \(dealerScore)"))
+        dealerVbox.append(OCLabel(text: "Dealer Score: \(dealerScore)"))
     }
 
     // Show cards to start game.
@@ -253,12 +256,12 @@ class BlackJackApp : OCApp{
         let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
         let maincontainer = OCVBox(controls: [
-            playerView, dealerView, masterHBox
+            dealerView, playerView, masterHBox
         ])
             
     // Change background color.
         return maincontainer
     }
 }
-    
+
 BlackJackApp().start()
