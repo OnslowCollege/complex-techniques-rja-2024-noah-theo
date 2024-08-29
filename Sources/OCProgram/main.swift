@@ -263,5 +263,5 @@ class BlackJackApp : OCApp{
         return maincontainer
     }
 }
-    
+
 BlackJackApp().start()
