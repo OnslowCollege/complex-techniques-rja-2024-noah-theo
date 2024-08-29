@@ -355,10 +355,6 @@ class BlackJackApp : OCApp{
         return maincontainer
     }
 }
-<<<<<<< HEAD
-   
-BlackJackApp().start()
-=======
 
 BlackJackApp().start()
->>>>>>> 4629202ea0abcb90a3504ddd951cb04ebc8c2b2d
+
