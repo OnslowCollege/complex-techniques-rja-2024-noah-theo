@@ -1,20 +1,19 @@
 @charset "UTF-8";
 /* latin */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background-color: #084e16;
+    background-color: #0d7221;
+    font-family: 'Exo 2', sans-serif;
 }
 
-@font-face {
-    font-family: 'New Amsterdam';
-    src: url('fonts/NewAmsterdam.ttf') format('truetype');
-    font-weight: normal;
+.bold-font-regular {
+    font-family: "Exo 2";
+    font-weight: 900; /* Adjusted to make the text bold */
     font-style: normal;
 }
 
-body {
-    font-family: 'New Amsterdam', sans-serif;
-}
+
 
 
 .remi-main input[type='checkbox']:focus,
@@ -167,7 +166,8 @@ html {
 }
 
 .remi-main a {
-    color: rgba(255, 0, 0, 0.8);
+    background-color: #0d7221;
+    ;
     font-weight: 500
 }
 
@@ -235,12 +235,13 @@ html {
 }
 
 body> :nth-of-type(2) {
-    background: #084e16;;
+    background: #0d7221;
+    ;
     transition: height 1s;
     width: 1024px;
     padding: 8px !important;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -255,7 +256,8 @@ body> :nth-of-type(2) {
     grid-auto-flow: row;
     grid-auto-rows: 1fr;
     row-gap: 16px;
-    background-color: #084e16;;
+    background-color: #0d7221;
+    ;
     height: 100%;
     justify-content: start !important;
 }
@@ -266,7 +268,7 @@ body> :nth-of-type(2) {
     padding: 6px;
 }
 
-.remi-main .VBox > .HBox {
+.remi-main .VBox>.HBox {
     padding: 4px !important;
 }
 
@@ -350,20 +352,23 @@ select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(255, 255, 255);
     font-size: 20pt;
-    font-family: "New Amsterdam", sans-serif;
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
     min-height: 3rem;
     max-height: 3rem;
-    min-width: 10rem; 
-    border-radius: 0.5rem;
+    min-width: 10rem;
+    max-width: 20rem;
+    text-align: center;
+    border-radius: 0.4rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
-    background: linear-gradient(145deg, #454545, #6f6f6f);
+    background: #8e0000;
     margin: 0.2rem;
-    box-shadow: 0.3em 0.3em 0.6em rgba(0, 0, 0, 0.5);
+    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #333333;
+    border: 2px solid #8e0000;
 }
 
 
@@ -412,25 +417,28 @@ select:after {
 button:focus,
 button:active {
     grid-row: 1;
-    -webkit-text-fill-color: #FFFFFF;
+    -webkit-text-fill-color: #8e0000;
     font-size: 20pt;
-    font-family: "Tarif", serif;
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
     min-height: 3rem;
     max-height: 3rem;
     min-width: 10rem;
-    max-width: 10rem; 
-    border-radius: 10rem;
+    max-width: 20rem;
+    text-align: center;
+    border-radius: 0.4rem;
     position: relative !important;
-    size: relative;
     overflow: hidden;
-    cursor: default;
+    cursor: pointer;
     outline: none;
-    background: rgb(8, 116, 15);
+    background: #FFFFFF;
     margin: 0.2rem;
-    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
+    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #FFFFFF;
 }
 
-img{
+img {
     width: 117px;
     height: 175.5px;
     margin: 2px;
@@ -833,21 +841,24 @@ button::first-line {
 .remi-main .Label {
     grid-row: 1;
     -webkit-text-fill-color: rgb(255, 255, 255);
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
     font-size: 20pt;
-    font-family: "New Amsterdam", sans-serif;
     min-height: 3rem;
     max-height: 3rem;
-    min-width: 12rem; 
-    border-radius: 0.5em;
+    min-width: 15rem;
+    max-width: 30rem;
+    text-align: center;
+    border-radius: 0.4rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
-    background: linear-gradient(145deg, #454545, #6f6f6f);
+    background: #8e0000;
     margin: 0.2rem;
-    box-shadow: 0.3em 0.3em 0.6em rgba(0, 0, 0, 0.5);
+    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #333333;
+    border: 2px solid #8e0000
 }
 
 .remi-main .FileFolderItem {
