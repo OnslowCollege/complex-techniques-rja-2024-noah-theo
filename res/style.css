@@ -226,8 +226,8 @@ html {
 
 .remi-main .HBox {
     grid-auto-flow: column;
-    grid-auto-columns: 1rem;
-    column-gap: 1rem;
+    grid-auto-columns: 1fr;
+    column-gap: 5px;
     justify-content: none !important;
     display: grid !important;
     flex-direction: row !important;
