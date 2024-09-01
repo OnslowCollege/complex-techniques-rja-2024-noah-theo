@@ -228,10 +228,10 @@ html {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
     column-gap: 5px;
-    justify-content: none !important;
+    justify-content: center !important;
     display: grid !important;
     flex-direction: row !important;
-    align-items: start !important;
+    align-items: center !important;
 }
 
 body> :nth-of-type(2) {
@@ -441,8 +441,10 @@ button:active {
 img {
     width: 117px;
     height: 175.5px;
-    margin: 2px;
+    margin: 1rem;
     position: fixed;
+    padding: 1rem;
+    justify-content: center;
 }
 
 button::first-line {
