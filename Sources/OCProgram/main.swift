@@ -298,6 +298,7 @@ class BlackJackApp : OCApp{
         OCDialog(title: "Game over", message: "Oh no! You lost all of your credits and have now failed NCEA! Onslow College thinks this will reflect badly on them and have loaned you 100 more NCEA credts. Try not to lose them this time!", app: self).show()
         bankroll = 100
         currentBet = 10
+        self.defaultLabel.text = "10"
     }
 
     func increaseBet(button: any OCControlClickable) {
