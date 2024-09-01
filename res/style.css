@@ -854,9 +854,7 @@ button::first-line {
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
     font-size: 20pt;
     min-height: 3rem;
-    max-height: 3rem;
     min-width: 15rem;
-    max-width: 30rem;
     text-align: center;
     border-radius: 0.4rem;
     position: relative !important;
