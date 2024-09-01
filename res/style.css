@@ -229,9 +229,12 @@ html {
     grid-auto-columns: 1fr;
     column-gap: 5px;
     justify-content: center !important;
+    position: fixed;
+    justify-items: center;
     display: grid !important;
     flex-direction: row !important;
     align-items: center !important;
+
 }
 
 body> :nth-of-type(2) {
