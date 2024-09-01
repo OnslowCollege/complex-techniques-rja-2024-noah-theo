@@ -226,12 +226,13 @@ html {
 
 .remi-main .HBox {
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    column-gap: 5px;
+    grid-auto-columns: 0.5fr;
+    column-gap: 2px;
     justify-content: center !important;
     position: fixed;
     justify-items: center;
     display: grid !important;
+    padding: 0.1rem;
     flex-direction: row !important;
     align-items: center !important;
 
