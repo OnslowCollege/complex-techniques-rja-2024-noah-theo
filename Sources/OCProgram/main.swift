@@ -295,19 +295,20 @@ class BlackJackApp : OCApp{
     }
 
     func displayGameOver(){
-        OCDialog(title: "Game over", message: "Oh no! You lost all of your credits and have now failed NCEA! Onslow College thinks this will reflect badly on them and have loaned you 100 more NCEA credts. Try not to lose them this time!", app: self).show()
+        OCDialog(title: "Game over", message: "Oh no! You lost all of your credits and have now failed NCEA! Luckily Onslow College thinks this will reflect badly on them and have loaned you 100 more NCEA credts. Try not to lose them this time!", app: self).show()
         bankroll = 100
         currentBet = 10
-        self.defaultLabel.text = "10"
+            self.defaultLabel.text = "Default Bet: \(currentBet)"
     }
 
     func increaseBet(button: any OCControlClickable) {
         if currentBet + 5 <= bankroll {
+            increaseButton.enabled = true
             currentBet += 5
             self.defaultLabel.text = "Default Bet: \(currentBet)"
             updatesBets()
         } else {
-            OCDialog(title: "Error", message: "Insufficient funds: Cannot bet more NCEA credits than you have.", app: self).show()
+            increaseButton.enabled = false
         }
 
     }
@@ -315,8 +316,9 @@ class BlackJackApp : OCApp{
     func decreaseBet(button: any OCControlClickable) {
         if currentBet > 5 {
             currentBet -= 5
+            decreaseButton.enabled = true
         } else {
-            OCDialog(title: "Error", message: "Cannot decrease any further. 5 credits is the minimum bet", app: self).show()
+            decreaseButton.enabled = false
         }
         self.defaultLabel.text = "Default Bet: \(currentBet)"
         updatesBets()
