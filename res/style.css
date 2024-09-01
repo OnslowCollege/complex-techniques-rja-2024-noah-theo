@@ -271,6 +271,7 @@ body> :nth-of-type(2) {
 .remi-main .VBox {
     box-sizing: border-box;
     padding: 6px;
+    align-items: left;
 }
 
 .remi-main .VBox>.HBox {
