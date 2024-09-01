@@ -441,9 +441,9 @@ button:active {
 img {
     width: 117px;
     height: 175.5px;
-    margin: 1rem;
+    margin: 0.2rem;
     position: fixed;
-    padding: 1rem;
+    padding: 0.2rem;
     justify-content: center;
 }
 
