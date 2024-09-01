@@ -43,7 +43,7 @@ body {
 .remi-main img,
 .remi-main svg,
 .remi-main video {
-    vertical-align: left
+    vertical-align: center
 }
 
 .remi-main textarea {
