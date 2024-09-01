@@ -304,8 +304,7 @@ class BlackJackApp : OCApp{
             self.defaultLabel.text = "Default Bet: \(currentBet)"
             updatesBets()
         } else {
-            playerView.append(OCLabel(text: "Cannot increase bet. Insufficent funds."))
-            // Theo where
+            OCDialog(title: "Error", message: "Insufficient funds: Cannot bet more NCEA credits than you have.", app: self).show()
         }
 
     }
@@ -314,8 +313,7 @@ class BlackJackApp : OCApp{
         if currentBet > 5 {
             currentBet -= 5
         } else {
-            playerView.append(OCLabel(text: "Cannot decrease bet. Minimum is 5."))
-            // Theo where
+            OCDialog(title: "Error", message: "Cannot decrease any further. 5 credits is the minimum bet", app: self).show()
         }
         self.defaultLabel.text = "Default Bet: \(currentBet)"
         updatesBets()
