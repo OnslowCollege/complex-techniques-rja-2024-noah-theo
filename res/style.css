@@ -453,6 +453,25 @@ img {
     justify-content: center;
 }
 
+.help-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #8e0000;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 999; /* Ensure it stays on top */
+    transition: background-color 0.3s ease;
+}
+
+.help-button:hover {
+    background-color: #ff0000; /* Change on hover */
+}
+
 button::first-line {
     position: relative;
     top: -1px;
