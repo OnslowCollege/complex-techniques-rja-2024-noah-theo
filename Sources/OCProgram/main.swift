@@ -23,7 +23,6 @@ struct Card{
 class BlackJackApp : OCApp{
     var playerView = OCHBox(controls: [OCLabel(text: "Player Cards: ")])
     let dealerView = OCHBox(controls: [OCLabel(text: "Dealer Cards: ")])
-    // Return total layout of GUI.
     let listView = OCListView()
     var deck: [Card] = []
     var playerCards: [Card] = []
