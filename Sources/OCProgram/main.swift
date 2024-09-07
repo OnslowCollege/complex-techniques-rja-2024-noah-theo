@@ -341,9 +341,8 @@ class BlackJackApp : OCApp{
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
-        let label = OCLabel(text:".........................................................................")
         playerView.append(betLabel)
-        let topHbox = OCHBox(controls: [label, helpButton], justifyContent: OCContentJustification.flexEnd)
+        playerView.append(helpButton)
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
@@ -352,7 +351,7 @@ class BlackJackApp : OCApp{
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
         let maincontainer = OCVBox(controls: [
-            topHbox, dealerView, playerView, masterHBox
+            dealerView, playerView, masterHBox
         ])
 
         return maincontainer
