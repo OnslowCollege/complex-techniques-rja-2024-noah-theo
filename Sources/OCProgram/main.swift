@@ -343,7 +343,7 @@ class BlackJackApp : OCApp{
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         playerView.append(betLabel)
-
+        let topHbox = OCHBox(controls: [helpButton])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
@@ -352,7 +352,7 @@ class BlackJackApp : OCApp{
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
         let maincontainer = OCVBox(controls: [
-            dealerView, playerView, masterHBox
+            topHbox, dealerView, playerView, masterHBox
         ])
            
     // Change background color.
