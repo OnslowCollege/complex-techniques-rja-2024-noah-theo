@@ -171,7 +171,7 @@ class BlackJackApp : OCApp{
             playerView.append(resetButton)
             updatesBankroll()
         }
-        playerView.append(helpButton)
+        dealerView.append(helpButton)
 }
 
 
@@ -343,7 +343,7 @@ class BlackJackApp : OCApp{
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         playerView.append(betLabel)
-        playerView.append(helpButton)
+        dealerView.append(helpButton)
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
