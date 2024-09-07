@@ -171,6 +171,7 @@ class BlackJackApp : OCApp{
             playerView.append(resetButton)
             updatesBankroll()
         }
+        playerView.append(helpButton)
 }
 
 
