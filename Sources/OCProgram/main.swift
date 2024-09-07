@@ -38,6 +38,7 @@ class BlackJackApp : OCApp{
     let increaseButton = OCButton(text: "Increase")
     let decreaseButton = OCButton(text: "Decrease")
     let resetButton = OCButton(text: "Again")
+    let helpButton = OCButton(text: "?")
     var dealerSecondCardHidden = true
     var currentBet: Int = 10
     var betLabel = OCLabel(text: "Bet: 10")
