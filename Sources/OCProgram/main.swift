@@ -342,7 +342,7 @@ class BlackJackApp : OCApp{
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
-        let label = OCLabel(text:"                                                                                                                                                                                                                                                   .")
+        let label = OCLabel(text:"‎ ‎ ‎ ‎ ")
         playerView.append(betLabel)
         let topHbox = OCHBox(controls: [label, helpButton], justifyContent: OCContentJustification.flexEnd)
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
