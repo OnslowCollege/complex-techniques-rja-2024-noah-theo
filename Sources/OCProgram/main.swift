@@ -21,8 +21,8 @@ struct Card{
 
 // Application to play blackjack.
 class BlackJackApp : OCApp{
-    var playerView = OCHBox(controls: [OCLabel(text: "Player Cards: ")])
-    let dealerView = OCHBox(controls: [OCLabel(text: "Dealer Cards: ")])
+    var playerView = OCHBox(controls: [OCLabel(text: "Player Cards: ")], justifyContent: OCContentJustification.flexStart)
+    let dealerView = OCHBox(controls: [OCLabel(text: "Dealer Cards: ")], justifyContent: OCContentJustification.flexStart)
     let listView = OCListView()
     var deck: [Card] = []
     var playerCards: [Card] = []
