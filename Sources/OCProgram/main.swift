@@ -39,7 +39,13 @@ class BlackJackApp : OCApp{
     let decreaseButton = OCButton(text: "Decrease")
     let resetButton = OCButton(text: "Again")
     var dealerSecondCardHidden = true
-
+    var currentBet: Int = 10
+    var betLabel = OCLabel(text: "Bet: 10")
+    var bankroll: Int = 100
+    var bankrollLabel = OCLabel(text: "Balance: 100")
+    var result: String = ""
+    var defaultLabel = OCLabel(text: "Default Bet: 10")
+    var insuranceBet: Int = 0
     func generateDeck() -> [Card] {
         // Each value and suite.
         let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
@@ -58,6 +64,7 @@ class BlackJackApp : OCApp{
         return deck.shuffled()
     }
 
+
     func calculateScore(cards: [Card]) -> Int {
         var score = 0
         var aces = 0
@@ -68,7 +75,7 @@ class BlackJackApp : OCApp{
                     aces += 1
                 case "K", "Q", "J":
                     score += 10
-                default: 
+                default:
                     score += Int(card.value) ?? 0
             }
             // If have ace and score is more thant 21 ace becomes a 1.
@@ -82,18 +89,23 @@ class BlackJackApp : OCApp{
 
     func updatePlayerScore() {
         playerView.empty()
-        playerView.append(OCLabel(text: "Player Cards: "))
+        let playerVbox = OCVBox(controls: [OCLabel(text: "Player Cards: ")])
+        playerVbox.append(betLabel)
+        playerView.append(playerVbox)
 
         for card in playerCards {
             playerView.append(OCImageView(filename: card.image))
         }
         let playerScore = calculateScore(cards: playerCards)
-        playerView.append(OCLabel(text: "Player Score: \(playerScore)"))
+        playerVbox.append(OCLabel(text: "Player Score: \(playerScore)"))
+        self.betLabel.text = "Bet: \(currentBet)"
+        self.bankrollLabel.text = "NCEA Credits: \(bankroll)"
     }
 
     func updateDealerScore() {
         dealerView.empty()
-        dealerView.append(OCLabel(text: "Dealer Cards: "))
+        let dealerVbox = OCVBox(controls: [OCLabel(text: "Dealer Cards: ")])
+        dealerView.append(dealerVbox)
         // Re-add the dealer's cards
         for (index, card) in dealerCards.enumerated() {
             if dealerSecondCardHidden && index == 1 {
@@ -104,15 +116,23 @@ class BlackJackApp : OCApp{
         }
         let visibleDealerCards = dealerSecondCardHidden ? [dealerCards[0]] : dealerCards
         let dealerScore = calculateScore(cards: visibleDealerCards)
-        dealerView.append(OCLabel(text: "Dealer Score: \(dealerScore)"))
+        dealerVbox.append(OCLabel(text: "Dealer Score: \(dealerScore)"))
     }
 
     // Show cards to start game.
     func startGame(button: any OCControlClickable) {
+        if bankroll < currentBet {
+            playerView.append(OCLabel(text: "Insufficent balance to place this bet."))
+            return
+        }
         playerCards = []
         dealerCards = []
         playerView.empty()
         dealerView.empty()
+        increaseButton.enabled = false
+        splitButton.enabled = false
+        decreaseButton.enabled = false
+        insuranceButton.enabled = false
 
         // Add card to player view and dealer view.
         let playerCard1 = "\(deck[currentCard].image)"
@@ -136,19 +156,23 @@ class BlackJackApp : OCApp{
         dealButton.enabled = false
         hitButton.enabled = true
         standButton.enabled = true
-        splitButton.enabled = true
-        insuranceButton.enabled = true
         doubleButton.enabled = true
+
+        if dealerCards[0].value == "A" {
+            insuranceButton.enabled = true
+        }
         updatePlayerScore()
         updateDealerScore()
         if calculateScore(cards: playerCards) == 21 {
             hitButton.enabled = false
-            playerView.append(OCLabel(text: "Blackjack! Yay!"))
             standButton.enabled = false
             splitButton.enabled = false
             insuranceButton.enabled = false
             doubleButton.enabled = false
+            playerView.append(OCLabel(text: "Blackjack! Yay you won \(Int(Double(currentBet) * 1.5))"))
+            result = "blackjack"
             playerView.append(resetButton)
+            updatesBankroll()
         }
 }
 
@@ -162,12 +186,14 @@ class BlackJackApp : OCApp{
         updatePlayerScore()
         if calculateScore(cards: playerCards) > 21 {
             hitButton.enabled = false
-            playerView.append(OCLabel(text: "Bust! You lose."))
             standButton.enabled = false
             splitButton.enabled = false
             insuranceButton.enabled = false
             doubleButton.enabled = false
+            playerView.append(OCLabel(text: "Bust! You lose your bet."))
             playerView.append(resetButton)
+            result = "lost"
+            updatesBankroll()
         }
     }
 
@@ -185,6 +211,7 @@ class BlackJackApp : OCApp{
 
         playerView.empty()
         dealerView.empty()
+        result = ""
 
         dealButton.enabled = true
         hitButton.enabled = false
@@ -192,12 +219,14 @@ class BlackJackApp : OCApp{
         splitButton.enabled = false
         insuranceButton.enabled = false
         doubleButton.enabled = false
+        increaseButton.enabled = true
+        decreaseButton.enabled = true
         if currentCard > 42 {
             deck.shuffle()
             playerView.append(OCLabel(text: "Deck Shuffled"))
             currentCard = 0
         }
-    } 
+    }
 
     func standPlayer(button: any OCControlClickable) {
         hitButton.enabled = false
@@ -205,7 +234,7 @@ class BlackJackApp : OCApp{
         splitButton.enabled = false
         insuranceButton.enabled = false
         doubleButton.enabled = false
-    
+   
         dealerSecondCardHidden = false
         updateDealerScore()
 
@@ -217,19 +246,110 @@ class BlackJackApp : OCApp{
         let playerScore = calculateScore(cards: playerCards)
 
         if dealerScore > 21 {
-            dealerView.append(OCLabel(text: "Dealer Bust."))
+            dealerView.append(OCLabel(text: "Dealer Bust. You win \(currentBet)."))
+            result = "player"
             dealerView.append(resetButton)
+            updatesBankroll()  
         } else if dealerScore > playerScore {
-            playerView.append(OCLabel(text: "Dealer Wins."))
+            playerView.append(OCLabel(text: "Dealer Wins. You lose \(currentBet)."))
+            result = "lost"
             playerView.append(resetButton)
+            updatesBankroll()
         } else if dealerScore < playerScore {
-            playerView.append(OCLabel(text: "You Win."))
+            playerView.append(OCLabel(text: "You win \(currentBet)."))
+            result = "player"
             playerView.append(resetButton)
+            updatesBankroll()  
         } else {
-            playerView.append(OCLabel(text: "Tie."))
+            playerView.append(OCLabel(text: "Tie. You get your bet back."))
+            result = "tie"
             playerView.append(resetButton)
+            updatesBankroll()  
         }
     }
+
+    func updatesBets() {
+        self.betLabel.text = "Bet: \(currentBet)"
+        self.defaultLabel.text = "Default Bet: \(currentBet)"
+    }
+
+    func updatesBankroll() {
+        switch result {
+        case "player" :
+            bankroll += currentBet  
+            bankrollLabel.text = "Balance: \(bankroll)"
+        case "blackjack":
+            bankroll += Int(Double(currentBet) * 1.5)
+            bankrollLabel.text = "Balance: \(bankroll)"
+        case "tie":
+            bankrollLabel.text = "Balance: \(bankroll)"
+        case "lost":
+            bankroll -= currentBet
+            bankrollLabel.text = "Balance: \(bankroll)"
+        default:
+            break
+        }
+        if bankroll <= 0 {
+            displayGameOver()
+            return
+        }
+    }
+
+    func doubleDown(button: any OCControlClickable) {
+        currentBet *= 2
+
+        updatesBets()
+        hitPlayer(button: button)
+
+        if calculateScore(cards: playerCards) > 21{
+            return
+        }
+
+
+        hitButton.enabled = false
+        standButton.enabled = false
+        splitButton.enabled = false
+        insuranceButton.enabled = false
+        doubleButton.enabled = false
+
+        standPlayer(button: button)
+    }
+
+    func takeInsurance(button: any OCControlClickable) {
+
+    }
+
+    func displayGameOver(){
+        OCDialog(title: "Game over", message: "Oh no! You lost all of your credits and have now failed NCEA! Luckily Onslow College thinks this will reflect badly on them and have loaned you 100 more NCEA credts. Try not to lose them this time!", app: self).show()
+        bankroll = 100
+        currentBet = 10
+            self.defaultLabel.text = "Default Bet: \(currentBet)"
+        // reset views?
+    }
+
+    func increaseBet(button: any OCControlClickable) {
+        if currentBet + 5 <= bankroll {
+            increaseButton.enabled = true
+            currentBet += 5
+            self.defaultLabel.text = "Default Bet: \(currentBet)"
+            updatesBets()
+        } else {
+            increaseButton.enabled = false
+        }
+
+    }
+
+    func decreaseBet(button: any OCControlClickable) {
+        if currentBet > 5 {
+            currentBet -= 5
+            decreaseButton.enabled = true
+        } else {
+            decreaseButton.enabled = false
+        }
+        self.defaultLabel.text = "Default Bet: \(currentBet)"
+        updatesBets()
+    }
+
 
     override open func main(app: any OCAppDelegate) -> OCControl {
         hitButton.enabled = false
@@ -241,24 +361,30 @@ class BlackJackApp : OCApp{
         hitButton.onClick(self.hitPlayer)
         resetButton.onClick(self.resestGame)
         self.standButton.onClick(self.standPlayer)
-        
+        self.increaseButton.onClick(self.increaseBet)
+        self.decreaseButton.onClick(self.decreaseBet)
+        self.doubleButton.onClick(self.doubleDown)
+        self.insuranceButton.onClick(self.takeInsurance)
+       
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
+        playerView.append(betLabel)
 
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [splitButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
-        let masterHBox = OCHBox(controls: [hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
+        let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
+        let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
         let maincontainer = OCVBox(controls: [
-            playerView, dealerView, masterHBox
+            dealerView, playerView, masterHBox
         ])
-            
+           
     // Change background color.
         return maincontainer
     }
 }
-    
+
 BlackJackApp().start()
