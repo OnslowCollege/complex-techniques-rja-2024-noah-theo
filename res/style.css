@@ -240,7 +240,6 @@ html {
 
 body> :nth-of-type(2) {
     background: #0d7221;
-    justify-content: start;
     transition: height 1s;
     width: 1024px;
     padding: 8px !important;
@@ -256,6 +255,7 @@ body> :nth-of-type(2) {
     align-items: flex-start;
     align-content: start;
     justify-items: start;
+    justify-content: left;
 }
 
 
