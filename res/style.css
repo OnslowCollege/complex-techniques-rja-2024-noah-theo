@@ -252,10 +252,11 @@ body> :nth-of-type(2) {
     margin: auto;
     margin-top: 1px;
     margin-bottom: 0.5px;
-    align-items: left;
     align-content: left;
+    align-self: left;
+    align-content: left;
+    justify-self: left;
     justify-items: left;
-    justify-content: left;
 }
 
 
