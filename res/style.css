@@ -65,12 +65,6 @@ html {
     font-size: 14pt;
     font-weight: 400;
     justify-content: left;
-    align-content: left;
-    align-self: left;
-    align-content: left;
-    justify-self: left;
-    justify-tracks: left;
-    justify-items: left;
 }
 
 *[hidden] {
