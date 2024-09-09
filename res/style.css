@@ -235,6 +235,7 @@ html {
     flex-direction: row !important;
     align-items: flex-start !important;
     align-content: flex-start;
+    min-width: 30rem;
 
 }
 
