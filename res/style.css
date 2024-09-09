@@ -65,6 +65,9 @@ html {
     font-size: 14pt;
     font-weight: 400;
     justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-items: flex-start;
 }
 
 *[hidden] {
@@ -235,8 +238,6 @@ html {
     flex-direction: row !important;
     align-items: flex-start !important;
     align-content: flex-start;
-    min-width: 50rem;
-
 }
 
 body> :nth-of-type(2) {
@@ -254,11 +255,9 @@ body> :nth-of-type(2) {
     margin: auto;
     margin-top: 1px;
     margin-bottom: 0.5px;
-    align-content: left;
-    align-self: left;
-    align-content: left;
-    justify-self: left;
+    align-content: flex-start;
     justify-items: left;
+    justify-content: flex-start;
 }
 
 
