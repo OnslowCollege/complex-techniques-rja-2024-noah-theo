@@ -43,7 +43,7 @@ body {
 .remi-main img,
 .remi-main svg,
 .remi-main video {
-    vertical-align: left
+    vertical-align: flex-start
 }
 
 .remi-main textarea {
@@ -64,7 +64,7 @@ html {
     font-family: "Lucida Grande", "Helvetica", "Arial", sans-serif;
     font-size: 14pt;
     font-weight: 400;
-    justify-content: left;
+    justify-content: flex-start;
 }
 
 *[hidden] {
@@ -228,13 +228,13 @@ html {
     grid-auto-flow: column;
     grid-auto-columns: 0.5fr;
     column-gap: 8px;
-    justify-content: left !important;
+    justify-content: flex-start !important;
     position: fixed;
     display: grid !important;
     padding: 1rem;
     flex-direction: row !important;
-    align-items: left !important;
-    align-content: left;
+    align-items: flex-start !important;
+    align-content: flex-start;
 
 }
 
@@ -266,7 +266,7 @@ body> :nth-of-type(2) {
     background-color: #0d7221;
     ;
     height: 100%;
-    justify-content: left !important;
+    justify-content: flex-start !important;
 }
 
 .remi-main .HBox,
@@ -655,9 +655,9 @@ button::first-line {
     outline: 0;
     padding: 0;
     color: rgb(147, 50, 50);
-    -webkit-align-self: left;
-    -ms-flex-item-align: left;
-    align-self: left;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: flex-start;
     z-index: 1;
     cursor: pointer;
     height: 100%;
@@ -894,8 +894,8 @@ button::first-line {
     margin: 2px;
     display: flex;
     flex-direction: row;
-    align-items: left;
-    justify-content: left;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .remi-main .FileFolderItem .Label {
