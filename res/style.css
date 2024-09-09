@@ -65,6 +65,12 @@ html {
     font-size: 14pt;
     font-weight: 400;
     justify-content: left;
+    align-content: left;
+    align-self: left;
+    align-content: left;
+    justify-self: left;
+    justify-tracks: left;
+    justify-items: left;
 }
 
 *[hidden] {
@@ -183,13 +189,13 @@ html {
 
 .remi-main blockquote:before {
     position: absolute;
-    left: -.5em;
+    flex-start: -.5em;
     content: '�'
 }
 
 .remi-main blockquote:after {
     content: '�';
-    margin-left: -.05em
+    margin-flex-start: -.05em
 }
 
 .remi-main mark {
@@ -228,7 +234,7 @@ html {
     grid-auto-flow: column;
     grid-auto-columns: 0.5fr;
     column-gap: 8px;
-    justify-content: left !important;
+    justify-content: flex-start !important;
     position: fixed;
     display: grid !important;
     padding: 1rem;
@@ -246,16 +252,16 @@ body> :nth-of-type(2) {
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
+    flex-start: 0;
     right: 0;
     aspect-ratio: 4 / 3;
     margin: auto;
     margin-top: 1px;
     margin-bottom: 0.5px;
-    align-items: left;
-    align-content: left;
-    justify-items: left;
-    justify-content: left;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-items: flex-start;
+    justify-content: flex-start;
 }
 
 
@@ -266,14 +272,14 @@ body> :nth-of-type(2) {
     background-color: #0d7221;
     ;
     height: 100%;
-    justify-content: left !important;
+    justify-content: flex-start !important;
 }
 
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
     padding: 6px;
-    align-items: left;
+    align-items: flex-start;
 }
 
 .remi-main .VBox>.HBox {
@@ -332,7 +338,7 @@ body> :nth-of-type(2) {
     display: block;
     font-size: 95%;
     background: 0 0;
-    text-align: left;
+    text-align: flex-start;
     color: inherit;
     padding: 0;
     background-color: rgb(245, 245, 245);
@@ -385,8 +391,8 @@ select {
     border-radius: 3px !important;
     width: 100%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
-    padding-left: 8px;
-    background: linear-gradient(180deg, rgba(128, 128, 128, 0.75) 0%, rgba(226, 226, 226, 0.75) 1%, rgba(222, 222, 222, 0.75) 23%, rgba(209, 209, 209, 0.75) 36%, rgba(254, 254, 254, 0.75) 99%, rgba(128, 128, 128, 0.75) 100%) left / calc(100% - 32px) no-repeat, url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m15.99 5.992-5.711 8.525 11.491 0.032-5.78-8.557z"/><path d="m15.99 25.992-5.711-8.526 11.491-0.032-5.78 8.558z"/></svg>') right / 32px no-repeat, linear-gradient(180deg, rgba(7, 71, 156, 0.75) 0%, rgba(77, 160, 255, 0.75) 1%, rgba(202, 229, 255, 0.75) 4%, rgba(170, 211, 255, 0.75) 29%, rgba(61, 155, 255, 0.75) 31%, rgba(174, 255, 255, 0.75) 99%, rgba(14, 71, 162, 0.75) 100%) right / 32px no-repeat, rgba(255, 255, 255, 0.7);
+    padding-flex-start: 8px;
+    background: linear-gradient(180deg, rgba(128, 128, 128, 0.75) 0%, rgba(226, 226, 226, 0.75) 1%, rgba(222, 222, 222, 0.75) 23%, rgba(209, 209, 209, 0.75) 36%, rgba(254, 254, 254, 0.75) 99%, rgba(128, 128, 128, 0.75) 100%) flex-start / calc(100% - 32px) no-repeat, url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m15.99 5.992-5.711 8.525 11.491 0.032-5.78-8.557z"/><path d="m15.99 25.992-5.711-8.526 11.491-0.032-5.78 8.558z"/></svg>') right / 32px no-repeat, linear-gradient(180deg, rgba(7, 71, 156, 0.75) 0%, rgba(77, 160, 255, 0.75) 1%, rgba(202, 229, 255, 0.75) 4%, rgba(170, 211, 255, 0.75) 29%, rgba(61, 155, 255, 0.75) 31%, rgba(174, 255, 255, 0.75) 99%, rgba(14, 71, 162, 0.75) 100%) right / 32px no-repeat, rgba(255, 255, 255, 0.7);
 }
 
 select:disabled {
@@ -398,7 +404,7 @@ button:before,
 select:before {
     content: "";
     position: absolute;
-    left: 50%;
+    flex-start: 50%;
     transform: translateX(-50%);
     height: 33%;
     background: (8, 116, 15);
@@ -413,7 +419,7 @@ button:after,
 select:after {
     content: "";
     position: absolute;
-    left: 50%;
+    flex-start: 50%;
     transform: translateX(-50%);
     height: 33%;
     width: calc(100% - 1.25em);
@@ -497,7 +503,7 @@ button::first-line {
     font-family: "Lucida Grande", "Lucida Sans", "Helvetica", "Arial", sans-serif;
     padding: 0;
     /*background: 0 0;*/
-    text-align: left;
+    text-align: flex-start;
     background-color: white;
 }
 
@@ -577,7 +583,7 @@ button::first-line {
 
 .remi-main .Menu .Menu .Menu {
     top: 5%;
-    left: 95%;
+    flex-start: 95%;
     position: absolute;
 }
 
@@ -697,7 +703,7 @@ button::first-line {
 
 .remi-main input[type='range']::-ms-fill-upper {
     padding: 0;
-    background: linear-gradient(to left, transparent, transparent 16px, rgba(0, 0, 0, .26), rgba(0, 0, 0, .26)0)
+    background: linear-gradient(to flex-start, transparent, transparent 16px, rgba(0, 0, 0, .26), rgba(0, 0, 0, .26)0)
 }
 
 .remi-main input[type='range']::-webkit-slider-thumb {
@@ -796,7 +802,7 @@ button::first-line {
 }
 
 .remi-main .TabBox ul {
-    padding-left: 0;
+    padding-flex-start: 0;
     margin: 0px;
 }
 
@@ -854,7 +860,7 @@ button::first-line {
 }
 
 .remi-main .TreeItem[treeopen="true"] .TreeView {
-    padding-left: 18px;
+    padding-flex-start: 18px;
 }
 
 .remi-main .TreeItem:hover {
@@ -895,7 +901,7 @@ button::first-line {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: left;
+    justify-content: flex-start;
 }
 
 .remi-main .FileFolderItem .Label {
