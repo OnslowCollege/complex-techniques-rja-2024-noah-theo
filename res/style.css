@@ -261,10 +261,6 @@ body> :nth-of-type(2) {
     display: grid;
     grid-auto-flow: row;
     row-gap: 16px;
-    justify-content: left;
-    align-items: left;
-    align-self: left;
-    justify-self: left;
 }
 
 .remi-main .HBox,
@@ -272,6 +268,10 @@ body> :nth-of-type(2) {
     box-sizing: border-box;
     padding: 6px;
     align-items: left;
+    justify-content: left;
+    align-items: left;
+    align-self: left;
+    justify-self: left;
 }
 
 .remi-main .VBox>.HBox {
