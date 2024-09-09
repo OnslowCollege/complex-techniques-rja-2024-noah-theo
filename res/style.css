@@ -266,7 +266,7 @@ body> :nth-of-type(2) {
     background-color: #0d7221;
     ;
     height: 100%;
-    justify-content: start !important;
+    justify-content: flex-start !important;
 }
 
 .remi-main .HBox,
@@ -655,9 +655,9 @@ button::first-line {
     outline: 0;
     padding: 0;
     color: rgb(147, 50, 50);
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: flex-start;
     z-index: 1;
     cursor: pointer;
     height: 100%;
@@ -894,7 +894,7 @@ button::first-line {
     margin: 2px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
