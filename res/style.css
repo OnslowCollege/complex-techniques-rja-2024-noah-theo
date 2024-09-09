@@ -657,10 +657,11 @@ button::first-line {
     color: rgb(147, 50, 50);
     -webkit-align-self: flex-start;
     -ms-flex-item-align: flex-start;
-    align-self: flex-start;
+    align-self: left;
     z-index: 1;
     cursor: pointer;
     height: 100%;
+    justify-content: left;
 }
 
 .remi-main input[type='range']::-moz-focus-outer {
