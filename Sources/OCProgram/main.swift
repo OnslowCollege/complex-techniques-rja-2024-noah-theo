@@ -349,7 +349,7 @@ class BlackJackApp : OCApp{
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
         let masterVbox = OCVBox(controls: [dealerView, playerView, masterHBox])
-        let maincontainer = OCVBox(controls: [
+        let maincontainer = OCHBox(controls: [
             masterVbox, helpButton
         ])
 
