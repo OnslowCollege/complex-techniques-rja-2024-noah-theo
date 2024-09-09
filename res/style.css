@@ -240,11 +240,11 @@ html {
 
 body> :nth-of-type(2) {
     background: #0d7221;
-    justify-content: flex-start;
+    justify-content: start;
     transition: height 1s;
     width: 1024px;
     padding: 8px !important;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -254,6 +254,8 @@ body> :nth-of-type(2) {
     margin-top: 1px;
     margin-bottom: 0.5px;
     align-items: flex-start;
+    align-content: start;
+    justify-items: start;
 }
 
 
