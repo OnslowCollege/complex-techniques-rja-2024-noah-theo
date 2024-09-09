@@ -225,23 +225,17 @@ html {
 }
 
 .remi-main .HBox {
+    display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 0.5fr;
     column-gap: 8px;
-    justify-content: flex-start !important;
-    position: fixed;
-    display: grid !important;
-    padding: 1rem;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    align-content: flex-start;
 
 }
 
 body> :nth-of-type(2) {
     background: #0d7221;
     transition: height 1s;
-    width: 1024px;
+    width: 80%;
+    max-width: 1024px;
     padding: 8px !important;
     position: fixed;
     top: 0;
