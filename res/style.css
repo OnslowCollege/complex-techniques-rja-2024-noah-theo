@@ -43,7 +43,7 @@ body {
 .remi-main img,
 .remi-main svg,
 .remi-main video {
-    vertical-align: center
+    vertical-align: flex-start
 }
 
 .remi-main textarea {
@@ -64,7 +64,7 @@ html {
     font-family: "Lucida Grande", "Helvetica", "Arial", sans-serif;
     font-size: 14pt;
     font-weight: 400;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 *[hidden] {
