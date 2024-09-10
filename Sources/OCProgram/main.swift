@@ -400,7 +400,7 @@ class BlackJackApp : OCApp{
         allInButton.enabled = false
     }
 
-        func ShowRulesStrategy(button: any OCControlClickable) {
+        func showRulesStrategy(button: any OCControlClickable) {
             self.playerView.visible = false
             self.dealerView.visible = false
         }
@@ -422,7 +422,7 @@ class BlackJackApp : OCApp{
         self.doubleButton.onClick(self.doubleDown)
         self.insuranceButton.onClick(self.takeInsurance)
         self.allInButton.onClick(self.allInButton)
-        self.helpButton.onClick(self.ShowRulesStrategy)
+        self.helpButton.onClick(self.showRulesStrategy)
        
 
         deck = shuffleDeck(deck: generateDeck())
