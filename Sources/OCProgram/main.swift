@@ -48,6 +48,18 @@ class BlackJackApp : OCApp{
     var insuranceBet: Int = 0
     var hashit: Bool = false
     let helpButton = OCButton(text: "?")
+    let helpMenuButton = OCLabel(text: "Show Strategy")
+    let closeMenuButton = OCLabel(text: "Close")
+    var menuLabel = OCLabel(text: "Blackjack Rules:")
+    let helpLabel = OCLabel(text: """
+    HELP
+    BLACKJACK
+    ONSLOW
+    HELP
+    MUST
+    WIN
+    BLACKJACK
+    """)
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -400,12 +412,14 @@ class BlackJackApp : OCApp{
         allInButton.enabled = false
     }
 
-        func showRulesStrategy(button: any OCControlClickable) {
-            var savedPlayerView = playerView
-            var savedDealerView = dealerView
-            self.playerView.empty()
-            self.dealerView.empty()
-        }
+    func showRulesStrategy(button: any OCControlClickable) {
+        var savedPlayerView = playerView
+        var savedDealerView = dealerView
+        self.playerView.empty()
+        self.dealerView.empty()
+        let helpVbox = OCVBox(controls: [menuLabel, helpMenuButton, helpLabel, closeMenuButton])
+        self.playerView.append(helpVbox)
+    }
 
 
 
