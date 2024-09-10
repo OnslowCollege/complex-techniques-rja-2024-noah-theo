@@ -52,13 +52,13 @@ class BlackJackApp : OCApp{
     let closeMenuButton = OCLabel(text: "Close")
     var menuLabel = OCLabel(text: "Blackjack Rules:")
     let helpLabel = OCLabel(text: """
-    HELP
-    BLACKJACK
-    ONSLOW
-    HELP
-    MUST
-    WIN
-    BLACKJACK
+    WILL
+    THIS
+    LABEL
+    WORK
+    OVER
+    MULTIPLE
+    LINES?
     """)
 
     func generateDeck() -> [Card] {
@@ -417,7 +417,8 @@ class BlackJackApp : OCApp{
         var savedDealerView = dealerView
         self.playerView.empty()
         self.dealerView.empty()
-        let helpVbox = OCVBox(controls: [menuLabel, helpMenuButton, helpLabel, closeMenuButton])
+        let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
+        let helpVbox = OCVBox(controls: [menuLabel, helpLabel, helpHbox])
         self.playerView.append(helpVbox)
     }
 
