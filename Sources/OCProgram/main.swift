@@ -401,8 +401,10 @@ class BlackJackApp : OCApp{
     }
 
         func showRulesStrategy(button: any OCControlClickable) {
-            self.playerView.visible = false
-            self.dealerView.visible = false
+            var savedPlayerView = playerView
+            var savedDealerView = dealerView
+            self.playerView.empty()
+            self.dealerView.empty()
         }
 
 
