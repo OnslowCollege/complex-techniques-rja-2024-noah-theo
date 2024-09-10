@@ -306,6 +306,8 @@ class BlackJackApp : OCApp{
         hitPlayer(button: button)
 
         if calculateScore(cards: playerCards) > 21{
+            currentBet /= 2
+            updatesBets()
             return
         }
 
@@ -315,6 +317,9 @@ class BlackJackApp : OCApp{
         doubleButton.enabled = false
 
         standPlayer(button: button)
+
+        currentBet /= 2
+        updatesBets()
     }
 
     func takeInsurance(button: any OCControlClickable) {
@@ -420,8 +425,8 @@ class BlackJackApp : OCApp{
         playerView.append(betLabel)
 
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
-        let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
-        let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
+        let splitInsuranceVBox = OCVBox(controls: [dealButton, insuranceButton])
+        let dealDoubleVBox = OCVBox(controls: [allInButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
