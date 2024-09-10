@@ -364,25 +364,32 @@ class BlackJackApp : OCApp{
 
     func increaseBet(button: any OCControlClickable) {
         if currentBet + 5 <= bankroll {
-            increaseButton.enabled = true
             currentBet += 5
             self.defaultLabel.text = "Default Bet: \(currentBet)"
             updatesBets()
-        } else {
-            increaseButton.enabled = false
-        }
 
+            if currentBet > 5{
+                decreaseButton.enabled = true
+            }
+        }
+        if currentBet + 5 > bankroll {
+            increaseButton.enabled = false 
+        }
     }
 
     func decreaseBet(button: any OCControlClickable) {
         if currentBet > 5 {
             currentBet -= 5
-            decreaseButton.enabled = true
-        } else {
+            self.defaultLabel.text = "Default Bet: \(currentBet)"
+            updatesBets()
+
+            if currentBet + 5 <= bankroll {
+                increaseButton.enabled = true
+            }
+        }
+        if currentBet <= 5 {
             decreaseButton.enabled = false
         }
-        self.defaultLabel.text = "Default Bet: \(currentBet)"
-        updatesBets()
     }
 
     func allInButton(button: any OCControlClickable) {
