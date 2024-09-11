@@ -51,44 +51,8 @@ class BlackJackApp : OCApp{
     let helpMenuButton = OCButton(text: "Show Strategy")
     let closeMenuButton = OCButton(text: "Close")
     var menuLabel = OCLabel(text: "Blackjack Rules:")
-    var maincontainer = OCHBox(controls: [OCLabel(text: "")])
-    var savedContainer = OCHBox(controls: [OCLabel(text: "")])
-    let helpLabel = OCLabel(text: 
-    """
-        Card Values:
-        Number cards (2-10): Face value.
-        Face cards (King, Queen, Jack): 10 points.
-        Ace: 1 or 11 points (whichever benefits the hand).
-
-        Gameplay:
-        The player and dealer are each dealt two cards. The player's cards are both face-up, while the dealer has one face-up card and one face-down card. 
-        The player must decide how to play their hand based on the sum of their cards and the dealer’s  face-up card.
-
-        Player's Actions:
-        Hit: Take another card.
-        Stand: Keep the current hand and end the turn.
-        Double: Double the original bet, receive one additional card, and then stand.
-        Insurance: If the dealer’s upcard is an Ace, the player can take "insurance" against the dealer having Blackjack. If the dealer has Blackjack,
-        the insurance bet pays 2:1, but the player loses the original bet.
-
-        Dealer's Actions:
-        The dealer reveals their face-down card once the player has finished their turn.
-        The dealer must hit until their hand totals 17 or higher. 
-
-        Winning Conditions:
-        Blackjack: An Ace and any 10-point card dealt to the player in the first two cards. 
-        This is an automatic win unless the dealer also has Blackjack (in which case it's a tie).
-        Bust: If the player's or dealer’s hand exceeds 21, they lose.
-        Compare Hands: If neither busts, the hand closest to 21 wins.
-        Tie: If the player and dealer have the same hand value, the bet is returned (no win or loss).
-
-        Betting:
-        Win: If the player wins the hand by beating the dealer, they get paid 1:1 on their bet. This means they receive an amount equal to their original bet in 
-        addition to their bet being returned. 
-        Blackjack: If the player gets a Blackjack and the dealer doesn’t also have Blackjack, the player is paid 3:2. 
-        Tie: If the player and the dealer have the same hand value, it's a tie. In this case, the player’s bet is returned, and no credits are won or lost.
-        Loss: If the player loses to the dealer, their bet is forfeited
-    """)
+    var masterVBox = OCVBox(controls: [OCLabel(text: "")])
+    var savedMasterVbox = OCVBox(controls: [OCLabel(text: "")])
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -441,23 +405,21 @@ class BlackJackApp : OCApp{
     }
 
     func showRulesStrategy(button: any OCControlClickable) {
-        self.savedContainer = maincontainer
-        self.maincontainer.empty()
+        self.savedMasterVbox = masterVBox
+        self.masterVBox.empty()
         OCDialog(title: "Help", message: "\(helpLabel)", app: self).show()
         let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
         let helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rules.png"), helpHbox])
-        self.maincontainer.append(helpVbox)
+        self.masterVBox.append(helpVbox)
     }
 
     func closeButton(button: any OCControlClickable) {
-        self.maincontainer.empty()
-        self.maincontainer = savedContainer
-        print("\(maincontainer)")
+        self.masterVBox = savedMasterVbox
     }
 
 
-
     override open func main(app: any OCAppDelegate) -> OCControl {
+        
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
@@ -472,7 +434,7 @@ class BlackJackApp : OCApp{
         self.insuranceButton.onClick(self.takeInsurance)
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
-        self.closeMenuButton.onClick(self.closeButton)
+       
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
@@ -485,11 +447,11 @@ class BlackJackApp : OCApp{
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
-        let masterVBox = OCVBox(controls: [
+         self.masterVBox = OCVBox(controls: [
             dealerView, playerView, masterHBox
         ])
 
-        self.maincontainer = OCHBox(controls: [
+        let maincontainer = OCHBox(controls: [
             masterVBox, helpButton
         ])
 
