@@ -447,7 +447,13 @@ button:active {
     border: 2px solid #FFFFFF;
 }
 
-
+img {
+    margin: 0.2rem;
+    position: fixed;
+    size: 20%;
+    padding: 0.2rem;
+    justify-content: center;
+}
 
 .help-button {
     position: fixed;
