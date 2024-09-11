@@ -340,6 +340,7 @@ class BlackJackApp : OCApp{
         insuranceBet = currentBet / 2
         bankroll -= insuranceBet
         playerView.append(OCLabel(text: "Insurance Bet Placed: \(insuranceBet)"))
+        OCDialog(title: "Insurance Bet Placed", message: "Insurance Bet Placed: \(insuranceBet)", app: self).show()
         updatesBankroll()
 
 
@@ -347,10 +348,8 @@ class BlackJackApp : OCApp{
 
         if dealerHasBlackjack {
             // dealer has blackjack.
-            playerView.append(OCLabel(text: "Dealer has Blackjack! Insurance pays 2:1. "))
-            playerView.append(OCLabel(text: "You get \(insuranceBet * 2) from the insurance."))
+            OCDialog(title: "Insurance", message: "Dealer has Blackjack! Insurance pays 2:1. You get \(insuranceBet * 2) from the insurance, but you lose your main bet.", app: self).show()
             bankroll += insuranceBet * 2
-            playerView.append(OCLabel(text: "But you lose your main bet."))
             result = "lost"
             playerView.append(resetButton)
             updatesBankroll()
@@ -358,7 +357,7 @@ class BlackJackApp : OCApp{
             dealerSecondCardHidden = false
             updateDealerScore()
         } else {
-            playerView.append(OCLabel(text: "Dealer does not have Blackjack. You lose your insurance bet."))
+            OCDialog(title: "Insurance", message: "Dealer does not have Blackjack. You lose your insurance bet.", app: self).show()
             insuranceBet = 0
             updatesBankroll()
 
