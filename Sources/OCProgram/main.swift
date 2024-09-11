@@ -419,6 +419,7 @@ class BlackJackApp : OCApp{
         let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
         let helpVbox = OCVBox(controls: [menuLabel, helpLabel, helpHbox])
         self.playerView.append(helpVbox)
+        self.playerView.append(OCImageView(filename: "rules.png"))
     }
 
 
