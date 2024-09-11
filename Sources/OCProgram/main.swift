@@ -453,7 +453,6 @@ Loss: If the player loses to the dealer, their bet is forfeited
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
-        
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
@@ -468,7 +467,7 @@ Loss: If the player loses to the dealer, their bet is forfeited
         self.insuranceButton.onClick(self.takeInsurance)
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
-       
+        self.closeMenuButton.onClick(self.closeButton)
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
