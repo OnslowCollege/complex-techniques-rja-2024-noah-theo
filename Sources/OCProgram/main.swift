@@ -440,8 +440,7 @@ Blackjack: If the player gets a Blackjack and the dealer doesn’t also have Bla
 Tie: If the player and the dealer have the same hand value, it's a tie. In this case, the player’s bet is returned, and no credits are won or lost.
 Loss: If the player loses to the dealer, their bet is forfeited
 """, app: self).show()
-        savedMasterVbox = masterVBox
-        self.masterVBox.empty()
+        self.masterVBox.visible = false
         let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
         let helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rules.png"), helpHbox])
         self.masterVBox.append(helpVbox)
