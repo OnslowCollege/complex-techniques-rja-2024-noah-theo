@@ -51,8 +51,8 @@ class BlackJackApp : OCApp{
     let helpMenuButton = OCButton(text: "Show Strategy")
     let closeMenuButton = OCButton(text: "Close")
     var menuLabel = OCLabel(text: "Blackjack Rules:")
-    var masterVBox = OCVBox(controls: [OCLabel(text: "")])
-    var savedMasterVbox = OCVBox(controls: [OCLabel(text: "")])
+    var masterVBox = OCVBox(controls: [])
+    var helpVbox = OCVBox(controls: [])
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -441,11 +441,10 @@ Tie: If the player and the dealer have the same hand value, it's a tie. In this 
 Loss: If the player loses to the dealer, their bet is forfeited
 """, app: self).show()
         self.masterVBox.visible = false
+        self.helpVbox.visible = true
     }
 
     func closeButton(button: any OCControlClickable) {
-        self.masterVBox = savedMasterVbox
-        print("\(savedMasterVbox)")
     }
 
 
@@ -470,14 +469,14 @@ Loss: If the player loses to the dealer, their bet is forfeited
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         playerView.append(betLabel)
         let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
-        let helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rules.png"), helpHbox])
+        self.helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rules.png"), helpHbox])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
-        helpVbox.visible = false
+        self.helpVbox.visible = false
         self.masterVBox = OCVBox(controls: [
             dealerView, playerView, masterHBox
         ])
