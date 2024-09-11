@@ -449,7 +449,7 @@ button:active {
 
 img {
     width: 7.313rem;
-    height: 10.969rem;
+    height: auto;
     margin: 0.2rem;
     position: fixed;
     padding: 0.2rem;
