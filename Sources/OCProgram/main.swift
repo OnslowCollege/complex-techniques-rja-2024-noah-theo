@@ -51,7 +51,7 @@ class BlackJackApp : OCApp{
     let helpMenuButton = OCLabel(text: "Show Strategy")
     let closeMenuButton = OCLabel(text: "Close")
     var menuLabel = OCLabel(text: "Blackjack Rules:")
-    var masterVBox = OCVBox(controls: [OCLabel(text: "")])
+    var maincontainer = OCHBox(controls: [OCLabel(text: "")])
     let helpLabel = OCLabel(text: 
     """
         Card Values:
@@ -440,12 +440,12 @@ class BlackJackApp : OCApp{
     }
 
     func showRulesStrategy(button: any OCControlClickable) {
-        var savedMasterHbox = masterVBox
-        self.masterVBox.empty()
+        var savedContainer = maincontainer
+        self.maincontainer.empty()
         OCDialog(title: "Help", message: "\(helpLabel)", app: self).show()
         let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
         let helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rules.png"), helpHbox])
-        self.masterVBox.append(helpVbox)
+        self.maincontainer.append(helpVbox)
     }
 
 
@@ -479,11 +479,11 @@ class BlackJackApp : OCApp{
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
 
-         self.masterVBox = OCVBox(controls: [
+        let masterVBox = OCVBox(controls: [
             dealerView, playerView, masterHBox
         ])
 
-        let maincontainer = OCHBox(controls: [
+        self.maincontainer = OCHBox(controls: [
             masterVBox, helpButton
         ])
 
