@@ -442,9 +442,13 @@ Loss: If the player loses to the dealer, their bet is forfeited
 """, app: self).show()
         self.masterVBox.visible = false
         self.helpVbox.visible = true
+        self.helpButton.visible = false
     }
 
     func closeButton(button: any OCControlClickable) {
+        self.helpVbox.visible = false
+        self.masterVBox.visible = true
+        self.helpButton.visible = true
     }
 
 
