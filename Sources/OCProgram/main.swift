@@ -452,12 +452,12 @@ class BlackJackApp : OCApp{
     func closeButton(button: any OCControlClickable) {
         self.maincontainer.empty()
         self.maincontainer = savedContainer
+        print("\(maincontainer)")
     }
 
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
-        
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
