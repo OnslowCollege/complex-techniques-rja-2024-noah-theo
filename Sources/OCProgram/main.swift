@@ -441,9 +441,6 @@ Tie: If the player and the dealer have the same hand value, it's a tie. In this 
 Loss: If the player loses to the dealer, their bet is forfeited
 """, app: self).show()
         self.masterVBox.visible = false
-        let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
-        let helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rules.png"), helpHbox])
-        self.masterVBox.append(helpVbox)
     }
 
     func closeButton(button: any OCControlClickable) {
@@ -472,20 +469,21 @@ Loss: If the player loses to the dealer, their bet is forfeited
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         playerView.append(betLabel)
-
+        let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
+        let helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rules.png"), helpHbox])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
-
-         self.masterVBox = OCVBox(controls: [
+        helpVbox.visible = false
+        self.masterVBox = OCVBox(controls: [
             dealerView, playerView, masterHBox
         ])
 
         let maincontainer = OCHBox(controls: [
-            masterVBox, helpButton
+            masterVBox, helpVbox, helpButton
         ])
 
         return maincontainer
