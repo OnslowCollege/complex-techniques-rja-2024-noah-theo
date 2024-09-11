@@ -48,8 +48,8 @@ class BlackJackApp : OCApp{
     var insuranceBet: Int = 0
     var hashit: Bool = false
     let helpButton = OCButton(text: "?")
-    let helpMenuButton = OCLabel(text: "Show Strategy")
-    let closeMenuButton = OCLabel(text: "Close")
+    let helpMenuButton = OCButton(text: "Show Strategy")
+    let closeMenuButton = OCButton(text: "Close")
     var menuLabel = OCLabel(text: "Blackjack Rules:")
     var maincontainer = OCHBox(controls: [OCLabel(text: "")])
     var savedContainer = OCHBox(controls: [OCLabel(text: "")])
@@ -472,7 +472,7 @@ class BlackJackApp : OCApp{
         self.insuranceButton.onClick(self.takeInsurance)
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
-       
+        self.closeMenuButton.onClick(self.closeButton)
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
