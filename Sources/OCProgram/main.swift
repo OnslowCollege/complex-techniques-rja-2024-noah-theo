@@ -70,6 +70,7 @@ class BlackJackApp : OCApp{
         return deck.shuffled()
     }
 
+
     /// Takes list of cards an calculate score in blackjack terms.
     func calculateScore(cards: [Card]) -> Int {
         var score = 0
@@ -102,7 +103,7 @@ class BlackJackApp : OCApp{
         let playerVbox = OCVBox(controls: [OCLabel(text: "Player Cards: ")])
         playerVbox.append(betLabel)
         playerView.append(playerVbox)
-        
+
         for card in playerCards {
             playerView.append(OCImageView(filename: card.image))
         }
@@ -120,6 +121,7 @@ class BlackJackApp : OCApp{
         // Re add everything as updated.
         let dealerVbox = OCVBox(controls: [OCLabel(text: "Dealer Cards: ")])
         dealerView.append(dealerVbox)
+
         for (index, card) in dealerCards.enumerated() {
             if dealerSecondCardHidden && index == 1 {
                 dealerView.append(OCImageView(filename: "back.png"))
@@ -140,6 +142,7 @@ class BlackJackApp : OCApp{
             playerView.append(OCLabel(text: "Insufficent balance to place this bet."))
             return
         }
+
         // Reset cards and views and enable correct buttons.
         playerCards = []
         dealerCards = []
@@ -252,6 +255,7 @@ class BlackJackApp : OCApp{
         increaseButton.enabled = true
         decreaseButton.enabled = true
         allInButton.enabled = true
+      
         // Check if deck needs to be reset and shuffled.
         if currentCard > 42 {
             deck.shuffle()
@@ -470,11 +474,13 @@ class BlackJackApp : OCApp{
         self.standButton.onClick(self.standPlayer)
         self.increaseButton.onClick(self.increaseBet)
         self.decreaseButton.onClick(self.decreaseBet)
+
         self.doubleButton.onClick(self.doubleDown)
         self.insuranceButton.onClick(self.takeInsurance)
         self.allInButton.onClick(self.allInButton)
         
         // Generate deck correctly.
+
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         playerView.append(betLabel)
@@ -495,3 +501,4 @@ class BlackJackApp : OCApp{
 }
 
 BlackJackApp().start()
+

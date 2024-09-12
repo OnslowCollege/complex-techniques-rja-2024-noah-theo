@@ -1,9 +1,20 @@
 @charset "UTF-8";
 /* latin */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     background-color: #0d7221;
+    font-family: 'Exo 2', sans-serif;
 }
+
+.bold-font-regular {
+    font-family: "Exo 2";
+    font-weight: 900; /* Adjusted to make the text bold */
+    font-style: normal;
+}
+
+
+
 
 .remi-main input[type='checkbox']:focus,
 .remi-main input[type='color']:focus,
@@ -32,7 +43,7 @@ body {
 .remi-main img,
 .remi-main svg,
 .remi-main video {
-    vertical-align: middle
+    vertical-align: left
 }
 
 .remi-main textarea {
@@ -89,7 +100,7 @@ html {
     font-size: 400%;
     line-height: 1.35;
     letter-spacing: -.02em;
-    margin: 24px 0
+    margin: 12px 0
 }
 
 .remi-main h1,
@@ -105,12 +116,12 @@ html {
 
 .remi-main h2,
 .remi-main h3 {
-    margin: 24px 0
+    margin: 12px 0
 }
 
 .remi-main h3 {
     font-size: 240%;
-    line-height: 40px
+    line-height: 20px
 }
 
 .remi-main h3,
@@ -123,7 +134,7 @@ html {
     font-size: 170%;
     line-height: 32px;
     -moz-osx-font-smoothing: grayscale;
-    margin: 24px 0 16px
+    margin: 12px 0 8px
 }
 
 .remi-main h5 {
@@ -136,7 +147,7 @@ html {
 .remi-main h5,
 .remi-main h6 {
     font-family: "Lucida Grande", "Helvetica", "Arial", sans-serif;
-    margin: 24px 0 16px
+    margin: 12px 0 8px
 }
 
 .remi-main h6 {
@@ -155,7 +166,8 @@ html {
 }
 
 .remi-main a {
-    color: rgba(255, 0, 0, 0.8);
+    background-color: #0d7221;
+    ;
     font-weight: 500
 }
 
@@ -208,14 +220,14 @@ html {
 
 .remi-main div {
     display: grid;
-    padding: 8px 0;
+    padding: 4px 0;
     z-index: 0;
 }
 
 .remi-main .HBox {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    column-gap: 24px;
+    column-gap: 8px;
     justify-content: none !important;
     display: grid !important;
     flex-direction: none !important;
@@ -224,19 +236,19 @@ html {
 
 body> :nth-of-type(2) {
     background: #0d7221;
-    margin-top: 32px;
+    ;
     transition: height 1s;
     width: 1024px;
-    padding: 32px !important;
+    padding: 8px !important;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     aspect-ratio: 4 / 3;
     margin: auto;
-    margin-top: 64px;
-    margin-bottom: 64px;
+    margin-top: 1px;
+    margin-bottom: 0.5px;
 }
 
 
@@ -245,6 +257,7 @@ body> :nth-of-type(2) {
     grid-auto-rows: 1fr;
     row-gap: 16px;
     background-color: #0d7221;
+    ;
     height: 100%;
     justify-content: start !important;
 }
@@ -252,11 +265,11 @@ body> :nth-of-type(2) {
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
-    padding: 24px;
+    padding: 6px;
 }
 
-.remi-main .VBox > .HBox {
-    padding: 8px !important;
+.remi-main .VBox>.HBox {
+    padding: 4px !important;
 }
 
 .remi-main>* {
@@ -337,22 +350,27 @@ body> :nth-of-type(2) {
 button,
 select {
     grid-row: 1;
-    -webkit-text-fill-color: rgb(8, 116, 15);
-    font-size: 64pt;
-    font-family: "Tarif", serif;
-    min-height: 1.9em;
-    max-height: 1.9em;
-    min-width: 5em;
-    border: 0;
-    border-radius: 85px;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-size: 20pt;
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+    min-height: 3rem;
+    max-height: 3rem;
+    min-width: 10rem;
+    max-width: 20rem;
+    text-align: center;
+    border-radius: 0.4rem;
     position: relative !important;
     overflow: hidden;
-    cursor: default;
+    cursor: pointer;
     outline: none;
-    background: rgb(#ffffff);
-    box-shadow: 0.1em 0.1em 0.1em 0.1em rgba(42, 46, 43);
-    margin: 10px;
+    background: #8e0000;
+    margin: 0.2rem;
+    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #8e0000;
 }
+
 
 select {
     appearance: none;
@@ -398,7 +416,32 @@ select:after {
 
 button:focus,
 button:active {
-    box-shadow: 0 0.375em 0.5em rgba(4, 72, 9), 0 0.125em 0.125em rgba(4, 72, 9), inset 0 0.25em 0.25em rgba(4, 72, 9), inset 0 0.375em 0.5em 0.25em #BBBBBB, 0 0 0.5em rgba(4, 72, 9);
+    grid-row: 1;
+    -webkit-text-fill-color: #8e0000;
+    font-size: 20pt;
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+    min-height: 3rem;
+    max-height: 3rem;
+    min-width: 10rem;
+    max-width: 20rem;
+    text-align: center;
+    border-radius: 0.4rem;
+    position: relative !important;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    background: #FFFFFF;
+    margin: 0.2rem;
+    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #FFFFFF;
+}
+
+img {
+    width: 117px;
+    height: 175.5px;
+    margin: 2px;
 }
 
 button::first-line {
@@ -796,7 +839,26 @@ button::first-line {
 }
 
 .remi-main .Label {
-    min-height: 14pt;
+    grid-row: 1;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+    font-size: 20pt;
+    min-height: 3rem;
+    max-height: 3rem;
+    min-width: 15rem;
+    max-width: 30rem;
+    text-align: center;
+    border-radius: 0.4rem;
+    position: relative !important;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    background: #8e0000;
+    margin: 0.2rem;
+    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #8e0000
 }
 
 .remi-main .FileFolderItem {
