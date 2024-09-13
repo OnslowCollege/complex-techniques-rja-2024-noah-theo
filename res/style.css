@@ -257,8 +257,8 @@ body> :nth-of-type(2) {
     align-content: flex-end;
     justify-items: flex-end;
     justify-content: flex-end;
-    min-width: fit-content;
-    min-height: fit-content;
+    min-width: max-content;
+    min-height: max-content;
 }
 
 img {
