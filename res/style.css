@@ -446,7 +446,7 @@ button:active {
 
 img {
     width: auto;
-    height: auto;
+    transform: scale(0.4);
     margin: 0.2rem;
     position: relative;
     padding: 0.2rem;
