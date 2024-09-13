@@ -255,9 +255,9 @@ body> :nth-of-type(2) {
     margin-bottom: 1rem;
     margin-right: 1rem;
     margin-left: 1rem;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
+    align-content: flex-end;
+    justify-items: flex-end;
+    justify-content: flex-end;
     min-width: fit-content;
     min-height: fit-content;
 }
