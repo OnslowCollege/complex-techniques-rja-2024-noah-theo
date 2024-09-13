@@ -877,7 +877,7 @@ button::first-line {
     -webkit-text-fill-color: rgb(255, 255, 255);
     font-family: 'Exo 2';
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-    font-size: 1vw;
+    font-size: 2vw;
     min-height: 3rem;
     min-width: 15rem;
     text-align: center;
