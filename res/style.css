@@ -253,7 +253,7 @@ body> :nth-of-type(2) {
     margin: auto;
     margin-top: 1px;
     margin-bottom: 0.5px;
-    margin-right: 5rem;
+    margin-right: 1rem;
     align-content: flex-start;
     justify-items: flex-start;
     justify-content: flex-start;
@@ -877,7 +877,7 @@ button::first-line {
     -webkit-text-fill-color: rgb(255, 255, 255);
     font-family: 'Exo 2';
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-    font-size: 20pt;
+    font-size: 1vw;
     min-height: 3rem;
     min-width: 15rem;
     text-align: center;
@@ -890,7 +890,7 @@ button::first-line {
     margin: 0.2rem;
     box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #8e0000
+    border: 0.125rem solid #8e0000
 }
 
 .remi-main .FileFolderItem {
