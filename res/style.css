@@ -254,9 +254,10 @@ body> :nth-of-type(2) {
     margin: auto;
     margin-top: 1px;
     margin-bottom: 0.5px;
-    align-content: flex-start;
+    align-content: left;
     justify-items: left;
-    justify-content: flex-start;
+    justify-content: left;
+    min-width: fit-content;
 }
 
 
@@ -880,7 +881,7 @@ button::first-line {
     min-width: 15rem;
     text-align: center;
     border-radius: 0.4rem;
-    position: fixed !important;
+    position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
