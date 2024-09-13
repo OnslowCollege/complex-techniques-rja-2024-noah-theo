@@ -283,7 +283,7 @@ img {
 .remi-main .VBox {
     box-sizing: border-box;
     padding: 6px;
-    align-items: left;
+    align-items: flex-start;
 }
 
 .remi-main .VBox>.HBox {
