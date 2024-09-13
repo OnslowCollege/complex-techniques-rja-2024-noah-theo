@@ -243,10 +243,9 @@ html {
 body> :nth-of-type(2) {
     background: #0d7221;
     transition: height 1s;
-    width: 80%; /* Adjust to fit smaller screens */
-    max-width: 1024px;
+    width: 70%; /* Adjust to fit smaller screens */
     padding: 8px !important;
-    position: fixed;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
@@ -881,7 +880,7 @@ button::first-line {
     min-width: 15rem;
     text-align: center;
     border-radius: 0.4rem;
-    position: relative !important;
+    position: fixed !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
