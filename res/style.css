@@ -263,9 +263,9 @@ body> :nth-of-type(2) {
 }
 
 img {
-    height: 40%;
-    width: auto;
+    margin: 0.2rem;
     position: relative;
+    padding: 0.2rem;
 }
 
 .remi-main .VBox {
