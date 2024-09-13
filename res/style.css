@@ -444,13 +444,7 @@ button:active {
     border: 0.125rem solid #8e0000
 }
 
-img {
-    width: auto;
-    height: 40%;
-    margin: 0.2rem;
-    position: relative;
-    padding: 0.2rem;
-}
+
 
 .help-button {
     position: fixed;
