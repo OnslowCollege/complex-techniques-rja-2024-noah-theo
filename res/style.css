@@ -877,20 +877,20 @@ button::first-line {
     -webkit-text-fill-color: rgb(255, 255, 255);
     font-family: 'Exo 2';
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-    font-size: 2vw;
-    min-height: 3rem;
-    min-width: 15rem;
+    font-size: 15pt;
+    min-height: 2.25rem;
+    min-width: 11.25rem;
     text-align: center;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
     background: #8e0000;
-    margin: 0.2rem;
-    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    margin: 0.15rem;
+    box-shadow: 0.225em 0.225em 0.225em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 0.125rem solid #8e0000
+    border: 0.125rem solid #6d0000
 }
 
 .remi-main .FileFolderItem {
