@@ -254,10 +254,12 @@ body> :nth-of-type(2) {
     margin: auto;
     margin-top: 1px;
     margin-bottom: 0.5px;
-    align-content: left;
-    justify-items: left;
-    justify-content: left;
+    margin-right: 5rem;
+    align-content: flex-start;
+    justify-items: flex-start;
+    justify-content: flex-start;
     min-width: fit-content;
+    min-height: fit-content;
 }
 
 
