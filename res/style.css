@@ -43,7 +43,9 @@ body {
 .remi-main img,
 .remi-main svg,
 .remi-main video {
-    vertical-align: flex-start
+    vertical-align: flex-start;
+    padding: 0.1rem;
+    margin: 0.1rem;
 }
 
 .remi-main textarea {
