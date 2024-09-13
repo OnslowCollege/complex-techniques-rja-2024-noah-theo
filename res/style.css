@@ -251,16 +251,24 @@ body> :nth-of-type(2) {
     right: 0;
     aspect-ratio: 4 / 3;
     margin: auto;
-    margin-top: 1px;
-    margin-bottom: 0.5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     margin-right: 1rem;
-    align-content: flex-start;
-    justify-items: flex-start;
+    margin-left: 1rem;
+    align-content: center;
+    justify-items: center;
     justify-content: center;
     min-width: fit-content;
     min-height: fit-content;
 }
 
+img {
+    height: 40%;
+    width: auto;
+    margin: 0.2rem;
+    position: relative;
+    padding: 0.2rem;
+}
 
 .remi-main .VBox {
     grid-auto-flow: row;
