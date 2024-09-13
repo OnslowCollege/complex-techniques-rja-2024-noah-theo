@@ -361,24 +361,22 @@ button,
 select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(255, 255, 255);
-    font-size: 20pt;
     font-family: 'Exo 2';
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-    min-height: 3rem;
-    max-height: 3rem;
-    min-width: 10rem;
-    max-width: 20rem;
+    font-size: 15pt;
+    min-height: 2.25rem;
+    min-width: 11.25rem;
     text-align: center;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
     background: #8e0000;
-    margin: 0.2rem;
-    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    margin: 0.15rem;
+    box-shadow: 0.225em 0.225em 0.225em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #8e0000;
+    border: 0.125rem solid #8e0000
 }
 
 
@@ -428,33 +426,30 @@ button:focus,
 button:active {
     grid-row: 1;
     -webkit-text-fill-color: #8e0000;
-    font-size: 20pt;
     font-family: 'Exo 2';
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-    min-height: 3rem;
-    max-height: 3rem;
-    min-width: 10rem;
-    max-width: 20rem;
+    font-size: 15pt;
+    min-height: 2.25rem;
+    min-width: 11.25rem;
     text-align: center;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
     background: #FFFFFF;
-    margin: 0.2rem;
-    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    margin: 0.15rem;
+    box-shadow: 0.225em 0.225em 0.225em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #FFFFFF;
+    border: 0.125rem solid #8e0000
 }
 
 img {
-    width: 7.313rem;
-    height: 10.969rem;
+    width: auto;
+    height: auto;
     margin: 0.2rem;
-    position: fixed;
+    position: relative;
     padding: 0.2rem;
-    justify-content: center;
 }
 
 .help-button {
@@ -890,7 +885,7 @@ button::first-line {
     margin: 0.15rem;
     box-shadow: 0.225em 0.225em 0.225em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 0.125rem solid #6d0000
+    border: 0.125rem solid #8e0000
 }
 
 .remi-main .FileFolderItem {
