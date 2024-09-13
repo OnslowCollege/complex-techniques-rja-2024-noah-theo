@@ -254,11 +254,11 @@ body> :nth-of-type(2) {
     margin-bottom: 1rem;
     margin-right: -2rem;
     margin-left: 1rem;
-    align-content: flex-end;
-    justify-items: flex-end;
-    justify-content: flex-end;
-    min-width: max-content;
-    min-height: max-content;
+    align-content: flex-start;
+    justify-items: flex-start;
+    justify-content: flex-start;
+    min-width: min-content;
+    min-height: min-content;
 }
 
 img {
