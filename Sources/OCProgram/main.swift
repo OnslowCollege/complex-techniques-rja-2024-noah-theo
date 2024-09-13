@@ -221,6 +221,8 @@ class BlackJackApp : OCApp{
 
         playerView.empty()
         dealerView.empty()
+        sideVbox.empty()
+        sideVbox.append(helpButton)
         result = ""
 
         dealButton.enabled = true
