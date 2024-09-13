@@ -42,7 +42,7 @@ class BlackJackApp : OCApp{
     var currentBet: Int = 10
     var betLabel = OCLabel(text: "Bet: 10")
     var bankroll: Int = 100
-    var bankrollLabel = OCLabel(text: "Balance: 100")
+    var bankrollLabel = OCLabel(text: "NCEA Credits: 100")
     var result: String = ""
     var defaultLabel = OCLabel(text: "Default Bet: 10")
     var insuranceBet: Int = 0
