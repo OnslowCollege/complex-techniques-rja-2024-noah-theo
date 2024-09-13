@@ -234,7 +234,6 @@ html {
     justify-content: flex-start !important;
     position: fixed;
     display: grid !important;
-    padding: 1rem;
     flex-direction: row !important;
     align-items: flex-start !important;
     align-content: flex-start;
@@ -265,7 +264,8 @@ body> :nth-of-type(2) {
 img {
     width: 40%;  /* Adjust the width percentage as needed */
     height: auto;  /* Maintain the aspect ratio */
-    margin: auto;
+    margin: 0.01rem;
+    padding: 0.01rem;
     position: center;
     padding: auto
 }
