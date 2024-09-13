@@ -243,7 +243,6 @@ html {
 body> :nth-of-type(2) {
     background: #0d7221;
     transition: height 1s;
-    width: 70%; /* Adjust to fit smaller screens */
     padding: 8px !important;
     position: relative;
     top: 0;
