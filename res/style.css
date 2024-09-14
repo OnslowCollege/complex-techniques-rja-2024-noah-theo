@@ -254,7 +254,7 @@ body> :nth-of-type(2) {
     margin: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-right: -2rem;
+    margin-right: -10rem;
     margin-left: 1rem;
     align-content: flex-start;
     justify-items: flex-start;
@@ -266,9 +266,8 @@ body> :nth-of-type(2) {
 img {
     width: 70%;  /* Adjust the width percentage as needed */
     height: auto;  /* Maintain the aspect ratio */
-    margin: 0.01rem;
-    padding: 0.01rem;
-    position: center;
+    padding: -1rem;
+    position: flex-start;
     padding: auto
 }
 
