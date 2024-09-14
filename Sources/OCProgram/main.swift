@@ -55,6 +55,7 @@ class BlackJackApp : OCApp{
     var helpVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
     let rules = OCImageView(filename: "gamerules.png")
+    let imgSize = OCSize(fromString: "90%")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -144,22 +145,27 @@ class BlackJackApp : OCApp{
         allInButton.enabled = false
 
         // Add card to player view and dealer view.
-        let playerCard1 = "\(deck[currentCard].image)"
-        playerView.append(OCImageView(filename: playerCard1))
+        let playerCard1 = OCImageView(filename: "\(deck[currentCard].image)")
+        playerCard1.width = imgSize
+        playerView.append(playerCard1)
         playerCards.append(deck[currentCard])
         currentCard += 1
 
-        let playerCard2 = "\(deck[currentCard].image)"
-        playerView.append(OCImageView(filename: playerCard2))
+        let playerCard2 = OCImageView(filename: "\(deck[currentCard].image)")
+        playerCard2.width = imgSize
+        playerView.append(playerCard2)
         playerCards.append(deck[currentCard])
         currentCard += 1
 
-        let dealerCard = "\(deck[currentCard].image)"
-        dealerView.append(OCImageView(filename: dealerCard))
+        let dealerCard = OCImageView(filename: "\(deck[currentCard].image)")
+        dealerCard.width = imgSize
+        dealerView.append(dealerCard)
         dealerCards.append(deck[currentCard])
         currentCard += 1
 
-        dealerView.append(OCImageView(filename: "back.png"))
+        let backCard = OCImageView(filename: "back.png")
+        backCard.width = imgSize
+        dealerView.append(backCard)
         dealerCards.append(deck[currentCard])
         currentCard += 1
         dealButton.enabled = false
@@ -425,8 +431,8 @@ class BlackJackApp : OCApp{
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
-        let size = OCSize(fromString: "300%")
-        rules.width = size
+        let rulesSize = OCSize(fromString: "150%")
+        rules.width = rulesSize
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
