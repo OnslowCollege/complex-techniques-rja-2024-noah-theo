@@ -239,6 +239,7 @@ html {
     flex-direction: row !important;
     align-items: flex-start !important;
     align-content: flex-start;
+    max-width: fit-content;
 }
 
 body> :nth-of-type(2) {
