@@ -277,14 +277,12 @@ img {
     background-color: #0d7221;
     height: 100%;
     justify-content: flex-start;
-    align-items: flex-end;  /* Ensures the alignment within the VBox */
 }
 
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
     padding: 6px;
-    align-items: flex-start;
 }
 
 .remi-main .VBox>.HBox {
