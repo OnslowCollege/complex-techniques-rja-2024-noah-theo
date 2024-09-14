@@ -245,6 +245,8 @@ html {
     align-content: flex-start;
     max-width: max-content;
     min-width: max-content;
+    justify-items: center;
+    -moz-column-gap: 0;
 }
 
 body> :nth-of-type(2) {
