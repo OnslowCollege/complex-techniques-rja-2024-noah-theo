@@ -133,7 +133,7 @@ class BlackJackApp : OCApp{
     func startGame(button: any OCControlClickable) {
         // Ensure not betting more than they have.
         if bankroll < currentBet {
-            playerView.append(OCLabel(text: "Insufficent balance to place this bet."))
+            sideVbox.append(OCLabel(text: "Insufficent balance to place this bet."))
             return
         }
 
@@ -142,6 +142,8 @@ class BlackJackApp : OCApp{
         dealerCards = []
         playerView.empty()
         dealerView.empty()
+        sideVbox.empty()
+        sideVbox.append(helpButton)
         increaseButton.enabled = false
         decreaseButton.enabled = false
         allInButton.enabled = false
@@ -187,9 +189,9 @@ class BlackJackApp : OCApp{
             standButton.enabled = false
             insuranceButton.enabled = false
             doubleButton.enabled = false
-            playerView.append(OCLabel(text: "Blackjack! Yay you won \(Int(Double(currentBet) * 1.5))"))
+            sideVbox.append(OCLabel(text: "Blackjack! Yay you won \(Int(Double(currentBet) * 1.5))"))
             result = "blackjack"
-            playerView.append(resetButton)
+            sideVbox.append(resetButton)
             updatesBankroll()
         }
     }
@@ -210,8 +212,8 @@ class BlackJackApp : OCApp{
             hitButton.enabled = false
             standButton.enabled = false
             insuranceButton.enabled = false
-            playerView.append(OCLabel(text: "Bust! You lose your bet."))
-            playerView.append(resetButton)
+            sideVbox.append(OCLabel(text: "Bust! You lose your bet."))
+            sideVbox.append(resetButton)
             result = "lost"
             updatesBankroll()
         }
