@@ -44,8 +44,7 @@ body {
 .remi-main svg,
 .remi-main video {
     vertical-align: flex-start;
-    padding: 0.2rem;
-    margin: 0.2rem;
+    row-gap: 0rem;
 }
 
 .remi-main textarea {
@@ -232,13 +231,14 @@ html {
 .remi-main .HBox {
     grid-auto-flow: column;
     grid-auto-columns: 0.5fr;
-    column-gap: auto;
+    column-gap: 0rem;
+    row-gap: 0rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjusts gaps between cards */
-    gap: 1rem;
+    justify-content: center; /* Adjusts gaps between cards */
+    gap: 0rem;
     justify-content: flex-start !important;
-    position: fixed;
+    position: relative;
     display: grid !important;
     flex-direction: row !important;
     align-items: center !important;
