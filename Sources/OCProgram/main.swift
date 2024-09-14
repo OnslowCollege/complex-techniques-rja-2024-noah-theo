@@ -196,7 +196,9 @@ class BlackJackApp : OCApp{
     func hitPlayer(button: any OCControlClickable) {
         doubleButton.enabled = false
         // Adds card to playerView.
-        playerView.append(OCImageView(filename: "\(deck[currentCard].image)"))
+        let newCard = OCImageView(filename: "\(deck[currentCard].image)")
+        newCard.width = imgSize
+        playerView.append(newCard)
         playerCards.append(deck[currentCard])
         currentCard += 1
         updatePlayerScore()
@@ -213,7 +215,9 @@ class BlackJackApp : OCApp{
 
     func hitDealer() {
         dealerCards.append(deck[currentCard])
-        dealerView.append(OCImageView(filename: "\(deck[currentCard].image)"))
+        let newCard = OCImageView(filename: "\(deck[currentCard].image)")
+        newCard.width = imgSize
+        dealerView.append(newCard)
         currentCard += 1
         updateDealerScore()
     }
