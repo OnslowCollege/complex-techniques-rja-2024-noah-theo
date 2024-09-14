@@ -423,6 +423,7 @@ class BlackJackApp : OCApp{
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
+        close()
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
