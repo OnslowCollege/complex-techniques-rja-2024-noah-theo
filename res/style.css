@@ -243,8 +243,8 @@ html {
     flex-direction: row !important;
     align-items: center !important;
     align-content: flex-start;
-    max-width: fit-content;
-    min-width: fit-content;
+    max-width: max-content;
+    min-width: max-content;
 }
 
 body> :nth-of-type(2) {
