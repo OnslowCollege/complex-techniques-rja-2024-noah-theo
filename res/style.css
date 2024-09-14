@@ -267,7 +267,7 @@ img {
     position: flex-start;
     padding: auto;
     max-width: 55%; 
-    max-height: 82.5;
+    max-height: 82.5%;
 }
 
 .remi-main .VBox {
