@@ -251,7 +251,6 @@ body> :nth-of-type(2) {
     left: 0;
     right: 0;
     aspect-ratio: 4 / 3;
-    margin: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-right: -10rem;
@@ -259,12 +258,12 @@ body> :nth-of-type(2) {
     align-content: flex-start;
     justify-items: flex-start;
     justify-content: flex-start;
-    min-width: min-content;
-    min-height: min-content;
+    min-width: max-content;
+    min-height: max-content;
 }
 
 img {
-    width: 70%;  /* Adjust the width percentage as needed */
+    width: 55%;  /* Adjust the width percentage as needed */
     height: auto;  /* Maintain the aspect ratio */
     padding: -1rem;
     position: flex-start;
