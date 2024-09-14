@@ -258,6 +258,7 @@ body> :nth-of-type(2) {
     align-content: flex-start;
     justify-items: flex-start;
     justify-content: flex-start;
+    max-height: fit-content;
 }
 
 img {
