@@ -267,7 +267,8 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; /* Adjusts gaps between cards */
-    max-width: 75%;  /* Adjust the width percentage as needed */
+    max-width: 75%;
+    min-width: 75%;  /* Adjust the width percentage as needed */
     height: auto;  /* Maintain the aspect ratio */
     padding: 0.2rem;
     position: center;
