@@ -377,7 +377,7 @@ select {
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
     font-size: 15pt;
     min-height: 2.25rem;
-    min-width: 9rem;
+    min-width: 10rem;
     text-align: center;
     border-radius: 0.3rem;
     position: relative !important;
@@ -442,7 +442,7 @@ button:active {
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
     font-size: 15pt;
     min-height: 2.25rem;
-    min-width: 9rem;
+    min-width: 10rem;
     text-align: center;
     border-radius: 0.3rem;
     position: relative !important;

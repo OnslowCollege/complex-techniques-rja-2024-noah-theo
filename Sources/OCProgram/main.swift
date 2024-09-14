@@ -54,7 +54,7 @@ class BlackJackApp : OCApp{
     var masterVBox = OCVBox(controls: [])
     var helpVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
-    let rules = OCImageView(filename: "gamerules.png")
+    var menuImg = OCImageView(filename: "gamerules.png")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -430,6 +430,15 @@ class BlackJackApp : OCApp{
         self.sideVbox.visible = false
     }
 
+    func menuButton() {
+        if helpMenuButton.text == "Show Strategy" {
+            self.helpMenuButton.text = "Show Rules"
+            self.menuImg = OCImageView(filename: "strategy.png")
+        } else {
+            self.helpMenuButton.text = "Show Strategy"
+        }
+    }
+
     func closeButton(button: any OCControlClickable) {
         self.helpVbox.visible = false
         self.masterVBox.visible = true
@@ -454,8 +463,8 @@ class BlackJackApp : OCApp{
 
     override open func main(app: any OCAppDelegate) -> OCControl {
         visibiltyUpdate()
-        let rulesSize = OCSize(fromString: "120%")
-        rules.width = rulesSize
+        let Size = OCSize(fromString: "120%")
+        menuImg.width = Size
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
