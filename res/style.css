@@ -276,7 +276,9 @@ img {
     row-gap: 16px;
     background-color: #0d7221;
     height: 100%;
-    justify-content: flex-end !important;
+    justify-content: flex-start !important;
+    align-self: auto;
+    justify-self: auto;
 }
 
 .remi-main .HBox,
