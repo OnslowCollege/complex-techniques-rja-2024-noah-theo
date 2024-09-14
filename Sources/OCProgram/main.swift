@@ -445,7 +445,7 @@ class BlackJackApp : OCApp{
         sideVbox.append(helpButton)
         playerView.append(betLabel)
         let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
-        self.helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rules.png"), helpHbox])
+        self.helpVbox = OCVBox(controls: [menuLabel, OCImageView(filename: "rule.png"), helpHbox])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
