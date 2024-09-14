@@ -231,6 +231,10 @@ html {
 
 .remi-main .HBox {
     grid-auto-flow: column;
+    -webkit-column-rule-width: 0.1rem;
+    column-rule-width: 0.1rem;
+    column-gap: normal;
+    column-width: 0.1rem;
     grid-auto-columns: 0.5fr;
     column-gap: auto;
     justify-content: flex-start !important;
