@@ -130,28 +130,26 @@ class BlackJackApp : OCApp{
     }
 
     // Show cards to start game.
-    func startGame(button: any OCControlClickable) {
-        let imgSize = OCSize(fromString: "90%")
-        if bankroll < currentBet {
-            sideVbox.append(OCLabel(text: "Insufficent balance to place this bet."))
-            return
-        }
-        playerCards = []
-        dealerCards = []
-        playerView.empty()
-        dealerView.empty()
-        increaseButton.enabled = false
-        decreaseButton.enabled = false
-        allInButton.enabled = false
+func startGame(button: any OCControlClickable) {
+    if bankroll < currentBet {
+        sideVbox.append(OCLabel(text: "Insufficient balance to place this bet."))
+        return
+    }
+    playerCards = []
+    dealerCards = []
+    playerView.empty()
+    dealerView.empty()
+    increaseButton.enabled = false
+    decreaseButton.enabled = false
+    allInButton.enabled = false
 
-        // Add card to player view and dealer view.
+    // Test with absolute size to check if the issue is with percentage handling
+    let imgSize = OCSize(fromString: "90%")
+    if let imgSize = imgSize {
+        print("Setting image size to \(imgSize)")
+        
         let playerCard1 = OCImageView(filename: "\(deck[currentCard].image)")
-        if let imgSize = OCSize(fromString: "90%") {
-            print("Image size is \(imgSize)")
-            playerCard1.width = imgSize
-        } else {
-            print("Failed to create OCSize from string")
-        }
+        playerCard1.width = imgSize
         playerView.append(playerCard1)
         playerCards.append(deck[currentCard])
         currentCard += 1
@@ -173,10 +171,16 @@ class BlackJackApp : OCApp{
         dealerView.append(backCard)
         dealerCards.append(deck[currentCard])
         currentCard += 1
+
         dealButton.enabled = false
         hitButton.enabled = true
         standButton.enabled = true
         doubleButton.enabled = true
+    } else {
+        print("Failed to create valid size for cards.")
+    }
+
+
 
         if dealerCards[0].value == "A" {
             insuranceButton.enabled = true
