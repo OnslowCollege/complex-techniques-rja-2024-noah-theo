@@ -425,7 +425,7 @@ class BlackJackApp : OCApp{
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
-        let size = OCSize(fromString: "5000px")
+        let size = OCSize(fromString: "300%")
         rules.width = size
         hitButton.enabled = false
         standButton.enabled = false
