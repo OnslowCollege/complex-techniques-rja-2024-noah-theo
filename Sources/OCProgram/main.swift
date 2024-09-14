@@ -54,7 +54,8 @@ class BlackJackApp : OCApp{
     var masterVBox = OCVBox(controls: [])
     var helpVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
-    var menuImg = OCImageView(filename: "gamerules.png")
+    let rulesImg = OCImageView(filename: "gamerules.png")
+    let strategyImg = OCImageView(filename: "strategy.png")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -434,9 +435,8 @@ class BlackJackApp : OCApp{
         if helpMenuButton.text == "Show Strategy" {
             self.helpMenuButton.text = "Show Rules"
             menuLabel.text = "Basic Blackjack Strategy"
-            self.menuImg = OCImageView(filename: "strategy.png")
-            let strategySize = OCSize(fromString: "200%")
-            self.menuImg.width = strategySize
+            self.rulesImg.visible = false
+            self.strategyImg.visible = true
         } else {
             self.helpMenuButton.text = "Show Strategy"
         }
@@ -467,7 +467,10 @@ class BlackJackApp : OCApp{
     override open func main(app: any OCAppDelegate) -> OCControl {
         visibiltyUpdate()
         let size = OCSize(fromString: "120%")
-        menuImg.width = size
+        rulesImg.width = size
+        let strategySize = OCSize(fromString: "200%")
+        self.strategyImg.width = strategySize
+        self.strategyImg.visible = false
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
@@ -489,7 +492,7 @@ class BlackJackApp : OCApp{
         sideVbox.append(helpButton)
         playerView.append(betLabel)
         let helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
-        self.helpVbox = OCVBox(controls: [menuLabel, menuImg, helpHbox])
+        self.helpVbox = OCVBox(controls: [menuLabel, rulesImg, strategyImg, helpHbox])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
