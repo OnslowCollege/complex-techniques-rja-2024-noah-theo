@@ -258,10 +258,10 @@ body> :nth-of-type(2) {
     align-content: flex-start;
     justify-items: flex-start;
     justify-content: flex-start;
-    min-width: fit-content;
-    min-height: fit-content;
-    max-width: fit-content;
-    max-height: fit-content;
+    min-width: min-content;
+    min-height: min-content;
+    max-width: min-content;
+    max-height: min-content;
 }
 
 img {
