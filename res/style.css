@@ -276,9 +276,8 @@ img {
     row-gap: 16px;
     background-color: #0d7221;
     height: 100%;
-    justify-content: flex-end;  /* Aligns the items to the right */
+    justify-content: flex-start;
     align-items: flex-end;  /* Ensures the alignment within the VBox */
-    padding-right: 16px; /* Optional: adds some space on the right */
 }
 
 .remi-main .HBox,
