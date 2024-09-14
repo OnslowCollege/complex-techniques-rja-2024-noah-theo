@@ -434,6 +434,8 @@ class BlackJackApp : OCApp{
         if helpMenuButton.text == "Show Strategy" {
             self.helpMenuButton.text = "Show Rules"
             self.menuImg = OCImageView(filename: "strategy.png")
+            let strategySize = OCSize(fromString: "200%")
+            menuImg.width = strategySize
         } else {
             self.helpMenuButton.text = "Show Strategy"
         }
@@ -463,8 +465,8 @@ class BlackJackApp : OCApp{
 
     override open func main(app: any OCAppDelegate) -> OCControl {
         visibiltyUpdate()
-        let Size = OCSize(fromString: "120%")
-        menuImg.width = Size
+        let size = OCSize(fromString: "120%")
+        menuImg.width = size
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
