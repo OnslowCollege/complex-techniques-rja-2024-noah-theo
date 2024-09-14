@@ -150,6 +150,7 @@ class BlackJackApp : OCApp{
         playerView.append(playerCard1)
         playerCards.append(deck[currentCard])
         currentCard += 1
+        print(playerCard1.width)
 
         let playerCard2 = OCImageView(filename: "\(deck[currentCard].image)")
         playerCard2.width = imgSize
