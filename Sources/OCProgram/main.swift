@@ -421,13 +421,20 @@ class BlackJackApp : OCApp{
         self.sideVbox.visible = true
     }
 
+    func resetVisibility() {
+    self.helpVbox.visible = false
+    self.masterVBox.visible = true
+    self.helpButton.visible = true
+    self.sideVbox.visible = true
+}
+
 
     override open func main(app: any OCAppDelegate) -> OCControl {
+        resetVisibility()
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
         doubleButton.enabled = false
-        dealButton.onClick(self.closeButton)
         dealButton.onClick(self.startGame)
         hitButton.onClick(self.hitPlayer)
         resetButton.onClick(self.resestGame)
