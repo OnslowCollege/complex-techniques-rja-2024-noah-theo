@@ -231,12 +231,12 @@ html {
 
 .remi-main .HBox {
     grid-auto-flow: column;
-    -webkit-column-rule-width: 0.1rem;
-    column-rule-width: 0.1rem;
-    column-gap: normal;
-    column-width: 0.1rem;
     grid-auto-columns: 0.5fr;
     column-gap: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusts gaps between cards */
+    gap: 1rem;
     justify-content: flex-start !important;
     position: fixed;
     display: grid !important;
