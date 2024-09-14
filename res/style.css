@@ -237,11 +237,11 @@ html {
     column-width: 0.1rem;
     grid-auto-columns: 0.5fr;
     column-gap: auto;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     position: fixed;
     display: grid !important;
     flex-direction: row !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     align-content: flex-start;
     max-width: fit-content;
     min-width: fit-content;
