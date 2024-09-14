@@ -230,7 +230,7 @@ html {
 
 .remi-main .HBox {
     grid-auto-flow: column;
-    grid-auto-columns: 0.4fr;
+    grid-auto-columns: 0.5fr;
     column-gap: 0rem;
     row-gap: 0rem;
     display: flex;
@@ -270,7 +270,7 @@ img {
     height: auto;
     padding: 0.2rem;
     position: center;
-    width: max-content
+    width: 65%
 }
 
 .remi-main .VBox {
