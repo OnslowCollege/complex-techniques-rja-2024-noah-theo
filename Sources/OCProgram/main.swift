@@ -130,29 +130,27 @@ class BlackJackApp : OCApp{
     }
 
     // Show cards to start game.
-func startGame(button: any OCControlClickable) {
-    if bankroll < currentBet {
-        sideVbox.append(OCLabel(text: "Insufficient balance to place this bet."))
-        return
-    }
-    playerCards = []
-    dealerCards = []
-    playerView.empty()
-    dealerView.empty()
-    increaseButton.enabled = false
-    decreaseButton.enabled = false
-    allInButton.enabled = false
+    func startGame(button: any OCControlClickable) {
+        if bankroll < currentBet {
+            sideVbox.append(OCLabel(text: "Insufficent balance to place this bet."))
+            return
+        }
+        playerCards = []
+        dealerCards = []
+        playerView.empty()
+        dealerView.empty()
+        increaseButton.enabled = false
+        decreaseButton.enabled = false
+        allInButton.enabled = false
 
-    // Test with absolute size to check if the issue is with percentage handling
-    let imgSize = OCSize(fromString: "90%")
-    if let imgSize = imgSize {
-        print("Setting image size to \(imgSize)")
-        
+        // Add card to player view and dealer view.
+        let imgSize = OCSize(fromString: "90%")
         let playerCard1 = OCImageView(filename: "\(deck[currentCard].image)")
         playerCard1.width = imgSize
         playerView.append(playerCard1)
         playerCards.append(deck[currentCard])
         currentCard += 1
+        playerCard1.width = imgSize
 
         let playerCard2 = OCImageView(filename: "\(deck[currentCard].image)")
         playerCard2.width = imgSize
@@ -171,16 +169,10 @@ func startGame(button: any OCControlClickable) {
         dealerView.append(backCard)
         dealerCards.append(deck[currentCard])
         currentCard += 1
-
         dealButton.enabled = false
         hitButton.enabled = true
         standButton.enabled = true
         doubleButton.enabled = true
-    } else {
-        print("Failed to create valid size for cards.")
-    }
-
-
 
         if dealerCards[0].value == "A" {
             insuranceButton.enabled = true
