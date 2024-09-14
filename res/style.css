@@ -258,10 +258,6 @@ body> :nth-of-type(2) {
     align-content: flex-start;
     justify-items: flex-start;
     justify-content: flex-start;
-    min-width: min-content;
-    min-height: min-content;
-    max-width: min-content;
-    max-height: min-content;
 }
 
 img {
@@ -270,7 +266,8 @@ img {
     padding: -1rem;
     position: flex-start;
     padding: auto;
-    max-width: 55% 
+    max-width: 55%; 
+    max-height: auto;
 }
 
 .remi-main .VBox {
