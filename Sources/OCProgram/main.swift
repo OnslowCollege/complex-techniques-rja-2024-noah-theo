@@ -465,7 +465,7 @@ class BlackJackApp : OCApp{
 
     override open func main(app: any OCAppDelegate) -> OCControl {
         visibiltyUpdate()
-        let size = OCSize(fromString: "120%")
+        let size = OCSize(fromString: "200%")
         menuImg.width = size
         hitButton.enabled = false
         standButton.enabled = false
