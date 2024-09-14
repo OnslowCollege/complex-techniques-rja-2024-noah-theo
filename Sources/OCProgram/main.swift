@@ -471,7 +471,6 @@ class BlackJackApp : OCApp{
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
         self.closeMenuButton.onClick(self.closeButton)
-        visibiltyUpdate()
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         sideVbox.append(helpButton)
@@ -492,7 +491,7 @@ class BlackJackApp : OCApp{
         let maincontainer = OCHBox(controls: [
             masterVBox, helpVbox, sideVbox
         ])
-
+        visibiltyUpdate()
         return maincontainer
     }
 }
