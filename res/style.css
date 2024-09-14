@@ -44,8 +44,8 @@ body {
 .remi-main svg,
 .remi-main video {
     vertical-align: flex-start;
-    padding: 0.1rem;
-    margin: 0.1rem;
+    padding: 0.2rem;
+    margin: 0.2rem;
 }
 
 .remi-main textarea {
@@ -237,7 +237,7 @@ html {
     column-width: 0.1rem;
     grid-auto-columns: 0.5fr;
     column-gap: auto;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     position: fixed;
     display: grid !important;
     flex-direction: row !important;
@@ -269,9 +269,8 @@ body> :nth-of-type(2) {
 img {
     max-width: 55%;  /* Adjust the width percentage as needed */
     height: auto;  /* Maintain the aspect ratio */
-    padding: -1rem;
-    position: flex-start;
-    padding: auto;
+    padding: 0.2rem;
+    position: center;
 }
 
 .remi-main .VBox {
