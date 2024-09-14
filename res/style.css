@@ -237,7 +237,7 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     justify-content: flex-start !important;
-    position: fixed;
+    position: relative;
     display: grid !important;
     flex-direction: row !important;
     align-items: center !important;
