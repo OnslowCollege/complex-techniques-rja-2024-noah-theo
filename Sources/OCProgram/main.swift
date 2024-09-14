@@ -427,6 +427,7 @@ class BlackJackApp : OCApp{
         standButton.enabled = false
         insuranceButton.enabled = false
         doubleButton.enabled = false
+        dealButton.onClick(self.closeButton)
         dealButton.onClick(self.startGame)
         hitButton.onClick(self.hitPlayer)
         resetButton.onClick(self.resestGame)
@@ -438,7 +439,6 @@ class BlackJackApp : OCApp{
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
         self.closeMenuButton.onClick(self.closeButton)
-        self.dealButton.onClick(self.closeButton)
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
