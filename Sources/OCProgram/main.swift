@@ -262,7 +262,7 @@ class BlackJackApp : OCApp{
         standButton.enabled = false
         insuranceButton.enabled = false
         doubleButton.enabled = false
-   
+
         dealerSecondCardHidden = false
         updateDealerScore()
 
@@ -436,10 +436,24 @@ class BlackJackApp : OCApp{
         self.helpButton.visible = true
         self.sideVbox.visible = true
     }
-    
+
+    func visibiltyUpdate() {
+        if masterVBox.visible == true {
+            self.masterVBox.visible = false
+            self.helpVbox.visible = true
+            self.helpButton.visible = false
+            self.sideVbox.visible = false
+        } else {
+            self.helpVbox.visible = false
+            self.masterVBox.visible = true
+            self.helpButton.visible = true
+            self.sideVbox.visible = true
+        }
+    }
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
+        visibiltyUpdate()
         let rulesSize = OCSize(fromString: "120%")
         rules.width = rulesSize
         hitButton.enabled = false
@@ -457,7 +471,7 @@ class BlackJackApp : OCApp{
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
         self.closeMenuButton.onClick(self.closeButton)
-
+        visibiltyUpdate()
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         sideVbox.append(helpButton)
