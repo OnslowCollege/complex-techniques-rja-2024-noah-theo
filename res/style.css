@@ -238,7 +238,7 @@ html {
     justify-content: center; /* Adjusts gaps between cards */
     gap: 0rem;
     justify-content: flex-start !important;
-    position: relative;
+    position: fixed;
     display: grid !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -259,13 +259,10 @@ body> :nth-of-type(2) {
     left: 0;
     right: 0;
     aspect-ratio: 4 / 3;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-right: -10rem;
-    margin-left: 1rem;
     align-content: flex-start;
     justify-items: flex-start;
     justify-content: flex-start;
+    min-width: max-content;
 }
 
 img {
