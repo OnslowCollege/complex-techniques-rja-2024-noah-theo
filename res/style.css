@@ -233,12 +233,12 @@ html {
     grid-auto-flow: column;
     grid-auto-columns: 0.5fr;
     column-gap: 8px;
-    justify-content: flex-start !important;
-    position: fixed;
+    justify-content: left !important;
+    position: relative;
     display: grid !important;
     flex-direction: row !important;
-    align-items: flex-start !important;
-    align-content: flex-start;
+    align-items: leftt !important;
+    align-content: left;
 }
 
 body> :nth-of-type(2) {
@@ -276,7 +276,7 @@ img {
     row-gap: 16px;
     background-color: #0d7221;
     height: 100%;
-    justify-content: flex-start !important;
+    justify-content: flex-end !important;
 }
 
 .remi-main .HBox,
