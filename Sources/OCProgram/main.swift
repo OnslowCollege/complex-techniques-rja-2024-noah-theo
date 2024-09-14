@@ -131,10 +131,13 @@ class BlackJackApp : OCApp{
 
     // Show cards to start game.
     func startGame(button: any OCControlClickable) {
+        // Ensure not betting more than they have.
         if bankroll < currentBet {
-            sideVbox.append(OCLabel(text: "Insufficent balance to place this bet."))
+            playerView.append(OCLabel(text: "Insufficent balance to place this bet."))
             return
         }
+
+        // Reset cards and views and enable correct buttons.
         playerCards = []
         dealerCards = []
         playerView.empty()
@@ -143,83 +146,81 @@ class BlackJackApp : OCApp{
         decreaseButton.enabled = false
         allInButton.enabled = false
 
-        // Add card to player view and dealer view.
-        let imgSize = OCSize(fromString: "90%")
-        let playerCard1 = OCImageView(filename: "\(deck[currentCard].image)")
-        playerCard1.width = imgSize
-        playerView.append(playerCard1)
+        // Add 2 cards for player.
+        let playerCard1 = "\(deck[currentCard].image)"
+        playerView.append(OCImageView(filename: playerCard1))
         playerCards.append(deck[currentCard])
         currentCard += 1
 
-        let playerCard2 = OCImageView(filename: "\(deck[currentCard].image)")
-        playerCard2.width = imgSize
-        playerView.append(playerCard2)
+        let playerCard2 = "\(deck[currentCard].image)"
+        playerView.append(OCImageView(filename: playerCard2))
         playerCards.append(deck[currentCard])
         currentCard += 1
 
-        let dealerCard = OCImageView(filename: "\(deck[currentCard].image)")
-        dealerCard.width = imgSize
-        dealerView.append(dealerCard)
+        // One card for dealer.
+        let dealerCard = "\(deck[currentCard].image)"
+        dealerView.append(OCImageView(filename: dealerCard))
         dealerCards.append(deck[currentCard])
         currentCard += 1
 
-        let backCard = OCImageView(filename: "back.png")
-        backCard.width = imgSize
-        dealerView.append(backCard)
+        // Second dealer card is hidden.
+        dealerView.append(OCImageView(filename: "back.png"))
         dealerCards.append(deck[currentCard])
         currentCard += 1
+        // Ensure correct action buttons enabled.
         dealButton.enabled = false
         hitButton.enabled = true
         standButton.enabled = true
         doubleButton.enabled = true
 
+        // Check if player is allowed to take insurance.
         if dealerCards[0].value == "A" {
             insuranceButton.enabled = true
         }
 
+        // After adding cards update both views and score.
         updatePlayerScore()
         updateDealerScore()
+        // Check if player has blackjack if so round ends and player wins.
         if calculateScore(cards: playerCards) == 21 {
             hitButton.enabled = false
             standButton.enabled = false
             insuranceButton.enabled = false
             doubleButton.enabled = false
-            sideVbox.append(OCLabel(text: "Blackjack! Yay you won \(Int(Double(currentBet) * 1.5))"))
+            playerView.append(OCLabel(text: "Blackjack! Yay you won \(Int(Double(currentBet) * 1.5))"))
             result = "blackjack"
-            sideVbox.append(resetButton)
+            playerView.append(resetButton)
             updatesBankroll()
+        }
     }
-}
 
 
     /// When dealer clicks hit button.
     func hitPlayer(button: any OCControlClickable) {
-        let imgSize = OCSize(fromString: "90%")
+        // Can no longer double after hitting.
         doubleButton.enabled = false
-        // Adds card to playerView.
-        let newCard = OCImageView(filename: "\(deck[currentCard].image)")
-        newCard.width = imgSize
-        playerView.append(newCard)
+        // Add card to playerView.
+        playerView.append(OCImageView(filename: "\(deck[currentCard].image)"))
         playerCards.append(deck[currentCard])
         currentCard += 1
+        // Update player view.
         updatePlayerScore()
+        // Make sure player hasn't busted if they have end game with loss.
         if calculateScore(cards: playerCards) > 21 {
             hitButton.enabled = false
             standButton.enabled = false
             insuranceButton.enabled = false
-            sideVbox.append(OCLabel(text: "Bust! You lose your bet."))
-            sideVbox.append(resetButton)
+            playerView.append(OCLabel(text: "Bust! You lose your bet."))
+            playerView.append(resetButton)
             result = "lost"
             updatesBankroll()
         }
     }
 
+    /// Func for after standing and to add card to dealer.
     func hitDealer() {
-        let imgSize = OCSize(fromString: "90%")
         dealerCards.append(deck[currentCard])
-        let newCard = OCImageView(filename: "\(deck[currentCard].image)")
-        newCard.width = imgSize
-        dealerView.append(newCard)
+        dealerView.append(OCImageView(filename: "\(deck[currentCard].image)"))
         currentCard += 1
         updateDealerScore()
     }
