@@ -423,7 +423,6 @@ class BlackJackApp : OCApp{
 
 
     override open func main(app: any OCAppDelegate) -> OCControl {
-        close()
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
@@ -439,6 +438,7 @@ class BlackJackApp : OCApp{
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
         self.closeMenuButton.onClick(self.closeButton)
+        self.dealButton.onClick(self.closeButton)
 
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
