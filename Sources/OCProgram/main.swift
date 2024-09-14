@@ -55,7 +55,6 @@ class BlackJackApp : OCApp{
     var helpVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
     let rules = OCImageView(filename: "gamerules.png")
-    let imgSize = OCSize(fromString: "90%")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -195,6 +194,7 @@ class BlackJackApp : OCApp{
 
     /// When dealer clicks hit button.
     func hitPlayer(button: any OCControlClickable) {
+        let imgSize = OCSize(fromString: "90%")
         doubleButton.enabled = false
         // Adds card to playerView.
         let newCard = OCImageView(filename: "\(deck[currentCard].image)")
@@ -215,6 +215,7 @@ class BlackJackApp : OCApp{
     }
 
     func hitDealer() {
+        let imgSize = OCSize(fromString: "90%")
         dealerCards.append(deck[currentCard])
         let newCard = OCImageView(filename: "\(deck[currentCard].image)")
         newCard.width = imgSize
