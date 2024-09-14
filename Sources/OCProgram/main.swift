@@ -438,17 +438,17 @@ class BlackJackApp : OCApp{
     }
 
     func visibiltyUpdate() {
-        if masterVBox.visible == true {
-            self.masterVBox.visible = false
-            self.helpVbox.visible = true
-            self.helpButton.visible = false
-            self.sideVbox.visible = false
-        } else {
-            self.helpVbox.visible = false
-            self.masterVBox.visible = true
-            self.helpButton.visible = true
-            self.sideVbox.visible = true
-        }
+        self.masterVBox.visible = false
+        self.helpVbox.visible = true
+        self.helpButton.visible = false
+        self.sideVbox.visible = false 
+    }
+
+    func visibiltyUpdateTwo() {
+        self.helpVbox.visible = false
+        self.masterVBox.visible = true
+        self.helpButton.visible = true
+        self.sideVbox.visible = true
     }
 
 
@@ -491,7 +491,7 @@ class BlackJackApp : OCApp{
         let maincontainer = OCHBox(controls: [
             masterVBox, helpVbox, sideVbox
         ])
-        visibiltyUpdate()
+        visibiltyUpdateTwo()
         return maincontainer
     }
 }
