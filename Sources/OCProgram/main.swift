@@ -433,7 +433,7 @@ class BlackJackApp : OCApp{
     func menuButton(button: any OCControlClickable) {
         if helpMenuButton.text == "Show Strategy" {
             self.helpMenuButton.text = "Show Rules"
-            self.menuLabel.text = "Basic Blackjack Strategy"
+            menuLabel.text = "Basic Blackjack Strategy"
             self.menuImg = OCImageView(filename: "strategy.png")
             let strategySize = OCSize(fromString: "200%")
             menuImg.width = strategySize
