@@ -55,6 +55,7 @@ class BlackJackApp : OCApp{
     var helpVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
     let rules = OCImageView(filename: "gamerules.png")
+    var playerCard1 = OCImageView(filename: "back.png")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -145,12 +146,12 @@ class BlackJackApp : OCApp{
 
         // Add card to player view and dealer view.
         let imgSize = OCSize(fromString: "90%")
-        let playerCard1 = OCImageView(filename: "\(deck[currentCard].image)")
-        playerCard1.width = imgSize
+        self.playerCard1 = OCImageView(filename: "\(deck[currentCard].image)")
+        self.playerCard1.width = imgSize
         playerView.append(playerCard1)
         playerCards.append(deck[currentCard])
         currentCard += 1
-        playerCard1.width = imgSize
+        self.playerCard1.width = imgSize
 
         let playerCard2 = OCImageView(filename: "\(deck[currentCard].image)")
         playerCard2.width = imgSize
