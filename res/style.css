@@ -261,13 +261,11 @@ body> :nth-of-type(2) {
 }
 
 img {
-    width: 55%;  /* Adjust the width percentage as needed */
+    max-width: 55%;  /* Adjust the width percentage as needed */
     height: auto;  /* Maintain the aspect ratio */
     padding: -1rem;
     position: flex-start;
     padding: auto;
-    max-width: 55%; 
-    max-height: 82.5%;
 }
 
 .remi-main .VBox {
