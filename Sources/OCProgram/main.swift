@@ -54,7 +54,7 @@ class BlackJackApp : OCApp{
     var masterVBox = OCVBox(controls: [])
     var helpVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
-    var menuImg = OCImageView(filename: "gamerules.png")
+    var menuImg = OCImageView(filename: "strategy.png")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
