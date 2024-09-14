@@ -237,7 +237,7 @@ html {
     position: relative;
     display: grid !important;
     flex-direction: row !important;
-    align-items: leftt !important;
+    align-items: left !important;
     align-content: left;
 }
 
@@ -276,9 +276,9 @@ img {
     row-gap: 16px;
     background-color: #0d7221;
     height: 100%;
-    justify-content: flex-start !important;
-    align-self: auto;
-    justify-self: auto;
+    justify-content: center !important;
+    align-self: center;
+    justify-self: center;
 }
 
 .remi-main .HBox,
