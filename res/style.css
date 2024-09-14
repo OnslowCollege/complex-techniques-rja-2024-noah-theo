@@ -267,7 +267,7 @@ img {
     position: flex-start;
     padding: auto;
     max-width: 55%; 
-    max-height: auto;
+    max-height: 82.5;
 }
 
 .remi-main .VBox {
@@ -621,6 +621,8 @@ button::first-line {
 .remi-main .GenericDialog .Label,
 .remi-main .GenericDialog .Container {
     padding: 24px;
+    max-width: max-content;
+    max-width: max-content;
 }
 
 .remi-main .GenericDialog .DialogTitle {
