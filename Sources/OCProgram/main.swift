@@ -132,6 +132,7 @@ class BlackJackApp : OCApp{
 
     // Show cards to start game.
     func startGame(button: any OCControlClickable) {
+        let imgSize = OCSize(fromString: "90%")
         if bankroll < currentBet {
             sideVbox.append(OCLabel(text: "Insufficent balance to place this bet."))
             return
