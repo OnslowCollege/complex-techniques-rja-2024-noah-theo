@@ -484,7 +484,7 @@ class BlackJackApp : OCApp{
         visibiltyUpdate()
         let size = OCSize(fromString: "120%")
         rulesImg.width = size
-        let strategySize = OCSize(fromString: "200%")
+        let strategySize = OCSize(fromString: "100%")
         self.strategyImg.width = strategySize
         hitButton.enabled = false
         standButton.enabled = false
