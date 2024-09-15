@@ -244,7 +244,7 @@ html {
     align-content: flex-start;
     max-width: fit-content;
     min-width: fit-content;
-    justify-items: flex-start;
+    justify-items: center;
 }
 
 body> :nth-of-type(2) {
