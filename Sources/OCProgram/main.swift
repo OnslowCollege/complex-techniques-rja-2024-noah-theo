@@ -35,8 +35,8 @@ class BlackJackApp : OCApp{
     let allInButton = OCButton(text: "All In")
     let insuranceButton = OCButton(text: "Insurance")
     let doubleButton = OCButton(text: "Double")
-    let increaseButton = OCButton(text: "Increase")
-    let decreaseButton = OCButton(text: "Decrease")
+    let increaseButton = OCButton(text: "Increase Bet")
+    let decreaseButton = OCButton(text: "Decrease Bet")
     let resetButton = OCButton(text: "Again")
     var dealerSecondCardHidden = true
     var currentBet: Int = 10
@@ -494,7 +494,7 @@ class BlackJackApp : OCApp{
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
-        let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
+        let masterHBox = OCHBox(controls: [balanceVbox, dealDoubleVBox, hitStandVBox, splitInsuranceVBox, betVBox])
         self.helpVbox.visible = false
         self.helpVboxTwo.visible = false
         self.masterVBox = OCVBox(controls: [
