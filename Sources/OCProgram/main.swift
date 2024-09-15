@@ -54,8 +54,8 @@ class BlackJackApp : OCApp{
     var masterVBox = OCVBox(controls: [])
     var helpVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
-    let rulesImg = OCImageView(filename: "gamerules.png")
-    let strategyImg = OCImageView(filename: "strategy.png")
+    let rulesImg = OCImageView(filename: "gamerules2.png")
+    let strategyImg = OCImageView(filename: "strategy2.png")
     var helpHbox = OCHBox(controls: [])
 
     func generateDeck() -> [Card] {
@@ -503,8 +503,9 @@ class BlackJackApp : OCApp{
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         sideVbox.append(helpButton)
         playerView.append(betLabel)
+        let imgHbox = OCHBox(controls: [rulesImg, strategyImg])
         self.helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
-        self.helpVbox = OCVBox(controls: [menuLabel, rulesImg, helpHbox])
+        self.helpVbox = OCVBox(controls: [menuLabel, imgHbox, closeMenuButton])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
