@@ -34,8 +34,6 @@ class BlackJackApp : OCApp{
     let decreaseButton = OCButton(text: "Decrease Bet")
     let resetButton = OCButton(text: "Again")
     var betLabel = OCLabel(text: "Bet: 10")
-    var bankrollLabel = OCLabel(text: "Balance: 100")
-    var defaultLabel = OCLabel(text: "Default Bet: 10")
     let helpButton = OCButton(text: "?")
     let closeMenuButton = OCButton(text: "Close")
     var menuLabel = OCLabel(text: "Blackjack Rules:")
