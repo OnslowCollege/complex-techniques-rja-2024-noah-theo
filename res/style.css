@@ -280,10 +280,7 @@ img {
     row-gap: 16px;
     background-color: #0d7221;
     height: 100%;
-    justify-content: center !important;
-    justify-self: center;
-    align-items: center;
-    align-self: center;
+    justify-content: flex-start !important;
 }
 
 .remi-main .HBox,
