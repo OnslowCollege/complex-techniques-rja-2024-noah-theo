@@ -405,6 +405,7 @@ class BlackJackApp : OCApp{
     }
 
     func decreaseBet(button: any OCControlClickable) {
+        allInButton.enabled = true
         if currentBet > 5 {
             currentBet -= 5
             self.defaultLabel.text = "Default Bet: \(currentBet)"
