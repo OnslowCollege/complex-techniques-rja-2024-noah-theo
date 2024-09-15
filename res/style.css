@@ -49,6 +49,7 @@ body {
 
 .remi-main textarea {
     resize: vertical
+    wid
 }
 
 .remi-main a,
@@ -496,12 +497,17 @@ button::first-line {
 }
 
 .remi-main .TextInput {
+    width: 300%;
+    height: 70%;
     display: block;
     font-family: "Lucida Grande", "Lucida Sans", "Helvetica", "Arial", sans-serif;
     padding: 0;
     /*background: 0 0;*/
     text-align: left;
-    background-color: white;
+    background-color: #0d7221;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 }
 
 .remi-main table {
@@ -593,7 +599,7 @@ button::first-line {
     top: 100%;
     z-index: 1;
     min-width: 100px;
-    max-width: 200px;
+    max-width: 300%;
 }
 
 .remi-main .MenuBar>.Menu>.MenuItem {
