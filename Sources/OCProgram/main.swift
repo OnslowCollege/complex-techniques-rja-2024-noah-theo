@@ -257,6 +257,10 @@ class BlackJackApp : OCApp{
             sideVbox.append(OCLabel(text: "Deck Shuffled"))
             currentCard = 0
         }
+        if currentBet > bankroll {
+            currentBet = bankroll
+            defaultLabel.text = "Default Bet: \(currentBet)"
+        }
     }
 
     func standPlayer(button: any OCControlClickable) {
