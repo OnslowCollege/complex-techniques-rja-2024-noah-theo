@@ -50,46 +50,15 @@ class BlackJackApp : OCApp{
     let helpButton = OCButton(text: "?")
     let helpMenuButton = OCButton(text: "Show Strategy")
     let closeMenuButton = OCButton(text: "Close")
-    var menuLabel = OCLabel(text: "Blackjack Rules:")
+    let rulesLabel = OCLabel(text: "Blackjack Rules:")
     var masterVBox = OCVBox(controls: [])
     var helpVbox = OCVBox(controls: [])
+    var strategyVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
     let rulesImg = OCImageView(filename: "gamerules.png")
-    let strategyImg = OCImageView(filename: "strategy3.png")
+    let strategyImg = OCImageView(filename: "strategy.png")
     var helpHbox = OCHBox(controls: [])
-    var rulesLabel = OCTextArea()
-    let cardRules = """
-Card Values:
-Number cards (2-10): Face value.
-Face cards (King, Queen, Jack): 10 points.
-Ace: 1 or 11 points (whichever benefits the hand).
-
-Gameplay:
-The player and dealer are each dealt two cards. The player's cards are both face-up, while the dealer has one face-up card and one face-down card.
-The player must decide how to play their hand based on the sum of their cards and the dealer’s face-up card.
-
-Player's Actions:
-Hit: Take another card.
-Stand: Keep the current hand and end the turn.
-Double: Double the original bet, receive one additional card, and then stand.
-Insurance: If the dealer’s upcard is an Ace, the player can take "insurance" against the dealer having Blackjack. If the dealer has Blackjack, the insurance bet pays 2:1, but the player loses the original bet.
-
-Dealer's Actions:
-The dealer reveals their face-down card once the player has finished their turn.
-The dealer must hit until their hand totals 17 or higher.
-
-Winning Conditions:
-Blackjack: An Ace and any 10-point card dealt to the player in the first two cards. This is an automatic win unless the dealer also has Blackjack (in which case it's a tie).
-Bust: If the player's or dealer’s hand exceeds 21, they lose.
-Compare Hands: If neither busts, the hand closest to 21 wins.
-Tie: If the player and dealer have the same hand value, the bet is returned (no win or loss).
-
-Betting:
-Win: If the player wins the hand by beating the dealer, they get paid 1:1 on their bet. This means they receive an amount equal to their original bet in addition to their bet being returned.
-Blackjack: If the player gets a Blackjack and the dealer doesn’t also have Blackjack, the player is paid 3:2.
-Tie: If the player and the dealer have the same hand value, it's a tie. In this case, the player’s bet is returned, and no credits are won or lost.
-Loss: If the player loses to the dealer, their bet is forfeited.
-"""
+    let strategyLabel = OCLabel(text: "Basic Blackjack Strategy:")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -292,7 +261,7 @@ Loss: If the player loses to the dealer, their bet is forfeited.
         }
         if currentBet > bankroll {
             currentBet = bankroll
-            defaultLabel.text = "Default Bet:\(currentBet)"
+            defaultLabel.text = "Default Bet\(currentBet)"
         }
     }
 
@@ -465,31 +434,13 @@ Loss: If the player loses to the dealer, their bet is forfeited.
 
     func showRulesStrategy(button: any OCControlClickable) {
         self.masterVBox.visible = false
-        self.helpVbox.visible = true
+        self.helpHbox.visible = true
         self.helpButton.visible = false
         self.sideVbox.visible = false
     }
 
-    func menuButton(button: any OCControlClickable) {
-        if helpMenuButton.text == "Show Strategy" {
-            self.helpMenuButton.text = "Show Rules"
-            self.menuLabel.text = "Basic Blackjack Strategy:"
-            self.helpVbox.empty()
-            self.helpVbox.append(menuLabel)
-            self.helpVbox.append(strategyImg)
-            self.helpVbox.append(helpHbox)
-        } else {
-            self.helpMenuButton.text = "Show Strategy"
-            self.menuLabel.text = "Blackjack Rules:"
-            self.helpVbox.empty()
-            self.helpVbox.append(menuLabel)
-            self.helpVbox.append(rulesImg)
-            self.helpVbox.append(helpHbox)
-        }
-    }
-
     func closeButton(button: any OCControlClickable) {
-        self.helpVbox.visible = false
+        self.helpHbox.visible = false
         self.masterVBox.visible = true
         self.helpButton.visible = true
         self.sideVbox.visible = true
@@ -497,13 +448,13 @@ Loss: If the player loses to the dealer, their bet is forfeited.
 
     func visibiltyUpdate() {
         self.masterVBox.visible = false
-        self.helpVbox.visible = true
+        self.helpHbox.visible = true
         self.helpButton.visible = false
         self.sideVbox.visible = false 
     }
 
     func visibiltyUpdateTwo() {
-        self.helpVbox.visible = false
+        self.helpHbox.visible = false
         self.masterVBox.visible = true
         self.helpButton.visible = true
         self.sideVbox.visible = true
@@ -516,9 +467,6 @@ Loss: If the player loses to the dealer, their bet is forfeited.
         rulesImg.width = size
         let strategySize = OCSize(fromString: "200%")
         self.strategyImg.width = strategySize
-        self.rulesLabel.text = cardRules
-        self.rulesLabel.width = OCSize(fromString: "300%")
-        self.rulesLabel.height = OCSize(fromString: "70%")
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
@@ -534,20 +482,20 @@ Loss: If the player loses to the dealer, their bet is forfeited.
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
         self.closeMenuButton.onClick(self.closeButton)
-        self.helpMenuButton.onClick(self.menuButton)
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         sideVbox.append(helpButton)
         playerView.append(betLabel)
-        self.helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
-        self.helpVbox = OCVBox(controls: [menuLabel, rulesLabel, helpHbox])
+        self.helpVbox = OCVBox(controls: [rulesLabel, rulesImg])
+        self.strategyVbox = OCVBox(controls: [strategyLabel, strategyImg])
+        self.helpHbox = OCHBox(controls: [helpVbox, strategyVbox])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
-        self.helpVbox.visible = false
+        self.helpHbox.visible = false
         self.masterVBox = OCVBox(controls: [
             dealerView, playerView, masterHBox
         ])
