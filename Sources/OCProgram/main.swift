@@ -34,6 +34,8 @@ class BlackJackApp : OCApp{
     let decreaseButton = OCButton(text: "Decrease Bet")
     let resetButton = OCButton(text: "Again")
     var betLabel = OCLabel(text: "Bet: 10")
+    var bankrollLabel = OCLabel(text: "Balance: 100")
+    var defaultLabel = OCLabel(text: "Default Bet: 10")
     let helpButton = OCButton(text: "?")
     let closeMenuButton = OCButton(text: "Close")
     var menuLabel = OCLabel(text: "Blackjack Rules:")
@@ -45,8 +47,6 @@ class BlackJackApp : OCApp{
     var helpHbox = OCHBox(controls: [])
     var helpVboxTwo = OCVBox(controls: [])
     let menuLabelTwo =  OCLabel(text: "Basic Blackjack Strategy:")
-    var bankrollLabel = OCLabel(text: "NCEA Credits: 100")
-    var defaultLabel = OCLabel(text: "Default Bet: 10")
 
     // Define Neccesary logic variables.
     var deck: [Card] = []
@@ -55,7 +55,7 @@ class BlackJackApp : OCApp{
     var dealerSecondCardHidden = true
     var currentCard = 0
     var currentBet: Int = 10
-    var bankroll: Int = 10 
+    var bankroll: Int = 100
     var result: String = ""
     var insuranceBet: Int = 0
     var hashit: Bool = false
@@ -573,5 +573,4 @@ class BlackJackApp : OCApp{
 }
 
 BlackJackApp().start()
-
 
