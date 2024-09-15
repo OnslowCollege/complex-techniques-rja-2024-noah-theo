@@ -479,7 +479,6 @@ class BlackJackApp : OCApp{
         rulesImg.width = size
         let strategySize = OCSize(fromString: "200%")
         self.strategyImg.width = strategySize
-        self.strategyImg.visible = true
         hitButton.enabled = false
         standButton.enabled = false
         insuranceButton.enabled = false
@@ -501,7 +500,7 @@ class BlackJackApp : OCApp{
         sideVbox.append(helpButton)
         playerView.append(betLabel)
         self.helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
-        self.helpVbox = OCVBox(controls: [menuLabel, rulesImg, strategyImg, helpHbox])
+        self.helpVbox = OCVBox(controls: [menuLabel, rulesImg, helpHbox])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
