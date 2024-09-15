@@ -50,15 +50,15 @@ class BlackJackApp : OCApp{
     let helpButton = OCButton(text: "?")
     let helpMenuButton = OCButton(text: "Show Strategy")
     let closeMenuButton = OCButton(text: "Close")
-    let rulesLabel = OCLabel(text: "Blackjack Rules:")
+    var menuLabel = OCLabel(text: "Blackjack Rules:")
     var masterVBox = OCVBox(controls: [])
     var helpVbox = OCVBox(controls: [])
-    var strategyVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
     let rulesImg = OCImageView(filename: "gamerules.png")
-    let strategyImg = OCImageView(filename: "strategy.png")
+    let strategyImg = OCImageView(filename: "strategy2.png")
     var helpHbox = OCHBox(controls: [])
-    let strategyLabel = OCLabel(text: "Basic Blackjack Strategy:")
+    var helpVboxTwo = OCVBox(controls: [])
+    let menuLabelTwo =  OCLabel(text: "Basic Blackjack Strategy:")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -261,7 +261,7 @@ class BlackJackApp : OCApp{
         }
         if currentBet > bankroll {
             currentBet = bankroll
-            defaultLabel.text = "Default Bet\(currentBet)"
+            defaultLabel.text = "Default Bet: \(currentBet)"
         }
     }
 
@@ -434,13 +434,32 @@ class BlackJackApp : OCApp{
 
     func showRulesStrategy(button: any OCControlClickable) {
         self.masterVBox.visible = false
-        self.helpHbox.visible = true
+        self.helpVbox.visible = true
+        self.helpVboxTwo.visible = true
         self.helpButton.visible = false
         self.sideVbox.visible = false
     }
 
+    func menuButton(button: any OCControlClickable) {
+        if helpMenuButton.text == "Show Strategy" {
+            self.helpMenuButton.text = "Show Rules"
+            self.menuLabel.text = "Basic Blackjack Strategy:"
+            self.helpVbox.empty()
+            self.helpVbox.append(menuLabel)
+            self.helpVbox.append(strategyImg)
+            self.helpVbox.append(helpHbox)
+        } else {
+            self.helpMenuButton.text = "Show Strategy"
+            self.menuLabel.text = "Blackjack Rules:"
+            self.helpVbox.empty()
+            self.helpVbox.append(menuLabel)
+            self.helpVbox.append(rulesImg)
+            self.helpVbox.append(helpHbox)
+        }
+    }
+
     func closeButton(button: any OCControlClickable) {
-        self.helpHbox.visible = false
+        self.helpVbox.visible = false
         self.masterVBox.visible = true
         self.helpButton.visible = true
         self.sideVbox.visible = true
@@ -448,13 +467,13 @@ class BlackJackApp : OCApp{
 
     func visibiltyUpdate() {
         self.masterVBox.visible = false
-        self.helpHbox.visible = true
+        self.helpVbox.visible = true
         self.helpButton.visible = false
         self.sideVbox.visible = false 
     }
 
     func visibiltyUpdateTwo() {
-        self.helpHbox.visible = false
+        self.helpVbox.visible = false
         self.masterVBox.visible = true
         self.helpButton.visible = true
         self.sideVbox.visible = true
@@ -482,26 +501,28 @@ class BlackJackApp : OCApp{
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
         self.closeMenuButton.onClick(self.closeButton)
+        self.helpMenuButton.onClick(self.menuButton)
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         sideVbox.append(helpButton)
         playerView.append(betLabel)
-        self.helpVbox = OCVBox(controls: [rulesLabel, rulesImg])
-        self.strategyVbox = OCVBox(controls: [strategyLabel, strategyImg])
-        self.helpHbox = OCHBox(controls: [helpVbox, strategyVbox])
+        self.helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
+        self.helpVbox = OCVBox(controls: [menuLabel, rulesImg, closeMenuButton])
+        self.helpVboxTwo = OCVBox(controls: [menuLabelTwo, strategyImg])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
-        self.helpHbox.visible = false
+        self.helpVbox.visible = false
+        self.helpVboxTwo.visible = false
         self.masterVBox = OCVBox(controls: [
             dealerView, playerView, masterHBox
         ])
 
         let maincontainer = OCHBox(controls: [
-            masterVBox, helpVbox, sideVbox
+            masterVBox, helpVbox, helpVboxTwo, sideVbox
         ])
         visibiltyUpdateTwo()
         return maincontainer
