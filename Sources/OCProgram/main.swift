@@ -48,7 +48,6 @@ class BlackJackApp : OCApp{
     var insuranceBet: Int = 0
     var hashit: Bool = false
     let helpButton = OCButton(text: "?")
-    let helpMenuButton = OCButton(text: "Show Strategy")
     let closeMenuButton = OCButton(text: "Close")
     var menuLabel = OCLabel(text: "Blackjack Rules:")
     var masterVBox = OCVBox(controls: [])
@@ -440,26 +439,9 @@ class BlackJackApp : OCApp{
         self.sideVbox.visible = false
     }
 
-    func menuButton(button: any OCControlClickable) {
-        if helpMenuButton.text == "Show Strategy" {
-            self.helpMenuButton.text = "Show Rules"
-            self.menuLabel.text = "Basic Blackjack Strategy:"
-            self.helpVbox.empty()
-            self.helpVbox.append(menuLabel)
-            self.helpVbox.append(strategyImg)
-            self.helpVbox.append(helpHbox)
-        } else {
-            self.helpMenuButton.text = "Show Strategy"
-            self.menuLabel.text = "Blackjack Rules:"
-            self.helpVbox.empty()
-            self.helpVbox.append(menuLabel)
-            self.helpVbox.append(rulesImg)
-            self.helpVbox.append(helpHbox)
-        }
-    }
-
     func closeButton(button: any OCControlClickable) {
         self.helpVbox.visible = false
+        self.helpVboxTwo.visible = false
         self.masterVBox.visible = true
         self.helpButton.visible = true
         self.sideVbox.visible = true
@@ -501,12 +483,10 @@ class BlackJackApp : OCApp{
         self.allInButton.onClick(self.allInButton)
         self.helpButton.onClick(self.showRulesStrategy)
         self.closeMenuButton.onClick(self.closeButton)
-        self.helpMenuButton.onClick(self.menuButton)
         deck = shuffleDeck(deck: generateDeck())
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         sideVbox.append(helpButton)
         playerView.append(betLabel)
-        self.helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
         self.helpVbox = OCVBox(controls: [menuLabel, rulesImg, closeMenuButton])
         self.helpVboxTwo = OCVBox(controls: [menuLabelTwo, strategyImg])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
