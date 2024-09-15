@@ -443,11 +443,10 @@ class BlackJackApp : OCApp{
         } else {
             self.helpMenuButton.text = "Show Strategy"
             self.menuLabel.text = "Blackjack Rules:"
-            self.helpMenuButton.text = "Show Rules"
             self.menuLabel.text = "Basic Blackjack Strategy:"
             self.helpVbox.empty()
             self.helpVbox.append(menuLabel)
-            self.helpVbox.append(strategyImg)
+            self.helpVbox.append(rulesImg)
             self.helpVbox.append(helpHbox)
         }
     }
