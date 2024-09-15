@@ -57,6 +57,8 @@ class BlackJackApp : OCApp{
     let rulesImg = OCImageView(filename: "gamerules2.png")
     let strategyImg = OCImageView(filename: "strategy2.png")
     var helpHbox = OCHBox(controls: [])
+    var helpVboxTwo = OCVBox(controls: [])
+    let menuLabelTwo =  OCLabel(text: "Basic Blackjack Strategy:")
 
     func generateDeck() -> [Card] {
         // Each value and suite.
@@ -433,6 +435,7 @@ class BlackJackApp : OCApp{
     func showRulesStrategy(button: any OCControlClickable) {
         self.masterVBox.visible = false
         self.helpVbox.visible = true
+        self.helpVboxTwo.visible = true
         self.helpButton.visible = false
         self.sideVbox.visible = false
     }
@@ -503,9 +506,9 @@ class BlackJackApp : OCApp{
         playerView.append(OCLabel(text: "Player Score:\(calculateScore(cards: playerCards))"))
         sideVbox.append(helpButton)
         playerView.append(betLabel)
-        let imgHbox = OCHBox(controls: [rulesImg, strategyImg])
         self.helpHbox = OCHBox(controls: [helpMenuButton, closeMenuButton])
-        self.helpVbox = OCVBox(controls: [menuLabel, imgHbox, closeMenuButton])
+        self.helpVbox = OCVBox(controls: [menuLabel, rulesImg, closeMenuButton])
+        self.helpVboxTwo = OCVBox(controls: [menuLabelTwo, strategyImg])
         let hitStandVBox = OCVBox(controls: [hitButton, standButton])
         let splitInsuranceVBox = OCVBox(controls: [allInButton, insuranceButton])
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
@@ -513,12 +516,13 @@ class BlackJackApp : OCApp{
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
         let masterHBox = OCHBox(controls: [balanceVbox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox, betVBox])
         self.helpVbox.visible = false
+        self.helpVboxTwo.visible = false
         self.masterVBox = OCVBox(controls: [
             dealerView, playerView, masterHBox
         ])
 
         let maincontainer = OCHBox(controls: [
-            masterVBox, helpVbox, sideVbox
+            masterVBox, helpVbox, helpVboxTwo, sideVbox
         ])
         visibiltyUpdateTwo()
         return maincontainer
