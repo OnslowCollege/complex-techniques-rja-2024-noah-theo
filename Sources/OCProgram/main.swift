@@ -494,7 +494,7 @@ class BlackJackApp : OCApp{
         let dealDoubleVBox = OCVBox(controls: [dealButton, doubleButton])
         let betVBox = OCVBox(controls: [increaseButton, decreaseButton])
         let balanceVbox = OCVBox(controls: [defaultLabel, bankrollLabel])
-        let masterHBox = OCHBox(controls: [balanceVbox, dealDoubleVBox, hitStandVBox, splitInsuranceVBox, betVBox])
+        let masterHBox = OCHBox(controls: [balanceVbox, betVBox, hitStandVBox, splitInsuranceVBox, dealDoubleVBox])
         self.helpVbox.visible = false
         self.helpVboxTwo.visible = false
         self.masterVBox = OCVBox(controls: [
