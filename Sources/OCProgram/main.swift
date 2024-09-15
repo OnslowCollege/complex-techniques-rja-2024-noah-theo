@@ -54,7 +54,7 @@ class BlackJackApp : OCApp{
     var helpVbox = OCVBox(controls: [])
     var sideVbox = OCVBox(controls: [])
     let rulesImg = OCImageView(filename: "rules.png")
-    let strategyImg = OCImageView(filename: "strategy2.png")
+    let strategyImg = OCImageView(filename: "strategy.png")
     var helpHbox = OCHBox(controls: [])
     var helpVboxTwo = OCVBox(controls: [])
     let menuLabelTwo =  OCLabel(text: "Basic Blackjack Strategy:")
