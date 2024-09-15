@@ -260,7 +260,7 @@ body> :nth-of-type(2) {
     aspect-ratio: 16 / 9;
     align-content: flex-start;
     justify-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     min-width: fit-content;
 }
 
