@@ -89,8 +89,7 @@ Compare Hands: If neither busts, the hand closest to 21 wins.
 Tie: If the player and dealer have the same hand value, the bet is returned (no win or loss).
 
 Betting:
-Win: If the player wins the hand by beating the dealer, they get paid 1:1 on their bet. This means they receive an amount equal to their original bet in
-addition to their bet being returned.
+Win: If the player wins the hand by beating the dealer, they get paid 1:1 on their bet. This means they receive an amount equal to their original bet in addition to their bet being returned.
 Blackjack: If the player gets a Blackjack and the dealer doesn’t also have Blackjack, the player is paid 3:2.
 Tie: If the player and the dealer have the same hand value, it's a tie. In this case, the player’s bet is returned, and no credits are won or lost.
 Loss: If the player loses to the dealer, their bet is forfeited.
@@ -518,6 +517,8 @@ Loss: If the player loses to the dealer, their bet is forfeited.
 
     override open func main(app: any OCAppDelegate) -> OCControl {
         self.rulesLabel.text = cardRules
+        self.rulesLabel.height = OCSize(fromString: "70%")
+        self.rulesLabel.width = OCSize(fromString: "300%")
         visibiltyUpdate()
         let size = OCSize(fromString: "120%")
         rulesImg.width = size
