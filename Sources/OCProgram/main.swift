@@ -434,11 +434,14 @@ class BlackJackApp : OCApp{
     func menuButton(button: any OCControlClickable) {
         if helpMenuButton.text == "Show Strategy" {
             self.helpMenuButton.text = "Show Rules"
-            menuLabel.text = "Basic Blackjack Strategy"
+            self.menuLabel.text = "Basic Blackjack Strategy:"
             self.rulesImg.visible = false
             self.strategyImg.visible = true
         } else {
             self.helpMenuButton.text = "Show Strategy"
+            self.menuLabel.text = "Blackjack Rules:"
+            self.rulesImg.visible = true
+            self.strategyImg.visible = false
         }
     }
 
