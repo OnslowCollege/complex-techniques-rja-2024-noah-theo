@@ -281,6 +281,9 @@ img {
     background-color: #0d7221;
     height: 100%;
     justify-content: center !important;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
 }
 
 .remi-main .HBox,
