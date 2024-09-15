@@ -43,11 +43,13 @@ body {
 .remi-main img,
 .remi-main svg,
 .remi-main video {
-    vertical-align: left
+    vertical-align: flex-start;
+    row-gap: 0rem;
 }
 
 .remi-main textarea {
     resize: vertical
+    wid
 }
 
 .remi-main a,
@@ -65,6 +67,9 @@ html {
     font-size: 14pt;
     font-weight: 400;
     justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-items: flex-start;
 }
 
 *[hidden] {
@@ -226,46 +231,64 @@ html {
 
 .remi-main .HBox {
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    column-gap: 8px;
-    justify-content: none !important;
+    grid-auto-columns: 0.5fr;
+    column-gap: 0rem;
+    row-gap: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: flex-start !important;
+    position: relative;
     display: grid !important;
-    flex-direction: none !important;
-    align-items: start !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    align-content: flex-start;
+    max-width: fit-content;
+    min-width: fit-content;
+    justify-items: center;
 }
 
 body> :nth-of-type(2) {
     background: #0d7221;
-    ;
     transition: height 1s;
-    width: 1024px;
     padding: 8px !important;
-    position: absolute;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    aspect-ratio: 4 / 3;
-    margin: auto;
-    margin-top: 1px;
-    margin-bottom: 0.5px;
+    margin: 1rem;
+    aspect-ratio: 16 / 9;
+    align-content: flex-start;
+    justify-items: flex-start;
+    justify-content: flex-start;
+    min-width: fit-content;
 }
 
+img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    padding: 0.2rem;
+    position: center;
+    width: 65%
+}
 
 .remi-main .VBox {
     grid-auto-flow: row;
     grid-auto-rows: 1fr;
     row-gap: 16px;
     background-color: #0d7221;
-    ;
     height: 100%;
-    justify-content: start !important;
+    justify-content: flex-start !important;
 }
 
 .remi-main .HBox,
 .remi-main .VBox {
     box-sizing: border-box;
     padding: 6px;
+    align-items: flex-start;
 }
 
 .remi-main .VBox>.HBox {
@@ -351,24 +374,22 @@ button,
 select {
     grid-row: 1;
     -webkit-text-fill-color: rgb(255, 255, 255);
-    font-size: 20pt;
     font-family: 'Exo 2';
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-    min-height: 3rem;
-    max-height: 3rem;
+    font-size: 15pt;
+    min-height: 2.25rem;
     min-width: 10rem;
-    max-width: 20rem;
     text-align: center;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
     background: #8e0000;
-    margin: 0.2rem;
-    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    margin: 0.15rem;
+    box-shadow: 0.225em 0.225em 0.225em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #8e0000;
+    border: 0.125rem solid #8e0000
 }
 
 
@@ -418,30 +439,43 @@ button:focus,
 button:active {
     grid-row: 1;
     -webkit-text-fill-color: #8e0000;
-    font-size: 20pt;
     font-family: 'Exo 2';
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-    min-height: 3rem;
-    max-height: 3rem;
+    font-size: 15pt;
+    min-height: 2.25rem;
     min-width: 10rem;
-    max-width: 20rem;
     text-align: center;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
     background: #FFFFFF;
-    margin: 0.2rem;
-    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    margin: 0.15rem;
+    box-shadow: 0.225em 0.225em 0.225em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #FFFFFF;
+    border: 0.125rem solid #8e0000
 }
 
-img {
-    width: 117px;
-    height: 175.5px;
-    margin: 2px;
+
+
+.help-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #8e0000;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 999; /* Ensure it stays on top */
+    transition: background-color 0.3s ease;
+}
+
+.help-button:hover {
+    background-color: #ff0000; /* Change on hover */
 }
 
 button::first-line {
@@ -463,12 +497,17 @@ button::first-line {
 }
 
 .remi-main .TextInput {
+    width: 300%;
+    height: 70%;
     display: block;
     font-family: "Lucida Grande", "Lucida Sans", "Helvetica", "Arial", sans-serif;
     padding: 0;
     /*background: 0 0;*/
     text-align: left;
-    background-color: white;
+    background-color: #0d7221;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 }
 
 .remi-main table {
@@ -508,7 +547,8 @@ button::first-line {
     border-bottom: 1px solid rgba(111, 111, 143, 0.5);
     margin: 0px;
     padding: 4px 0 4px 0;
-    font-family: "Lucida Grande", "Lucida Sans", "Helvetica", "Arial", sans-serif;
+    font-family: 'Exo 2';
+    src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
     text-align: center;
     margin-top: -8px;
 }
@@ -559,7 +599,7 @@ button::first-line {
     top: 100%;
     z-index: 1;
     min-width: 100px;
-    max-width: 200px;
+    max-width: 300%;
 }
 
 .remi-main .MenuBar>.Menu>.MenuItem {
@@ -591,6 +631,8 @@ button::first-line {
 .remi-main .GenericDialog .Label,
 .remi-main .GenericDialog .Container {
     padding: 24px;
+    max-width: max-content;
+    max-width: max-content;
 }
 
 .remi-main .GenericDialog .DialogTitle {
@@ -624,12 +666,13 @@ button::first-line {
     outline: 0;
     padding: 0;
     color: rgb(147, 50, 50);
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: left;
     z-index: 1;
     cursor: pointer;
     height: 100%;
+    justify-content: left;
 }
 
 .remi-main input[type='range']::-moz-focus-outer {
@@ -843,22 +886,20 @@ button::first-line {
     -webkit-text-fill-color: rgb(255, 255, 255);
     font-family: 'Exo 2';
     src: url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-    font-size: 20pt;
-    min-height: 3rem;
-    max-height: 3rem;
-    min-width: 15rem;
-    max-width: 30rem;
+    font-size: 15pt;
+    min-height: 2.25rem;
+    min-width: 10.5rem;
     text-align: center;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     position: relative !important;
     overflow: hidden;
     cursor: pointer;
     outline: none;
     background: #8e0000;
-    margin: 0.2rem;
-    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    margin: 0.15rem;
+    box-shadow: 0.225em 0.225em 0.225em rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border: 2px solid #8e0000
+    border: 0.125rem solid #8e0000
 }
 
 .remi-main .FileFolderItem {
